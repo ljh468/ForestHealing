@@ -187,7 +187,8 @@ body {
 			</div>
 		</div>
 
-
+		<div>
+		</div>
 		<form>
 			&nbsp;검색어를 선택하세요
 			<div style="display:inline-flex;">
