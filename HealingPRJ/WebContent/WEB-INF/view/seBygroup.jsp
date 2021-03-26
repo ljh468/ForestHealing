@@ -67,8 +67,8 @@ body {
 									</a>
 									<div class="message-body">
 										<small class="pull-right">3 mins ago</small> <a href="#"><strong>John
-												Doe</strong> commented on <strong>your photo</strong>.</a> <br />
-										<small class="text-muted">1:24 pm - 25/03/2015</small>
+												Doe</strong> commented on <strong>your photo</strong>.</a> <br /> <small
+											class="text-muted">1:24 pm - 25/03/2015</small>
 									</div>
 								</div>
 							</li>
@@ -81,8 +81,8 @@ body {
 									<div class="message-body">
 										<small class="pull-right">1 hour ago</small> <a href="#">New
 											message from <strong>Jane Doe</strong>.
-										</a> <br />
-										<small class="text-muted">12:27 pm - 25/03/2015</small>
+										</a> <br /> <small class="text-muted">12:27 pm -
+											25/03/2015</small>
 									</div>
 								</div>
 							</li>
@@ -176,85 +176,160 @@ body {
 			<ol class="breadcrumb">
 				<li><a href="#"> <em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">프로그램 결과 입력</li>
+				<li class="active">만족도&효과평가 단체별 검색</li>
 			</ol>
 		</div>
 		<!--/.row-->
 
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">프로그램 결과 입력</h1>
+				<h1 class="page-header">만족도&효과평가 단체별 검색</h1>
 			</div>
 		</div>
 
-		<div>
-		</div>
+
 		<form>
-			&nbsp;검색어를 선택하세요
-			<div style="display:inline-flex;">
-				<span class="input-group input-group-lg" style="width: 30%;">
-					<input type="text" placeholder="Search" class="form-control">
-					<span class="input-group-btn">
-					</span>
-				</span>
-				<span class="input-group input-group-lg" style="width: 30%;">
-					<input type="text" placeholder="Search" class="form-control">
-					<span class="input-group-btn">
-						<button type="button" class="btn btn-default" tabindex="-1">
-							<i class="fa fa-search"></i>
-						</button>
-					</span>
-				</span>
-				<span class="input-group input-group-lg" style="width: 30%;">
-					<input type="text" placeholder="Search" class="form-control">
-					<span class="input-group-btn">
-						<button type="button" class="btn btn-default" tabindex="-1">
-							<i class="fa fa-search"></i>
-						</button>
-					</span>
+			<div style="display: inline-flex;">
+				&nbsp;&nbsp; <span class="input-group input-group-lg"
+					style="width: 300px;"> <select name="effect"
+					class="form-control" style="border-radius: 5px;">
+						<option value="program">프로그램 만족도</option>
+						<option value="facility">시설서비스 환경 만족도</option>
+						<option value="counseling">상담&치유 서비스</option>
+						<option value="prevention">예방 서비스</option>
+						<option value="healing">힐링 서비스</option>
+						<option value="health">건강</option>
+				</select>
 				</span>
 			</div>
 
-		</form>
-
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="panel panel-default chat" style="word-break: break-all;">
-					hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohelloohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
-					hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohelloohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
-					hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohelloohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
-					hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohelloohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
-					hellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohelloohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohellohello
-
+			<hr style="margin-top: 10px; margin-bottom: 10px;">
+			&nbsp;&nbsp;단체명을 입력하세요 <br>
+			<div style="display: inline-flex">
+				&nbsp;&nbsp;
+				<div class="input-group input-group-lg" style="width: 500px;">
+					<input type="text" placeholder="Search" class="form-control">
+					<div class="input-group-btn">
+						<button type="button" class="btn btn-default" tabindex="-1">
+							<i class="fa fa-search"></i>
+						</button>
+					</div>
 				</div>
 			</div>
+		</form>
+
+		&nbsp;&nbsp;
+		<div class="row" style="display: inline-flex; margin-top: 2%">
+			<div class="col-lg-12">
+				<div id="wrapper">
+					<h1>&nbsp;&nbsp;&nbsp;프로그램 만족도</h1>
+					<div style="width: 100%; height: 100%; overflow: auto">
+						<table id="keywords" cellspacing="0" cellpadding="0">
+							<tbody style="font-size: 0.51em;">
+								<tr style="background-color: rgb(208, 219, 233);">
+									<td rowspan="2">순번</td>
+									<td rowspan="2">실시일자</td>
+									<td rowspan="2">단체명</td>
+									<td rowspan="2">참가자유형</td>
+									<td rowspan="2">사업유형</td>
+									<td rowspan="2">체류기간</td>
+									<td rowspan="2">분야</td>
+									<td rowspan="2">프로그램명</td>
+									<td rowspan="2">강사명</td>
+									<td colspan="4">강사</td>
+									<td colspan="4">내용구성</td>
+									<td colspan="4">효과성</td>
+									<td rowspan="2">전체평균</td>
+								</tr>
+
+								<tr style="background-color: rgb(208, 219, 233);">
+									<td rowspan="1">전문성</td>
+									<td rowspan="1">성실성</td>
+									<td rowspan="1">반응성</td>
+									<td rowspan="1">평균</td>
+
+									<td rowspan="1">체계성</td>
+									<td rowspan="1">적합성</td>
+									<td rowspan="1">흥미성</td>
+									<td rowspan="1">평균</td>
+
+									<td rowspan="1">학습성</td>
+									<td rowspan="1">재참여</td>
+									<td rowspan="1">추천</td>
+									<td rowspan="1">평균</td>
+								</tr>
+
+								<%
+									for (int i = 0; i < 50; i++) {
+								%>
+								<tr class="ProgramSatisfaction">
+									<td>1</td>
+									<td>2</td>
+									<td>폴리텍 데이터분석과</td>
+									<td>4</td>
+									<td>5</td>
+									<td>6</td>
+									<td>7</td>
+									<td>8</td>
+									<td>9</td>
+									<td>10</td>
+									<td>11</td>
+									<td>12</td>
+									<td>13</td>
+									<td>14</td>
+									<td>15</td>
+									<td>16</td>
+									<td>17</td>
+									<td>18</td>
+									<td>19</td>
+									<td>20</td>
+									<td>21</td>
+									<td>22</td>
+
+								</tr>
+								<%
+									}
+								%>
+							</tbody>
+						</table>
+						</div>
+						<!--/.table-->
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+						<br>
+					</div>
+				</div>
+			</div>
+			<!--/.row-->
+
+			<!--  -->
+
+
 		</div>
+		<!--/.main-->
 
-		<!--  -->
-
-
-	</div>
-	<!--/.main-->
-
-	<script src="/lumino/js/jquery-1.11.1.min.js"></script>
-	<script src="/lumino/js/bootstrap.min.js"></script>
-	<script src="/lumino/js/chart.min.js"></script>
-	<script src="/lumino/js/chart-data.js"></script>
-	<script src="/lumino/js/easypiechart.js"></script>
-	<script src="/lumino/js/easypiechart-data.js"></script>
-	<script src="/lumino/js/bootstrap-datepicker.js"></script>
-	<script src="/lumino/js/custom.js"></script>
-	<script>
-		window.onload = function() {
-			var chart1 = document.getElementById("line-chart").getContext("2d");
-			window.myLine = new Chart(chart1).Line(lineChartData, {
-				responsive : true,
-				scaleLineColor : "rgba(0,0,0,.2)",
-				scaleGridLineColor : "rgba(0,0,0,.05)",
-				scaleFontColor : "#c5c7cc"
-			});
-		};
-	</script>
-
+		<script src="/lumino/js/jquery-1.11.1.min.js"></script>
+		<script src="/lumino/js/bootstrap.min.js"></script>
+		<script src="/lumino/js/chart.min.js"></script>
+		<script src="/lumino/js/chart-data.js"></script>
+		<script src="/lumino/js/easypiechart.js"></script>
+		<script src="/lumino/js/easypiechart-data.js"></script>
+		<script src="/lumino/js/bootstrap-datepicker.js"></script>
+		<script src="/lumino/js/custom.js"></script>
+		<script>
+			window.onload = function() {
+				var chart1 = document.getElementById("line-chart").getContext(
+						"2d");
+				window.myLine = new Chart(chart1).Line(lineChartData, {
+					responsive : true,
+					scaleLineColor : "rgba(0,0,0,.2)",
+					scaleGridLineColor : "rgba(0,0,0,.05)",
+					scaleFontColor : "#c5c7cc"
+				});
+			};
+		</script>
 </body>
 </html>
