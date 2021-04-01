@@ -25,6 +25,13 @@ public class TestController {
 		return "/index";
 	}
 	
+	@RequestMapping(value="index2")
+	public String index2(HttpServletRequest request, HttpServletResponse reponse) { 
+		
+		log.info("hi");
+		return "/index2";
+	}
+	
 	@RequestMapping(value="seBygroup")
 	public String seBygroup(HttpServletRequest request, HttpServletResponse reponse) { 
 		
