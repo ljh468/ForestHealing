@@ -63,13 +63,9 @@ body {
 			</div>
 		</div>
 		<!--/.row-->
-	
-	
-	<h1>나는 subject 1이야</h1>
-	
-	
-	
-	
+		
+		
+		<h1>나는 subject 2이야</h1>
 	<form>
 		<div style="display: inline-flex;">
 		 &nbsp;&nbsp;

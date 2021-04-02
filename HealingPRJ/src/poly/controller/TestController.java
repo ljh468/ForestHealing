@@ -46,5 +46,12 @@ public class TestController {
 		return "/seBysubject";
 	}
 	
+	@RequestMapping(value="seBysubject2")
+	public String seBysubject2(HttpServletRequest request, HttpServletResponse reponse) { 
+		
+		log.info("seBysubject2");
+		return "/seBysubject2";
+	}
+	
 	
 }
