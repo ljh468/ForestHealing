@@ -35,29 +35,66 @@
 		}
 	</style>
 	<!-- 홍두표 - 나눔스퀘어 폰트 불러오기 -->
-
+	<!-- 차트 ajax -->
+	<script>
+	function search(){
+		var name = $("#user_name").val();
+		console.log(name);
+		  $.ajax({
+			url : 'resProgram_chart.do',
+			type : 'post',
+			data : {name : name},
+			success : function(data) {
+				console.log("성공");
+				console.log(data);
+				$("#resProgram_chart").html(data);
+			},
+			error:function (e){
+				alert("error");
+			}
+		}) 
+	}
+</script>
 
 </head>
 <body>
-		<%@ include file="/WEB-INF/view/top.jsp" %>
-		<%@ include file="/WEB-INF/view/sidebar.jsp" %>
 	
-		<!--/.row-->
+	<%@ include file="/WEB-INF/view/top.jsp" %>
+	<%@ include file="/WEB-INF/view/sidebar.jsp" %>
+	<!--/.sidebar-->
 		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#">
+					<em class="fa fa-home"></em>
+				</a></li>
+				<li class="active">프로그램 결과 입력</li>
+			</ol>
+		</div><!--/.row-->
 		
-		<!--홍석민이 만들고 있음  -->
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="panel panel-default chat" style="word-break: break-all;">
-					
-				</div>
+				<h1 class="page-header">프로그램 결과 입력</h1>
 			</div>
-		</div>
+		</div><!--/.row-->
 		
-		<!--  -->
+			<!--단체별 운영결과 검색창   -->
+		<div class="row">
+			<div class="col-lg-3">
+					   <div style="display: inline-flex;">
+						  <div class="input-group input-group-lg" style="width: 30%;">
+							 <input type="text" id="user_name" name="user_name" placeholder="검색어......" class="form-control" style="width: 300px;">
+							 <button type="button" onClick="JavaScript:search();" class="btn btn-default" tabindex="-1" value="검색"><i class="fa fa-search"></i></button>
+					      </div>
+					   </div>
+			</div>
+		</div>	<!--/.main-->
 		
-		
-	</div>	<!--/.main-->
+		<div id="resProgram_chart"></div>
+	</div>
+	
+	
 	
 	<script src="/lumino/js/jquery-1.11.1.min.js"></script>
 	<script src="/lumino/js/bootstrap.min.js"></script>
@@ -67,17 +104,7 @@
 	<script src="/lumino/js/easypiechart-data.js"></script>
 	<script src="/lumino/js/bootstrap-datepicker.js"></script>
 	<script src="/lumino/js/custom.js"></script>
-	<script>
-		window.onload = function () {
-	var chart1 = document.getElementById("line-chart").getContext("2d");
-	window.myLine = new Chart(chart1).Line(lineChartData, {
-	responsive: true,
-	scaleLineColor: "rgba(0,0,0,.2)",
-	scaleGridLineColor: "rgba(0,0,0,.05)",
-	scaleFontColor: "#c5c7cc"
-	});
-};
-	</script>
+	
 		
 </body>
 </html>

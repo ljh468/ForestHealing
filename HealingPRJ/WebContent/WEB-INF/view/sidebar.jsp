@@ -31,25 +31,44 @@
 		<ul class="nav menu">
 			<li class="active"><a href="index.do"><em class="fa fa-dashboard">&nbsp;</em> 프로그램 결과 입력</a></li>
 					
-			<li><a href="index2.do"><em class="fa fa-calendar">&nbsp;</em> 만족도 및 효과평가 입력</a></li>
-					
-			<li><a href="seBygroup.do"><em class="fa fa-bar-chart">&nbsp;</em> 결과검색</a></li>
-			
-			<li class="parent "><a data-toggle="collapse" href="#sub-item-1"><em class="fa fa-navicon">&nbsp;</em> 
-			만족도 및 효과평가 결과검색 
-			<span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
-			</a>
-			
-			
+			<li class="parent"><a data-toggle="collapse" href="#sub-item-1">
+				<em class="fa fa-bar-chart">&nbsp;</em> 
+				운영결과 결과보고 
+				<span data-toggle="collapse" href="#sub-item-1" class="icon pull-right">
+				<em class="fa fa-plus"></em></span>
+				</a>
 				<ul class="children collapse" id="sub-item-1">
-					<li><a class="" href="seBysubject.do"> <span class="fa fa-arrow-right">&nbsp;</span>
-							단체별 만족도 및 효과평가
+					<li><a class="" href="YearMonthResult.do">
+						<span class="fa fa-arrow-right">&nbsp;</span> 
+							연●월 통계
 					</a></li>
-					<li><a class="" href="seBysubject2.do"> <span class="fa fa-arrow-right">&nbsp;</span>
-							주제어별 만족도 및 효과평가
+					<li><a class="" href="YearMonthResult2.do">
+						<span class="fa fa-arrow-right">&nbsp;</span> 
+							프로그램 운영결과
+					</a></li>
+					<li><a class="" href="YearMonthResult3.do">
+						<span class="fa fa-arrow-right">&nbsp;</span> 
+							주제어별 운영결과 검색
 					</a></li>
 				</ul></li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em>
+			
+			<li class="parent"><a data-toggle="collapse" href="#sub-item-2">
+			<em class="fa fa-navicon">&nbsp;</em> 
+				만족도 및 효과평가 결과검색 
+			<span data-toggle="collapse" href="#sub-item-2" class="icon pull-right">
+			<em class="fa fa-plus"></em></span>
+			</a>
+			<ul class="children collapse" id="sub-item-2">
+					<li><a class="" href="seBysubject.do"> 
+						<span class="fa fa-arrow-right">&nbsp;</span>
+							단체별 만족도 및 효과평가
+					</a></li>
+					<li><a class="" href="seBysubject2.do"> 
+						<span class="fa fa-arrow-right">&nbsp;</span>
+							주제어별 만족도 및 효과평가
+					</a></li>
+			</ul></li>
+			<li><a href="index2.do"><em class="fa fa-power-off">&nbsp;</em>
 					관리자 모드</a></li>
 		</ul>
 	</div>
@@ -79,7 +98,7 @@
 			
 	        if (activePage == currentPage) {
 	        	$(".nav").find(".active").removeClass("active");
-	            $(this).parent().addClass('active'); 
+	            $(this).parent().addClass('active');
 	            $(this).addClass('active');
 	        }
 	    });

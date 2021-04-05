@@ -1031,9 +1031,8 @@ p.back-link {
   margin-bottom: 20px;
   font-size: 12px;
   text-transform: uppercase; }
-  
-  
-/* 차트 CSS */
+
+  /* 차트 CSS */
 
 ::selection { background: #5f74a0; color: #fff; }
 ::-moz-selection { background: #5f74a0; color: #fff; }
@@ -1063,7 +1062,7 @@ img { border: 0; max-width: 100%; }
 
 #wrapper {
   display: block;
-  width: 1500px;
+  width: 1100px;
   background: #fff;
   margin: 0 auto;
   padding: 8px 15px;
@@ -1074,7 +1073,7 @@ img { border: 0; max-width: 100%; }
   margin: 0 auto;
   font-size: 1.2em;
   margin-bottom: 12px;
-  width: 1400px;
+  width: 1050px;
 }
 
 
@@ -1111,7 +1110,7 @@ img { border: 0; max-width: 100%; }
 }
 #keywords tbody tr td {
   text-align: center;
-  padding: 0px 12px;
+  padding: 1px 1px;
   border :1px solid rgb(75, 73, 73);
 }
 #keywords tbody tr td.lalign {

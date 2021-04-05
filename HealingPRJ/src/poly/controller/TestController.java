@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import poly.service.ITestService;
+import poly.util.CmmUtil;
 
 @Controller
 public class TestController {
@@ -25,6 +26,7 @@ public class TestController {
 		return "/index";
 	}
 	
+	// 만족도및 효과평가 이재훈
 	@RequestMapping(value="index2")
 	public String index2(HttpServletRequest request, HttpServletResponse reponse) { 
 		
@@ -53,5 +55,42 @@ public class TestController {
 		return "/seBysubject2";
 	}
 	
+	//운영결과 페이지 호출 _ 유연준
+	@RequestMapping(value ="YearMonthResult")
+	public String resultProgram(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		log.info("프로그램 결과");
+		return "/YearMonthResult";
+	}
 	
-}
+	@RequestMapping(value ="YearMonthResult2")
+	public String resultProgram2(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		log.info("프로그램 결과");
+		return "/YearMonthResult2";
+	}
+	
+	@RequestMapping(value ="YearMonthResult3")
+	public String resultProgram3(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		log.info("프로그램 결과");
+		return "/YearMonthResult3";
+	}
+	@RequestMapping(value ="aa")
+	public String fadsam(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		log.info("프로그램 결과");
+		return "/resProgram_chart";
+	}
+	
+	
+	//운영결과 페이지 차트 호출  _ 유연준
+	@RequestMapping(value ="resProgram_chart")
+	public String resultProgram_chart(HttpServletRequest request, HttpServletResponse response)  throws Exception{
+		String name = CmmUtil.nvl(request.getParameter("name"));
+		
+		log.info("프로그램 차트 가기");
+		log.info(name);
+		return "/resProgram_chart";
+	}
+} 
