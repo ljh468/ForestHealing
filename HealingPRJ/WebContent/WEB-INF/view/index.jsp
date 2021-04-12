@@ -10,7 +10,7 @@
 <link href="/lumino/css/font-awesome.min.css" rel="stylesheet">
 <link href="/lumino/css/datepicker3.css" rel="stylesheet">
 <link href="/lumino/css/styles.css" rel="stylesheet">
-
+<link rel="stylesheet" href="/css/checkstyle.css">
 
 
 <!--Custom Font-->
@@ -74,12 +74,14 @@ body {
 				<div class="panel panel-default">
 					<div class="panel-heading clearfix">Inputs</div>
 					<div class="panel-body">
+					
+					<!-- form 시작 -->
 						<form class="form-horizontal row-border" action="#">
 							<div class="form-group">
 								<label class="col-md-2 control-label">단체명</label>
 								<div class="col-md-10">
 									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력">
+										placeholder="직접입력" style="font-size:16pt";>
 								</div>
 							</div>
 
@@ -87,30 +89,31 @@ body {
 								<label class="col-md-2 control-label">OM</label>
 								<div class="col-md-10">
 									<input type="text" name="om" class="form-control"
-										placeholder="직접입력">
+										placeholder="직접입력" style="font-size:16pt";>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="col-md-2 control-label">참여일자</label>
 								<div class="col-md-10">
-									<input type="text" name="om" class="form-control"
-										placeholder="직접입력">
+									<input type="text" name="topartic" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label class="col-md-2 control-label">체류기간</label>
 								<div class="col-md-10">
-									<input type="text" name="om" class="form-control"
-										placeholder="직접입력">
+									<input type="text" name="tostay" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
 								</div>
 							</div>
-							
+
 							<div class="form-group">
 								<label class="col-md-2 control-label">거주지역</label>
 								<div class="col-md-10">
-									<select class="form-control input-lg" name="period" style="border-radius: 5px;">
+									<select class="form-control input-lg" name="residence"
+										style="border-radius: 5px;">
 										<option value="">서울</option>
 										<option value="">인천</option>
 										<option value="">세종</option>
@@ -132,108 +135,189 @@ body {
 								</div>
 							</div>
 
-
-
-
-
-
-							<div class="form-group">
+							<div class="form-group" >
 								<label class="col-md-2 control-label">참여인원</label>
 								<div class="col-md-10">
-									<label class="checkbox-inline"><input type="checkbox"
-										id="inlineCheckbox1" value="parti">참여자 </label> <label
-										class="checkbox-inline"><input type="checkbox"
-										id="inlineCheckbox1" value="lead">인솔자 </label>
-								
-							<div class="form-group">
-								<div class="col-md-5" style="display:inline-flex;">
-									<label class="col-md-3 control-label">남자</label>
-									<div class="col-md-3">
-										<input type="text" name="male" class="form-control" placeholder="명">
-									</div>
-
-									<label class="col-md-3 control-label">여자</label>
-									<div class="col-md-3">
-										<input type="text" name="fmale" class="form-control" placeholder="명">
-									</div>
-								</div>
-
+									<label class="checkbox-inline">참여자 </label> <br />
 									
-								</div>
-								<span class="help-block">실인원 : </span> <span class="help-block">참여인원
-										: </span>
-							</div>
-							</div>
-							
-							
-							<div class="form-group">
-								<label class="col-md-2 control-label">지원사항</label>
-								<div class="col-md-10">
-							<label class="radio-inline">
-								<input type="radio" name="optionsRadios" id="Radios1" value="option1" >프로그램
-							</label>
-							
-							<label class="radio-inline">
-								<input type="radio" name="optionsRadios" id="Radios2" value="option2" >숙박
-							</label>
-							
-							<label class="radio-inline">
-								<input type="radio" name="optionsRadios" id="Radios3" value="option3" >식사
-							</label>
-							
-								</div>
-							</div>
-
-
-
-							<div class="panel-heading clearfix">Check boxes</div>
-							<div class="panel-body">
-								<label class="checkbox-inline"><input type="checkbox"
-									id="inlineCheckbox1" value="option1" checked="">1 </label> <label
-									class="checkbox-inline"> <input type="checkbox"
-									id="inlineCheckbox2" value="option2">2
-								</label> <label class="checkbox-inline"> <input type="checkbox"
-									id="inlineCheckbox3" value="option3" disabled="">3
-								</label>
-							</div>
-
-
-
-							<div class="form-group">
-								<label class="col-md-2 control-label">Predefined value</label>
-								<div class="col-md-10">
-									<input type="text" name="regular" value="http://"
-										class="form-control">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-md-2 control-label">Column sizing</label>
-								<div class="col-md-10">
-									<div class="row">
-										<div class="col-xs-3">
-											<input type="text" class="form-control"
-												placeholder=".col-xs-3">
+									<div class="col-md-5" style="display: inline-flex;">
+										<label class="col-md-3 control-label">남자</label>
+										<div class="col-md-3">
+											<input type="text" name="male1" class="form-control"
+												placeholder="명" style="font-size:16pt";>
 										</div>
-										<div class="col-xs-5">
-											<input type="text" class="form-control"
-												placeholder=".col-xs-5">
-										</div>
-										<div class="col-xs-4">
-											<input type="text" class="form-control"
-												placeholder=".col-xs-4">
+
+										<label class="col-md-3 control-label">여자</label>
+										<div class="col-md-3">
+											<input type="text" name="fmale1" class="form-control"
+												placeholder="명" style="font-size:16pt";>
 										</div>
 									</div>
 								</div>
+								
+								<label class="col-md-2 control-label"></label>
+								<div class="col-md-10">
+									<label class="checkbox-inline">인솔자 </label> <br />
+									
+									<div class="col-md-5" style="display: inline-flex;">
+										<label class="col-md-3 control-label">남자</label>
+										<div class="col-md-3">
+											<input type="text" name="male2" class="form-control"
+												placeholder="명" style="font-size:16pt";>
+										</div>
+
+										<label class="col-md-3 control-label">여자</label>
+										<div class="col-md-3">
+											<input type="text" name="fmale2" class="form-control"
+												placeholder="명" style="font-size:16pt";>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-5 control-label">
+								<label class="checkbox-inline"> <span class="help-block">실인원 : 11명 </span> </label>
+								<label class="checkbox-inline"> <span class="help-block">연인원 : 12명</span> </label>
+								</div>
 							</div>
 
-						</form>
+					<hr>			
+					<div class="form-group justify-content-center"  >
+						<label class="col-md-2 control-label">지원사항</label>
+						<div class="col-md-10">
+							<label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="support" id="support" value="1">프로그램<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="support" id="support" value="2">숙박<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="support" id="support" value="3">식사<span class="checkmark"></span>
+							</label>
+						</div>
 					</div>
+					
+					<hr>
+					<div class="form-group justify-content-center"  >
+						<label class="col-md-2 control-label">수입구분</label>
+						<div class="col-md-10">
+							<label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="income" id="income" value="1">사회공헌사업<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="income" id="income" value="2">수익사업<span class="checkmark"></span>
+							</label> 
+						</div>
+					</div>
+					
+					<hr>
+					<div class="form-group justify-content-center"  >
+						<label class="col-md-2 control-label">참가자유형</label>
+						<div class="col-md-10">
+							<label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="1">아동청소년<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="2">성인<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="3">노인<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="4">장애인<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="5">가족<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="6">저소득<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="7">다문화<span class="checkmark"></span>
+							</label>  <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="8">중독<span class="checkmark"></span>
+							</label>  <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="9">기타(중복가능)<span class="checkmark"></span>
+							</label>  
+						</div>
+					</div>
+					
+					<hr>
+					<div class="form-group justify-content-center"  >
+						<label class="col-md-2 control-label">사업목적</label>
+						<div class="col-md-10">
+							<label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="business" id="business" value="1">사회공헌<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="business" id="business" value="2">수익사업<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="business" id="business" value="3">녹색자금<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="business" id="business" value="4">산림복지바우처<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="business" id="business" value="5">교직원<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="business" id="business" value="6">기타<span class="checkmark"></span>
+							</label> 
+						</div>
+					</div>
+					
+					<hr>
+					<div class="form-group justify-content-center"  >
+						<label class="col-md-2 control-label">서비스유형</label>
+						<div class="col-md-10">
+							<label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="service" id="service" value="1">산림교육<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="service" id="service" value="2">산림치유<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="service" id="service" value="3">행위중독치유<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="service" id="service" value="4">행위중독예방<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="service" id="service" value="5">힐링<span class="checkmark"></span>
+							</label> 
+						</div>
+					</div>
+					
+					
+					<hr>
+					<div class="form-group col-md-12">
+						<label class="col-md-2 control-label">프로그램</label>
+							<div class="col-md-3">
+								<select class="form-control input-lg" name="program" style="border-radius: 5px; font-size:16pt;" >
+									<option value="Id">인문</option>
+									<option value="">음악</option>
+									<option value="">미술</option>
+									<option value="">요가명상</option>
+									<option value="">동작</option>
+									<option value="">자연치유</option>
+									<option value="">예방교육</option>
+									<option value="">산림교육</option>
+									<option value="">산림치유</option>
+									<option value="">이벤트</option>
+									<option value="">지역</option>
+									<option value="">신규</option>
+									<option value="">기타</option>
+								</select>
+							</div>
+						<label class="col-md-1 control-label">내부강사</label>
+								<div class="col-md-1">
+									<input type="text" name="male2" class="form-control" placeholder="명" style="font-size:16pt";>
+								</div>
+
+						<label class="col-md-1 control-label">외부강사</label>
+								<div class="col-md-1">
+									<input type="text" name="fmale2" class="form-control" placeholder="명" style="font-size:16pt";>
+								</div>
+								
+								
+				
+			
+		</div>
+					
+					
+					
+					<!-- form 끝 -->
+					</form>
+					</div>
+				
 				</div>
 			</div>
-
 		</div>
 
 	</div>
+
 	<!--/.main-->
 
 	<script src="/lumino/js/jquery-1.11.1.min.js"></script>
