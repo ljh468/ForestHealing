@@ -143,13 +143,13 @@ body {
 									<div class="col-md-5" style="display: inline-flex;">
 										<label class="col-md-3 control-label">남자</label>
 										<div class="col-md-3">
-											<input type="text" name="male1" class="form-control"
+											<input type="text" name="male1" class="form-control" id="per1"
 												placeholder="명" style="font-size:16pt";>
 										</div>
 
 										<label class="col-md-3 control-label">여자</label>
 										<div class="col-md-3">
-											<input type="text" name="fmale1" class="form-control"
+											<input type="text" name="fmale1" class="form-control" id="per2" 
 												placeholder="명" style="font-size:16pt";>
 										</div>
 									</div>
@@ -175,8 +175,8 @@ body {
 								</div>
 								
 								<div class="col-md-5 control-label">
-								<label class="checkbox-inline"> <span class="help-block">실인원 : 11명 </span> </label>
-								<label class="checkbox-inline"> <span class="help-block">연인원 : 12명</span> </label>
+								<label class="checkbox-inline"> <span class="help-block " id="person1" >실인원 : 참여자+인솔자 </span> </label>
+								<label class="checkbox-inline"> <span class="help-block person2">연인원 : 실인원×체류기간</span> </label>
 								</div>
 							</div>
 
@@ -320,15 +320,24 @@ body {
 
 	<!--/.main-->
 
-	<script src="/lumino/js/jquery-1.11.1.min.js"></script>
-	<script src="/lumino/js/bootstrap.min.js"></script>
-	<script src="/lumino/js/chart.min.js"></script>
-	<script src="/lumino/js/chart-data.js"></script>
-	<script src="/lumino/js/easypiechart.js"></script>
-	<script src="/lumino/js/easypiechart-data.js"></script>
-	<script src="/lumino/js/bootstrap-datepicker.js"></script>
-	<script src="/lumino/js/custom.js"></script>
+	
+	<script>
+	
+	per2.oninput = function(){
+		
+		var user1 = document.getElementById("per1").value;
+		var user2 = document.getElementById("per2").value; 
+		var total = parseInt(user1) + parseInt(user2);
+		
+		person1.innerHTML = "실인원 : " + total + "명";
+	}
+	
+	
 
+	
+	
+	
+	</script>
 
 
 
