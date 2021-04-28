@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,39 +80,39 @@ body {
 					
 					<!-- form 시작 -->
 						<form class="form-horizontal row-border" action="#">
-							<div class="form-group">
+							<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">단체명</label>
 								<div class="col-md-10">
 									<input type="text" name="groupname" class="form-control"
 										placeholder="직접입력" style="font-size:16pt";>
 								</div>
 							</div>
-
-							<div class="form-group">
+							<hr>
+							<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">OM</label>
 								<div class="col-md-10">
 									<input type="text" name="om" class="form-control"
 										placeholder="직접입력" style="font-size:16pt";>
 								</div>
 							</div>
-
-							<div class="form-group">
+							<hr>
+							<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">참여일자</label>
 								<div class="col-md-10">
-									<input type="text" name="topartic" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
+									<input type='date' name="openday" id="openday" style="font-size:16pt";/>
+									<input type='date' name="endday" id="endday" style="font-size:16pt";/>
+										
 								</div>
 							</div>
-
-							<div class="form-group">
+							<hr>
+							<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">체류기간</label>
 								<div class="col-md-10">
-									<input type="text" name="tostay" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
+									<span class="help-block " id="tostay"></span>
 								</div>
 							</div>
-
-							<div class="form-group">
+							<hr>
+							<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">거주지역</label>
 								<div class="col-md-10">
 									<select class="form-control input-lg" name="residence"
@@ -131,11 +134,12 @@ body {
 										<option value="">전북</option>
 										<option value="">전남</option>
 										<option value="">제주</option>
+										<option value="">폐광지역</option>
 									</select>
 								</div>
 							</div>
-
-							<div class="form-group" >
+							<hr>
+							<div class="form-group justify-content-center" >
 								<label class="col-md-2 control-label">참여인원</label>
 								<div class="col-md-10">
 									<label class="checkbox-inline">참여자 </label> <br />
@@ -154,7 +158,7 @@ body {
 										</div>
 									</div>
 								</div>
-								
+			
 								<label class="col-md-2 control-label"></label>
 								<div class="col-md-10">
 									<label class="checkbox-inline">인솔자 </label> <br />
@@ -162,13 +166,13 @@ body {
 									<div class="col-md-5" style="display: inline-flex;">
 										<label class="col-md-3 control-label">남자</label>
 										<div class="col-md-3">
-											<input type="text" name="male2" class="form-control"
+											<input type="text" name="male2" class="form-control" id="per3" 
 												placeholder="명" style="font-size:16pt";>
 										</div>
 
 										<label class="col-md-3 control-label">여자</label>
 										<div class="col-md-3">
-											<input type="text" name="fmale2" class="form-control"
+											<input type="text" name="fmale2" class="form-control" id="per4" 
 												placeholder="명" style="font-size:16pt";>
 										</div>
 									</div>
@@ -176,7 +180,7 @@ body {
 								
 								<div class="col-md-5 control-label">
 								<label class="checkbox-inline"> <span class="help-block " id="person1" >실인원 : 참여자+인솔자 </span> </label>
-								<label class="checkbox-inline"> <span class="help-block person2">연인원 : 실인원×체류기간</span> </label>
+								<label class="checkbox-inline"> <span class="help-block"  id="person2">연인원 : 실인원×체류기간</span> </label>
 								</div>
 							</div>
 
@@ -184,12 +188,16 @@ body {
 					<div class="form-group justify-content-center"  >
 						<label class="col-md-2 control-label">지원사항</label>
 						<div class="col-md-10">
-							<label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="support" id="support" value="1">프로그램<span class="checkmark"></span>
-							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="support" id="support" value="2">숙박<span class="checkmark"></span>
-							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="support" id="support" value="3">식사<span class="checkmark"></span>
+							<label class="checkbox-wrap checkbox-success"> 
+							<input type="checkbox" name="support" id="support" value="1">프로그램<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> 
+							<input type="checkbox" name="support" id="support" value="2">숙박<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> 
+							<input type="checkbox" name="support" id="support" value="3">식사<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> 
+							<input type="checkbox" name="support" id="support" value="4">해당없음<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> 
+							<input type="checkbox" name="support" id="support" value="5">기타<span class="checkmark"></span>
 							</label>
 						</div>
 					</div>
@@ -211,24 +219,32 @@ body {
 						<label class="col-md-2 control-label">참가자유형</label>
 						<div class="col-md-10">
 							<label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="participant" id="participant" value="1">아동청소년<span class="checkmark"></span>
+								name="participant" id="participant" value="1">아동<span class="checkmark"></span>
 							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="participant" id="participant" value="2">성인<span class="checkmark"></span>
+								name="participant" id="participant" value="2">청소년<span class="checkmark"></span>
 							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="participant" id="participant" value="3">노인<span class="checkmark"></span>
+								name="participant" id="participant" value="3">성인<span class="checkmark"></span>
 							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="participant" id="participant" value="4">장애인<span class="checkmark"></span>
+								name="participant" id="participant" value="4">노인<span class="checkmark"></span>
 							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="participant" id="participant" value="5">가족<span class="checkmark"></span>
+								name="participant" id="participant" value="5">장애인<span class="checkmark"></span>
 							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="participant" id="participant" value="6">저소득<span class="checkmark"></span>
+								name="participant" id="participant" value="6">가족<span class="checkmark"></span>
 							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="participant" id="participant" value="7">다문화<span class="checkmark"></span>
+								name="participant" id="participant" value="7">저소득<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="8">다문화<span class="checkmark"></span>
 							</label>  <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="participant" id="participant" value="8">중독<span class="checkmark"></span>
+								name="participant" id="participant" value="9">중독<span class="checkmark"></span>
 							</label>  <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
-								name="participant" id="participant" value="9">기타(중복가능)<span class="checkmark"></span>
-							</label>  
+								name="participant" id="participant" value="10">기타(중복가능)<span class="checkmark"></span>
+							</label>  <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="11">추가<span class="checkmark"></span>
+							</label>  <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="12">추가<span class="checkmark"></span>
+							</label>  <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="participant" id="participant" value="13">추가<span class="checkmark"></span>
+							</label>
 						</div>
 					</div>
 					
@@ -269,10 +285,9 @@ body {
 							</label> 
 						</div>
 					</div>
-					
-					
 					<hr>
-					<div class="form-group col-md-12">
+					<div id="test00">
+					<div class="form-group justify-content-center" id="test">
 						<label class="col-md-2 control-label">프로그램</label>
 							<div class="col-md-3">
 								<select class="form-control input-lg" name="program" style="border-radius: 5px; font-size:16pt;" >
@@ -293,18 +308,116 @@ body {
 							</div>
 						<label class="col-md-1 control-label">내부강사</label>
 								<div class="col-md-1">
-									<input type="text" name="male2" class="form-control" placeholder="명" style="font-size:16pt";>
+									<input type="text" name="instructor" class="form-control" placeholder="명" style="font-size:16pt";>
 								</div>
 
 						<label class="col-md-1 control-label">외부강사</label>
 								<div class="col-md-1">
-									<input type="text" name="fmale2" class="form-control" placeholder="명" style="font-size:16pt";>
+									<input type="text" name="outstructor" class="form-control" placeholder="명" style="font-size:16pt";>
 								</div>
 								
-								
-				
-			
-		</div>
+					</div>
+					</div>
+					<div id="box1"><input type="button" value="추가" ></div>
+					<div id="box2"><input type="button" value="삭제" ></div>
+					<hr>
+										
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">객실</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+					
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">식사</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+					
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">프로그램 만족도</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+					
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">시설서비스 만족도</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+					
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">상담&치유 서비스 효과평가</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+					
+					<div class="form-group">
+								<label class="col-md-2 control-label">예방서비스 효과평가</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+					
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">힐링서비스 효과평가</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+					
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">자율신경검사 효과평가</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+					
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">소감</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+					
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">종합의견</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+					
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">지출금액</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+					
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">수입금액</label>
+								<div class="col-md-10">
+									<input type="text" name="groupname" class="form-control"
+										placeholder="직접입력" style="font-size:16pt";>
+								</div>
+					</div>
+
 					
 					
 					
@@ -323,20 +436,60 @@ body {
 	
 	<script>
 	
-	per2.oninput = function(){
+	let L_TODAY = document.querySelector('#tostay');
+
+	endday.oninput = function(){
 		
-		var user1 = document.getElementById("per1").value;
-		var user2 = document.getElementById("per2").value; 
-		var total = parseInt(user1) + parseInt(user2);
+		var openday = document.getElementById("openday").valueAsDate.getTime();
+		var endday = document.getElementById("endday").valueAsDate.getTime();
+		console.log(openday);
+		var day = (endday-openday)/1000/60/60/24+1;
 		
-		person1.innerHTML = "실인원 : " + total + "명";
+		console.info("abc")
+		
+		tostay.innerHTML = day + "일";
 	}
-	
-	
 
 	
+	per4.oninput = function(){
+		
+		var user1 = document.getElementById("per1").value;
+		var user2 = document.getElementById("per2").value;
+		var user3 = document.getElementById("per3").value;
+		var user4 = document.getElementById("per4").value;
+		var total = parseInt(user1) + parseInt(user2) + parseInt(user3) + parseInt(user4);
+		var yeartotal = L_TODAY.textContent.replace("일","");
+		console.info(total);
+		person1.innerHTML = "실인원 : " + total + "명";
+		
+		console.log(yeartotal);
+		person2.innerHTML = "연인원 : " + (total * yeartotal) + "명";
+	}
 	
-	
+	var count = 1;
+	box1.onclick = function() {
+         const box = document.getElementById("test00");
+         const test = document.getElementById('test').innerHTML;
+         const newP = document.createElement('div');
+         newP.setAttribute("id", "test"+count);
+         newP.setAttribute("class","form-group justify-content-center");
+    
+         newP.innerHTML = test;
+         box.appendChild(newP);
+         count ++;
+	}
+	box2.onclick = function() {
+
+         var addedFormDiv = document.getElementById("test00");
+         if(count >1){ // 현재 폼이 두개 이상이면
+                    var addedDiv = document.getElementById("test"+(--count));
+                    // 마지막으로 생성된 폼의 ID를 통해 Div객체를 가져옴
+                    addedFormDiv.removeChild(addedDiv); // 폼 삭제 
+         }else{ // 마지막 폼만 남아있다면
+                    document.baseForm.reset(); // 폼 내용 삭제
+         }
+
+    }
 	</script>
 
 
