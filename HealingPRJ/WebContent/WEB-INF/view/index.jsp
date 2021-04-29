@@ -286,24 +286,24 @@ body {
 						</div>
 					</div>
 					<hr>
-					<div id="test00">
-					<div class="form-group justify-content-center" id="test">
+					<div id="test00" >
+					<div class="form-group justify-content-center" id="test" >
 						<label class="col-md-2 control-label">프로그램</label>
 							<div class="col-md-3">
-								<select class="form-control input-lg" name="program" style="border-radius: 5px; font-size:16pt;" >
-									<option value="Id">인문</option>
-									<option value="">음악</option>
-									<option value="">미술</option>
-									<option value="">요가명상</option>
-									<option value="">동작</option>
-									<option value="">자연치유</option>
-									<option value="">예방교육</option>
-									<option value="">산림교육</option>
-									<option value="">산림치유</option>
-									<option value="">이벤트</option>
-									<option value="">지역</option>
-									<option value="">신규</option>
-									<option value="">기타</option>
+								<select class="form-control input-lg" name="program" style="border-radius: 5px; font-size:16pt; ">
+									<option value="humanities">인문</option>
+									<option value="music">음악</option>
+									<option value="art">미술</option>
+									<option value="yoga">요가명상</option>
+									<option value="movement">동작</option>
+									<option value="natural">자연치유</option>
+									<option value="prevent">예방교육</option>
+									<option value="forestedu">산림교육</option>
+									<option value="forestcure">산림치유</option>
+									<option value="event">이벤트</option>
+									<option value="area">지역</option>
+									<option value="new">신규</option>
+									<option value="etc">기타</option>
 								</select>
 							</div>
 						<label class="col-md-1 control-label">내부강사</label>
@@ -315,106 +315,181 @@ body {
 								<div class="col-md-1">
 									<input type="text" name="outstructor" class="form-control" placeholder="명" style="font-size:16pt";>
 								</div>
-								
+							
 					</div>
+					<span id="box1" ><input type="button" value="추가" class="btn btn-primary btn-info btn-md" style="font-size: 18px;"></span>
+					<span id="box2" ><input type="button" value="삭제" class="btn btn-primary btn-info btn-md" style="font-size: 18px;"></span>
+					
 					</div>
-					<div id="box1"><input type="button" value="추가" ></div>
-					<div id="box2"><input type="button" value="삭제" ></div>
+					
 					<hr>
 										
-					<div class="form-group justify-content-center">
+					<div class="form-group justify-content-center" >
 								<label class="col-md-2 control-label">객실</label>
 								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
+									<label class="checkbox-inline">참여자 </label> <br />
+									
+									<div class="col-md-5" style="display: inline-flex;">
+										<label class="col-md-3 control-label">인원</label>
+										<div class="col-md-3">
+											<input type="text" name="parti_person_count" class="form-control" id="per1"
+												placeholder="명" style="font-size:16pt";>
+										</div>
+
+										<label class="col-md-3 control-label">객실</label>
+										<div class="col-md-3">
+											<input type="text" name="parti_room_count" class="form-control" id="per2" 
+												placeholder="명" style="font-size:16pt";>
+										</div>
+									</div>
 								</div>
+			
+								<label class="col-md-2 control-label"></label>
+								<div class="col-md-10">
+									<label class="checkbox-inline">인솔자 </label> <br />
+									
+									<div class="col-md-5" style="display: inline-flex;">
+										<label class="col-md-3 control-label">인원</label>
+										<div class="col-md-3">
+											<input type="text" name="leader_person_count" class="form-control" id="per3" 
+												placeholder="명" style="font-size:16pt";>
+										</div>
+
+										<label class="col-md-3 control-label">객실</label>
+										<div class="col-md-3">
+											<input type="text" name="leader_room_count" class="form-control" id="per4" 
+												placeholder="명" style="font-size:16pt";>
+										</div>
+									</div>
+								</div>
+								
+								<label class="col-md-2 control-label"></label>
+								<div class="col-md-10">
+									<label class="checkbox-inline">기타 </label> <br />
+									
+									<div class="col-md-5" style="display: inline-flex;">
+										<label class="col-md-3 control-label">인원</label>
+										<div class="col-md-3">
+											<input type="text" name="etc_person_conut" class="form-control" id="per3" 
+												placeholder="명" style="font-size:16pt";>
+										</div>
+
+										<label class="col-md-3 control-label">객실</label>
+										<div class="col-md-3">
+											<input type="text" name="etc_room_conut" class="form-control" id="per4" 
+												placeholder="명" style="font-size:16pt";>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-5 control-label">
+								<label class="checkbox-inline"> <span class="help-block " id="personcount" > 총인원 :  </span> </label>
+								<label class="checkbox-inline"> <span class="help-block"  id="person2"> 총객실 : </span> </label>
+								</div>
+							</div>
+					
+					<div class="form-group justify-content-center"  >
+						<label class="col-md-2 control-label">식사</label>
+						<div class="col-md-10">
+							<label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="meal" id="meal" value="1">1일 중식<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="meal" id="meal" value="2">1일 석식<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="meal" id="meal" value="3">2일 조식<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="meal" id="meal" value="4">2일 중식<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="meal" id="meal" value="5">2일 석식<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="meal" id="meal" value="6">3일 조식<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+							name="meal" id="meal" value="7">3일 중식<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="meal" id="meal" value="7">3일 석식<span class="checkmark"></span>
+							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
+								name="meal" id="meal" value="8">기타<span class="checkmark"></span>
+							</label> 
+						</div>
+					</div>
+					<hr/>
+					
+					<div class="form-group justify-content-center">
+							<label class="col-md-2 control-label">프로그램 만족도 </label>
+							<label class="btn btn-default">
+								<input type="file" hidden="" name="program_facility_satisfaction">
+							</label>
+							<button type="button" class="btn btn-primary btn-info btn-md" style="font-size: 16px;">Upload</button>
 					</div>
 					
 					<div class="form-group justify-content-center">
-								<label class="col-md-2 control-label">식사</label>
-								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
-								</div>
-					</div>
-					
-					<div class="form-group justify-content-center">
-								<label class="col-md-2 control-label">프로그램 만족도</label>
-								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
-								</div>
-					</div>
-					
-					<div class="form-group justify-content-center">
-								<label class="col-md-2 control-label">시설서비스 만족도</label>
-								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
-								</div>
+							<label class="col-md-2 control-label">시설서비스 만족도 </label>
+							<label class="btn btn-default">
+								<input type="file" hidden="" name="facility_satisfaction">
+							</label>
+							<button type="button" class="btn btn-primary btn-info btn-md" style="font-size: 16px;">Upload</button>
 					</div>
 					
 					<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">상담&치유 서비스 효과평가</label>
-								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
-								</div>
+								<label class="btn btn-default">
+								<input type="file" hidden="" name="counseling_effect">
+							</label>
+							<button type="button" class="btn btn-primary btn-info btn-md" style="font-size: 16px;">Upload</button>
 					</div>
 					
-					<div class="form-group">
+					<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">예방서비스 효과평가</label>
-								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
-								</div>
+								<label class="btn btn-default">
+								<input type="file" hidden="" name="prevent_effect">
+							</label>
+							<button type="button" class="btn btn-primary btn-info btn-md" style="font-size: 16px;">Upload</button>
 					</div>
 					
 					<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">힐링서비스 효과평가</label>
-								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
-								</div>
+								<label class="btn btn-default">
+								<input type="file" hidden="" name="healing__effect">
+							</label>
+							<button type="button" class="btn btn-primary btn-info btn-md" style="font-size: 16px;">Upload</button>
 					</div>
-					
+
 					<div class="form-group justify-content-center">
-								<label class="col-md-2 control-label">자율신경검사 효과평가</label>
-								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
-								</div>
+								<label class="col-md-2 control-label">자율신경검사 효과평가 </label>
+								<label class="btn btn-default">
+								<input type="file" hidden="" name="nervous_effect">
+							</label>
+							<button type="button" class="btn btn-primary btn-info btn-md" style="font-size: 16px;">Upload</button>
 					</div>
-					
+					<hr />
 					<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">소감</label>
 								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
+									<textarea id="story" name="story" class="form-control" style="font-size:13pt" rows="7" cols="100"></textarea>
 								</div>
+								
+								
+								
 					</div>
 					
 					<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">종합의견</label>
 								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
+									<textarea id="story" name="story" class="form-control" style="font-size:13pt" rows="4" cols="100"></textarea>
 								</div>
 					</div>
 					
 					<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">지출금액</label>
 								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
+									<textarea id="story" name="story" class="form-control" style="font-size:13pt" rows="2" cols="100"></textarea>
 								</div>
 					</div>
 					
 					<div class="form-group justify-content-center">
 								<label class="col-md-2 control-label">수입금액</label>
 								<div class="col-md-10">
-									<input type="text" name="groupname" class="form-control"
-										placeholder="직접입력" style="font-size:16pt";>
+									<textarea id="story" name="story" class="form-control" style="font-size:13pt" rows="2" cols="100"></textarea>
 								</div>
 					</div>
 
@@ -491,8 +566,6 @@ body {
 
     }
 	</script>
-
-
 
 </body>
 </html>
