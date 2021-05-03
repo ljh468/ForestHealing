@@ -201,8 +201,8 @@ a.btn:active, button:active {
   color: #1b3548; }
 
 .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary, .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
-  background-color: #30a5ff;
-  border-color: #30a5ff; }
+  background-color: #28a745;
+  border-color: #28a745; }
 
 .btn-success, .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success, .btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active {
   background-color: #8ad919;
@@ -217,10 +217,10 @@ a.btn:active, button:active {
   border-color: #f9243f; }
 
 .btn-link, .page-link, .text-primary {
-  color: #30a5ff !important; }
+  color: #28a745 !important; }
 
 .btn-link:focus, .btn-link:hover, .page-link:focus, .page-link:hover, a.text-primary:focus, a.text-primary:hover {
-  color: #50b3ff !important; }
+  color: #28a745 !important; }
 
 .bg-primary {
   color: #1b3548;
@@ -251,10 +251,10 @@ a.bg-teal:hover {
 
 .bg-info, .bg-blue {
   color: #fff;
-  background-color: #30a5ff; }
+  background-color: #28a745; }
 
 a.bg-info:hover, a.bg-blue:hover {
-  background-color: #30a5ff; }
+  background-color: #28a745 }
 
 .bg-info a, .bg-blue a {
   color: rgba(255, 255, 255, 0.75); }

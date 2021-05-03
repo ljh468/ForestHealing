@@ -33,6 +33,8 @@
 <script src="/js/charts.js"></script>
 <script src="/js/animated.js"></script>
 <style>
+
+
 #chartdiv {
   width: 100%;
   height: 500px;

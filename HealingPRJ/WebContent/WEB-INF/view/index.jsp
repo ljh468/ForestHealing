@@ -46,6 +46,47 @@ body {
 </style>
 <!-- 홍두표 - 나눔스퀘어 폰트 불러오기 -->
 
+<!-- submit css -->
+<style>
+body, .button, .tick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+
+.button {
+  width: 300px;
+  height: 80px;
+  background: #28a745;
+  border-radius: 6px;
+  transition: all .3s cubic-bezier(0.67, 0.17, 0.40, 0.83);
+}
+
+.button svg {
+  transform: rotate(180deg);
+  transition: all .5s;
+}
+
+.button__circle {
+  width: 120px;
+  height: 120px;
+  background: mediumseagreen;
+  border-radius: 50%;
+  transform: rotate(-180deg);
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.tick {
+  color: white;
+  font-size: 2em;
+  transition: all .9s;
+}
+</style>
 
 </head>
 <body>
@@ -147,13 +188,13 @@ body {
 									<div class="col-md-5" style="display: inline-flex;">
 										<label class="col-md-3 control-label">남자</label>
 										<div class="col-md-3">
-											<input type="text" name="male1" class="form-control" id="per1"
+											<input type="text" name="male1" class="form-control" id="per01"
 												placeholder="명" style="font-size:16pt";>
 										</div>
 
 										<label class="col-md-3 control-label">여자</label>
 										<div class="col-md-3">
-											<input type="text" name="fmale1" class="form-control" id="per2" 
+											<input type="text" name="fmale1" class="form-control" id="per02" 
 												placeholder="명" style="font-size:16pt";>
 										</div>
 									</div>
@@ -166,13 +207,13 @@ body {
 									<div class="col-md-5" style="display: inline-flex;">
 										<label class="col-md-3 control-label">남자</label>
 										<div class="col-md-3">
-											<input type="text" name="male2" class="form-control" id="per3" 
+											<input type="text" name="male2" class="form-control" id="per03" 
 												placeholder="명" style="font-size:16pt";>
 										</div>
 
 										<label class="col-md-3 control-label">여자</label>
 										<div class="col-md-3">
-											<input type="text" name="fmale2" class="form-control" id="per4" 
+											<input type="text" name="fmale2" class="form-control" id="per04" 
 												placeholder="명" style="font-size:16pt";>
 										</div>
 									</div>
@@ -287,10 +328,14 @@ body {
 					</div>
 					<hr>
 					<div id="test00" >
+					<div style="float: right; padding-right: 100px;"">
+					<span id="box1" ><input type="button" value="추가" class="btn btn-primary btn-info btn-md" style="font-size: 18px;"></span>
+					<span id="box2" ><input type="button" value="삭제" class="btn btn-primary btn-info btn-md" style="font-size: 18px;"></span>
+					</div>
 					<div class="form-group justify-content-center" id="test" >
 						<label class="col-md-2 control-label">프로그램</label>
 							<div class="col-md-3">
-								<select class="form-control input-lg" name="program" style="border-radius: 5px; font-size:16pt; ">
+								<select class="form-control input-lg" name="program" style="border-radius: 5px; font-size:15pt; ">
 									<option value="humanities">인문</option>
 									<option value="music">음악</option>
 									<option value="art">미술</option>
@@ -317,8 +362,7 @@ body {
 								</div>
 							
 					</div>
-					<span id="box1" ><input type="button" value="추가" class="btn btn-primary btn-info btn-md" style="font-size: 18px;"></span>
-					<span id="box2" ><input type="button" value="삭제" class="btn btn-primary btn-info btn-md" style="font-size: 18px;"></span>
+					
 					
 					</div>
 					
@@ -332,13 +376,13 @@ body {
 									<div class="col-md-5" style="display: inline-flex;">
 										<label class="col-md-3 control-label">인원</label>
 										<div class="col-md-3">
-											<input type="text" name="parti_person_count" class="form-control" id="per1"
+											<input type="text" name="parti_person_count" class="form-control" id="room01"
 												placeholder="명" style="font-size:16pt";>
 										</div>
 
 										<label class="col-md-3 control-label">객실</label>
 										<div class="col-md-3">
-											<input type="text" name="parti_room_count" class="form-control" id="per2" 
+											<input type="text" name="parti_room_count" class="form-control" id="room02" 
 												placeholder="명" style="font-size:16pt";>
 										</div>
 									</div>
@@ -351,13 +395,13 @@ body {
 									<div class="col-md-5" style="display: inline-flex;">
 										<label class="col-md-3 control-label">인원</label>
 										<div class="col-md-3">
-											<input type="text" name="leader_person_count" class="form-control" id="per3" 
+											<input type="text" name="leader_person_count" class="form-control" id="room03" 
 												placeholder="명" style="font-size:16pt";>
 										</div>
 
 										<label class="col-md-3 control-label">객실</label>
 										<div class="col-md-3">
-											<input type="text" name="leader_room_count" class="form-control" id="per4" 
+											<input type="text" name="leader_room_count" class="form-control" id="room04" 
 												placeholder="명" style="font-size:16pt";>
 										</div>
 									</div>
@@ -370,24 +414,25 @@ body {
 									<div class="col-md-5" style="display: inline-flex;">
 										<label class="col-md-3 control-label">인원</label>
 										<div class="col-md-3">
-											<input type="text" name="etc_person_conut" class="form-control" id="per3" 
+											<input type="text" name="etc_person_conut" class="form-control" id="room05" 
 												placeholder="명" style="font-size:16pt";>
 										</div>
 
 										<label class="col-md-3 control-label">객실</label>
 										<div class="col-md-3">
-											<input type="text" name="etc_room_conut" class="form-control" id="per4" 
+											<input type="text" name="etc_room_conut" class="form-control" id="room06" 
 												placeholder="명" style="font-size:16pt";>
 										</div>
 									</div>
 								</div>
 								
 								<div class="col-md-5 control-label">
-								<label class="checkbox-inline"> <span class="help-block " id="personcount" > 총인원 :  </span> </label>
-								<label class="checkbox-inline"> <span class="help-block"  id="person2"> 총객실 : </span> </label>
+								<label class="checkbox-inline"> <span class="help-block " id="total_room_person" > 총인원 :  </span> </label>
+								<label class="checkbox-inline"> <span class="help-block"  id="total_room_count"> 총객실 : </span> </label>
 								</div>
 							</div>
-					
+							<hr />
+							
 					<div class="form-group justify-content-center"  >
 						<label class="col-md-2 control-label">식사</label>
 						<div class="col-md-10">
@@ -409,7 +454,50 @@ body {
 								name="meal" id="meal" value="7">3일 석식<span class="checkmark"></span>
 							</label> <label class="checkbox-wrap checkbox-success"> <input type="checkbox"
 								name="meal" id="meal" value="8">기타<span class="checkmark"></span>
-							</label> 
+							</label>
+							 
+						</div>
+						
+						<div class="form-group justify-content-center" style="display: inline-flex";>
+						
+							<label class="col-md-3 control-label"></label>
+								
+								<div class="col-md-2.5">
+									<label class="checkbox-inline">참여자</label> <br />
+									
+									<div class="col-md-10" style="display: inline-flex;">
+										<label class="col-md-4 control-label">인원</label>
+										<div class="col-md-6">
+											<input type="text" name="leader_person_count" class="form-control" id="room03" 
+												placeholder="명" style="font-size:16pt";>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-2.5">
+									<label class="checkbox-inline">인솔자</label> <br />
+									
+									<div class="col-md-10" style="display: inline-flex;">
+										<label class="col-md-4 control-label">인원</label>
+										<div class="col-md-6">
+											<input type="text" name="leader_person_count" class="form-control" id="room03" 
+												placeholder="명" style="font-size:16pt";>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-2.5">
+									<label class="checkbox-inline">기타</label> <br />
+									
+									<div class="col-md-10" style="display: inline-flex;">
+										<label class="col-md-4 control-label">인원</label>
+										<div class="col-md-6">
+											<input type="text" name="leader_person_count" class="form-control" id="room03" 
+												placeholder="명" style="font-size:16pt";>
+										</div>
+									</div>
+								</div>
+								
 						</div>
 					</div>
 					<hr/>
@@ -463,13 +551,16 @@ body {
 					</div>
 					<hr />
 					<div class="form-group justify-content-center">
-								<label class="col-md-2 control-label">소감</label>
+								<label class="col-md-2 control-label">프로그램 소감</label>
 								<div class="col-md-10">
-									<textarea id="story" name="story" class="form-control" style="font-size:13pt" rows="7" cols="100"></textarea>
+									<textarea id="story" name="story01" class="form-control" style="font-size:13pt" rows="7" cols="100"></textarea>
 								</div>
-								
-								
-								
+					</div>
+					<div class="form-group justify-content-center">
+								<label class="col-md-2 control-label">시설서비스 소감</label>
+								<div class="col-md-10">
+									<textarea id="story" name="story02" class="form-control" style="font-size:13pt" rows="7" cols="100"></textarea>
+								</div>
 					</div>
 					
 					<div class="form-group justify-content-center">
@@ -479,25 +570,120 @@ body {
 								</div>
 					</div>
 					
-					<div class="form-group justify-content-center">
+					<div class="form-group justify-content-center" >
 								<label class="col-md-2 control-label">지출금액</label>
 								<div class="col-md-10">
-									<textarea id="story" name="story" class="form-control" style="font-size:13pt" rows="2" cols="100"></textarea>
+									<label class="checkbox-inline">강사 </label> <br />
+									
+									<div class="col-md-10" style="display: inline-flex;">
+										<label class="col-md-3 control-label">강사비</label>
+										<div class="col-md-4">
+											<input type="text" name="" class="form-control" id=""
+												placeholder="원" style="font-size:16pt";>
+										</div>
+
+										<label class="col-md-3 control-label">교통비</label>
+										<div class="col-md-4">
+											<input type="text" name="" class="form-control" id="" 
+												placeholder="원" style="font-size:16pt";>
+										</div>
+										
+										<label class="col-md-3 control-label">식비</label>
+										<div class="col-md-4">
+											<input type="text" name="" class="form-control" id="" 
+												placeholder="원" style="font-size:16pt";>
+										</div>
+									</div>
 								</div>
-					</div>
+			
+								<label class="col-md-2 control-label"></label>
+								<div class="col-md-10">
+									<label class="checkbox-inline">참가자 </label> <br />
+									
+									<div class="col-md-10" style="display: inline-flex;">
+										<label class="col-md-3 control-label">숙박비</label>
+										<div class="col-md-4">
+											<input type="text" name="" class="form-control" id="" 
+												placeholder="원" style="font-size:16pt";>
+										</div>
+
+										<label class="col-md-3 control-label">식비</label>
+										<div class="col-md-4">
+											<input type="text" name="" class="form-control" id="" 
+												placeholder="원" style="font-size:16pt";>
+										</div>
+										
+										<label class="col-md-3 control-label">재료비</label>
+										<div class="col-md-4">
+											<input type="text" name="" class="form-control" id="" 
+												placeholder="원" style="font-size:16pt";>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-5 control-label">
+								<label class="checkbox-inline"> <span class="help-block " id="" >예비비 </span> </label>
+								<label class="checkbox-inline"> <span class="help-block"  id="">합계</span> </label>
+								</div>
+							</div>
 					
-					<div class="form-group justify-content-center">
+					<div class="form-group justify-content-center" >
 								<label class="col-md-2 control-label">수입금액</label>
 								<div class="col-md-10">
-									<textarea id="story" name="story" class="form-control" style="font-size:13pt" rows="2" cols="100"></textarea>
-								</div>
-					</div>
+								<label class="checkbox-inline col-md-8"> 프로그램 </label>
+										<select class="form-control input-lg" name="program_accent" style="border-radius: 5px;width: 534px;margin-left: 20px;">
+											<option value="humanities">인문</option>
+											<option value="music">음악</option>
+											<option value="art">미술</option>
+											<option value="yoga">요가명상</option>
+											<option value="movement">동작</option>
+											<option value="natural">자연치유</option>
+											<option value="prevent">예방교육</option>
+											<option value="forestedu">산림교육</option>
+											<option value="forestcure">산림치유</option>
+											<option value="event">이벤트</option>
+											<option value="area">지역</option>
+											<option value="new">신규</option>
+											<option value="etc">기타</option>
+										</select>
+									<br/>
+									
+									<div class="col-md-10" style="display: inline-flex;">
+										<label class="col-md-3 control-label">숙박</label>
+										<div class="col-md-4">
+											<input type="text" name="" class="form-control" id=""
+												placeholder="원" style="font-size:16pt";>
+										</div>
 
-					
-					
-					
-					<!-- form 끝 -->
+										<label class="col-md-3 control-label">식사</label>
+										<div class="col-md-4">
+											<input type="text" name="" class="form-control" id="" 
+												placeholder="원" style="font-size:16pt";>
+										</div>
+										
+										<label class="col-md-3 control-label">대관 및 기타</label>
+										<div class="col-md-4">
+											<input type="text" name="" class="form-control" id="" 
+												placeholder="원" style="font-size:16pt";>
+										</div>
+									</div>
+									
+								</div>
+			
+								<div class="col-md-5 control-label">
+								<label class="checkbox-inline"> <span class="help-block " id="" >합계</span> </label>
+								<label class="checkbox-inline"> <span class="help-block"  id="">최종금액</span> </label>
+								</div>
+							</div>
+					<hr>
+					<div class="button" style="margin:0 auto; " onclik="submit()">
+					<div class="container">
+					<div class="tick">
+					</div>
+					</div>
+					</div>
 					</form>
+					<!-- form 끝 -->
 					</div>
 				
 				</div>
@@ -506,11 +692,11 @@ body {
 
 	</div>
 
-	<!--/.main-->
-
+</body>
+<!-- 스크립트 -->
+<script>
 	
-	<script>
-	
+	// 참여일자 계산
 	let L_TODAY = document.querySelector('#tostay');
 
 	endday.oninput = function(){
@@ -518,20 +704,20 @@ body {
 		var openday = document.getElementById("openday").valueAsDate.getTime();
 		var endday = document.getElementById("endday").valueAsDate.getTime();
 		console.log(openday);
-		var day = (endday-openday)/1000/60/60/24+1;
+		var day = (endday-openday) / 1000 / 60 / 60 / 24+1;
 		
 		console.info("abc")
 		
 		tostay.innerHTML = day + "일";
 	}
-
 	
-	per4.oninput = function(){
+	// 참여인원 계산
+	per04.oninput = function(){
 		
-		var user1 = document.getElementById("per1").value;
-		var user2 = document.getElementById("per2").value;
-		var user3 = document.getElementById("per3").value;
-		var user4 = document.getElementById("per4").value;
+		var user1 = document.getElementById("per01").value;
+		var user2 = document.getElementById("per02").value;
+		var user3 = document.getElementById("per03").value;
+		var user4 = document.getElementById("per04").value;
 		var total = parseInt(user1) + parseInt(user2) + parseInt(user3) + parseInt(user4);
 		var yeartotal = L_TODAY.textContent.replace("일","");
 		console.info(total);
@@ -541,6 +727,7 @@ body {
 		person2.innerHTML = "연인원 : " + (total * yeartotal) + "명";
 	}
 	
+	// 프로그램 추가 삭제 
 	var count = 1;
 	box1.onclick = function() {
          const box = document.getElementById("test00");
@@ -565,7 +752,45 @@ body {
          }
 
     }
+	
+	// 객실인원 계산
+	room06.oninput = function(){
+		
+		var room01 = document.getElementById("room01").value;
+		var room02 = document.getElementById("room02").value;
+		var room03 = document.getElementById("room03").value;
+		var room04 = document.getElementById("room04").value;
+		var room05 = document.getElementById("room05").value;
+		var room06 = document.getElementById("room06").value;
+		
+		var room_person = parseInt(room01) + parseInt(room03) + parseInt(room05);
+		var room_count = parseInt(room02) + parseInt(room04) + parseInt(room06);
+		console.log(total_room_person);
+		console.log(total_room_count);
+		total_room_person.innerHTML = "총인원 : " + room_person + "명";
+		total_room_count.innerHTML = "총 객실 : " + room_count + "호";
+
+	}
+	
+	// submit 버튼 
+	let button = document.querySelector('.button');
+	let buttonText = document.querySelector('.tick');
+
+	const tickMark = "<svg width=\"58\" height=\"45\" viewBox=\"0 0 58 45\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#fff\" fill-rule=\"nonzero\" d=\"M19.11 44.64L.27 25.81l5.66-5.66 13.18 13.18L52.07.38l5.65 5.65\"/></svg>";
+
+	buttonText.innerHTML = "Submit";
+
+	button.addEventListener('click', function() {
+
+	  if (buttonText.innerHTML !== "Submit") {
+	    buttonText.innerHTML = "Submit";
+	  } else if (buttonText.innerHTML === "Submit") {
+	    buttonText.innerHTML = tickMark;
+	  }
+	  this.classList.toggle('button__circle');
+	});
+	
+	
 	</script>
 
-</body>
 </html>
