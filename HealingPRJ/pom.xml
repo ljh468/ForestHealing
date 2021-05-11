@@ -16,7 +16,21 @@
 	</properties>
 
 	<dependencies>
-
+		
+		<!-- 엑셀 라이브러리 POI -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		
+		
 		<!-- 컬렉션 객체 활용을 위해 사용함 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>

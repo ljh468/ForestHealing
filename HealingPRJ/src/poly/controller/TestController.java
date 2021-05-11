@@ -1,5 +1,10 @@
 package poly.controller;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,8 +13,10 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import poly.dto.StudentDTO;
 import poly.service.ITestService;
 import poly.util.CmmUtil;
+import poly.util.ExcelManager;
 
 @Controller
 public class TestController {
@@ -20,9 +27,28 @@ public class TestController {
 	private ITestService testService;
 	
 	@RequestMapping(value="index")
-	public String index(HttpServletRequest request, HttpServletResponse reponse) { 
-		
+	public String index(HttpServletRequest request, HttpServletResponse reponse) throws IOException { 
 		log.info("hi");
+		
+		List<StudentDTO> rList = new ArrayList<StudentDTO>();
+		
+		rList = ExcelManager.getStudentList();
+		System.out.println(rList.size());
+		Iterator<StudentDTO> it = rList.iterator();
+		while(it.hasNext()) {
+			StudentDTO id = it.next();
+			System.out.print("id : " + id.getId() + "name : " + id.getName() 
+			+ "sex : " + id.getSex() 
+			+ "age : " + id.getAge() 
+			+ "residence : " + id.getResidence() 
+			+ "job : " + id.getJob() 
+			+ "programs_count : " + id.getPrograms_count()
+			+ "stress : " + id.getStress()
+			+ "eval : " + id.getEval());
+			System.out.println();
+		}
+		
+		
 		return "/index";
 	}
 	
