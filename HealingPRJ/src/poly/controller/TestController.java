@@ -40,7 +40,7 @@ public class TestController {
 			System.out.print("id : " + id.getId() + "name : " + id.getName() 
 			+ "sex : " + id.getSex() 
 			+ "age : " + id.getAge() 
-			+ "residence : " + id.getResidence() 
+			+ "residence : " + id.getResidence()
 			+ "job : " + id.getJob() 
 			+ "programs_count : " + id.getPrograms_count()
 			+ "stress : " + id.getStress()
