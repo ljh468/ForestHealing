@@ -91,14 +91,15 @@ body {
 
 				<div class="panel panel-default chat">
 					
-					<form action="/insertForm/serviceInsertForm/insertData.do" method="post">
+					
 					<div class="panel-heading" style="display: flex;">
 						<p style="margin: 0; padding: 0 1rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">서비스환경 만족도</p>
 						<div style="flex: auto; padding: 0 1rem; flex-basis: auto; white-space: nowrap;">
 								<input type="button" class="btn btn-success btn-sm" value="추가" onclick="add_div()"> 
 								<input type="button" class="btn btn-danger btn-sm" value="삭제" onclick="remove_div(this)">
-								<input type="submit" class="btn btn-default btn-sm" value="전송">
+								<input type="button" class="btn btn-default btn-sm" value="전송" onclick="action()">
 						</div>
+						<form name="form" method="post">
 						<div style="flex: auto; padding: 0 1rem; flex-basis: auto; white-space: nowrap;">
 							<h4 style="float : left; margin-right : 10px;">기관명</h4> 
 							<div style="width: 120px; float: left; margin-right: 30px;">
@@ -436,7 +437,9 @@ body {
 	
 	<script type="text/javascript">
 	function action() {
-		let list = [];
+		console.log("start 1 ??");
+		var form = document.form;
+		var list = [];
 		
 		let agency = document.getElementsByName('form-agency')[0].value;
 		let date = document.getElementsByName('form-date')[0].value;
