@@ -185,23 +185,7 @@ public class TestController {
 	public String index(HttpServletRequest request, HttpServletResponse reponse) throws IOException { 
 		log.info("hi");
 		
-		List<StudentDTO> rList = new ArrayList<StudentDTO>();
 		
-		rList = ExcelManager.getStudentList();
-		System.out.println(rList.size());
-		Iterator<StudentDTO> it = rList.iterator();
-		while(it.hasNext()) {
-			StudentDTO id = it.next();
-			System.out.print("id : " + id.getId() + "name : " + id.getName() 
-			+ "sex : " + id.getSex() 
-			+ "age : " + id.getAge() 
-			+ "residence : " + id.getResidence()
-			+ "job : " + id.getJob() 
-			+ "programs_count : " + id.getPrograms_count()
-			+ "stress : " + id.getStress()
-			+ "eval : " + id.getEval());
-			System.out.println();
-		}
 		
 		
 		return "/index";
