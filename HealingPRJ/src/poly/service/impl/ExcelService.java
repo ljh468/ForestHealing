@@ -165,9 +165,10 @@ public class ExcelService implements IExcelService {
 			cell.setCellValue(pDTO.getJob());
 			
 			// 문항시작 ( 변형을 해서 코드를 줄일 필요있음 ) getscore"1" ?
+			/*
 			cell = row.createCell(8);
 			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore1());
+			cell.setCellValue(pDTO.getScore().get(0));
 			
 			cell = row.createCell(9);
 			cell.setCellStyle(bodyStyle);
@@ -235,7 +236,7 @@ public class ExcelService implements IExcelService {
 			
 			cell = row.createCell(25);
 			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore18());
+			cell.setCellValue(pDTO.getScore18());*/
 			
 			listNm ++;
 		}
