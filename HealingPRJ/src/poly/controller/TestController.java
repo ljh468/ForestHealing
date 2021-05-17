@@ -1,5 +1,7 @@
 package poly.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
 
@@ -8,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +21,10 @@ import poly.dto.serviceInsertVO;
 import poly.service.IExcelService;
 import poly.service.ITestService;
 import poly.util.CmmUtil;
+import poly.util.DateUtil;
 
 @Controller
 public class TestController {
-	
 	
 	private Logger log = Logger.getLogger(this.getClass());
 
@@ -62,10 +65,15 @@ public class TestController {
        for(int i = 0 ; i<servList.getServiceInsertList().size();i++) {
           log.info(servList.getServiceInsertList().get(i).getAgency());
           log.info(servList.getServiceInsertList().get(i).getSex());
-          
-          for(int j=0; j<servList.getServiceInsertList().get(i).getScore().size(); j++)
-          log.info(servList.getServiceInsertList().get(i).getScore().get(j));
+          log.info(servList.getServiceInsertList().get(i).getDate());
+          log.info(servList.getServiceInsertList().get(i).getScore().get(0));
+          log.info(servList.getServiceInsertList().get(i).getScore().get(17));
+			/*
+			 * for(int j=0; j<servList.getServiceInsertList().get(i).getScore().size(); j++)
+			 * { log.info(servList.getServiceInsertList().get(i).getScore().get(j)); }
+			 */
        }
+       		
        
       
 
@@ -126,28 +134,27 @@ public class TestController {
 //	            }
 //	         }
 //	         
-//	         log.info("excelService.excelDownload start!");
-//	         XSSFWorkbook wb = excelService.excelDownload(serviceDtoList);
-//	         log.info("excelService.excelDownload end!");
-//	         
+	         log.info("excelService.excelDownload start!");
+	         XSSFWorkbook wb = excelService.excelDownload(servList);
+	         log.info("excelService.excelDownload end!");
 //	         // 컨텐츠 타입과 파일명 지정
 		//
-//	         response.setContentType("ms-vnd/excel");
-//	         response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
+	         response.setContentType("ms-vnd/excel");
+	         response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
 		//
-//	         // 엑셀 출력
-//	         String projectPath = System.getProperty("user.home");
-//	         log.info(projectPath);
-//	         String name = "_서비스환경만족도";
-//	         String date = DateUtil.getDateTime();
-//	         log.info(date);
-//	         // 21.05.13_폴리텍
-//	         
-//	         FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
-		//
-//	         log.info(output);
-//	         wb.write(output);
-//	         wb.close();
+	         // 엑셀 출력
+	         String projectPath = System.getProperty("user.home");
+	         log.info(projectPath);
+	         String name = "_서비스환경만족도";
+	         String date = DateUtil.getDateTime();
+	         log.info(date);
+	         // 21.05.13_폴리텍
+	         String agency = servList.getServiceInsertList().get(0).getAgency();
+	         FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
+		
+	         log.info(output);
+	         wb.write(output);
+	         wb.close();
 
 		log.info("insertForm/serviceInsertForm/insertData end");
 		return "succees";

@@ -2,9 +2,8 @@ package poly.dto;
 
 import java.util.List;
 
+
 public class serviceInsertDTO {
-	
-	
 	
 	private String agency;
 	private String date;

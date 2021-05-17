@@ -1,14 +1,13 @@
 package poly.service;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import poly.dto.serviceInsertDTO;
+import poly.dto.serviceInsertVO;
 
 public interface IExcelService {
 
-	XSSFWorkbook excelDownload(List<serviceInsertDTO> serviceDtoList) throws IOException;
+	XSSFWorkbook excelDownload(serviceInsertVO servList) throws IOException;
 
 }

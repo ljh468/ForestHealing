@@ -1,7 +1,6 @@
 package poly.service.impl;
 
 import java.io.IOException;
-import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.apache.poi.hssf.util.HSSFColor.HSSFColorPredefined;
@@ -16,7 +15,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
 import poly.dto.serviceInsertDTO;
+import poly.dto.serviceInsertVO;
 import poly.service.IExcelService;
+import poly.util.CmmUtil;
 
 @Service("ExcelService")
 public class ExcelService implements IExcelService {
@@ -24,14 +25,14 @@ public class ExcelService implements IExcelService {
 	private Logger log = Logger.getLogger(this.getClass());
 
 	@Override
-	public XSSFWorkbook excelDownload(List<serviceInsertDTO> serviceDtoList) throws IOException {
-		
-		int res = 0;
+	public XSSFWorkbook excelDownload(serviceInsertVO servList) throws IOException {
+
+		/* int res = 0; */
 		// 워크북 생성
 
 		XSSFWorkbook wb = new XSSFWorkbook();
 
-		Sheet sheet = wb.createSheet("프로그램만족도");
+		Sheet sheet = wb.createSheet("서비스환경만족도");
 
 		Row row = null;
 		Cell cell = null;
@@ -106,7 +107,8 @@ public class ExcelService implements IExcelService {
 		cell.setCellStyle(headStyle);
 		cell.setCellValue("직업");
 
-		for (int i = 0; i <= 17; i++) {
+		int scoreCount = servList.getServiceInsertList().get(0).getScore().size();
+		for (int i = 0; i < scoreCount; i++) {
 			cell = row.createCell(i + 8);
 			cell.setCellStyle(headStyle);
 			cell.setCellValue("문항" + (i + 1));
@@ -126,121 +128,73 @@ public class ExcelService implements IExcelService {
 
 		// 데이터 부분 생성
 		int listNm = 0;
-		int count = serviceDtoList.size();
 
-		for (serviceInsertDTO pDTO : serviceDtoList) {
+		for (serviceInsertDTO pDTO : servList.getServiceInsertList()) {
 
 			row = sheet.createRow(rowNo++);
 
-			cell = row.createCell(0);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(listNm);
+			// 빈값들어오면 더이상 for문 안돌게
+//            // + 이 구조로 간다하면 for문안에 jsp 알러트 창 띄울예정
+//            if(CmmUtil.nvl(list.get(i).get("sex").toString()).equals("")) {
+//               break;
+//            }
+			if (pDTO.getSex().toString().equals("")) {
+				log.info("pDTO.getsex == null ? : " + pDTO.getSex() == null);
+				return wb;
+			} else {
 
-			cell = row.createCell(1);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getAgency());
+				cell = row.createCell(0);
+				cell.setCellStyle(bodyStyle);
+				cell.setCellValue(listNm);
 
-			cell = row.createCell(2);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getDate());
-			
-			cell = row.createCell(3);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getPtcProgram());
+				cell = row.createCell(1);
+				cell.setCellStyle(bodyStyle);
+				cell.setCellValue(CmmUtil.nvl(pDTO.getAgency()));
 
-			cell = row.createCell(4);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getSex());
+				cell = row.createCell(2);
+				cell.setCellStyle(bodyStyle);
+				cell.setCellValue(pDTO.getDate());
 
-			cell = row.createCell(5);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getAge());
+				cell = row.createCell(3);
+				cell.setCellStyle(bodyStyle);
+				cell.setCellValue(CmmUtil.nvl(pDTO.getPtcProgram()));
 
-			cell = row.createCell(6);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getResidence());
+				int sexNm = Integer.valueOf(pDTO.getSex().toString());
+				log.info("sexNm : " + sexNm);
+				cell = row.createCell(4);
+				cell.setCellStyle(bodyStyle);
+				cell.setCellValue(sexNm);
 
-			cell = row.createCell(7);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getJob());
-			
-			// 문항시작 ( 변형을 해서 코드를 줄일 필요있음 ) getscore"1" ?
-			/*
-			cell = row.createCell(8);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore().get(0));
-			
-			cell = row.createCell(9);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore2());
-			
-			cell = row.createCell(10);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore3());
-			
-			cell = row.createCell(11);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore4());
-			
-			cell = row.createCell(12);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore5());
-			
-			cell = row.createCell(13);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore6());
-			
-			cell = row.createCell(14);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore7());
-			
-			cell = row.createCell(15);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore8());
-			
-			cell = row.createCell(16);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore9());
-			
-			cell = row.createCell(17);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore10());
-			
-			cell = row.createCell(18);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore11());
-			
-			cell = row.createCell(19);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore12());
-			
-			cell = row.createCell(20);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore13());
-			
-			cell = row.createCell(21);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore14());
-			
-			cell = row.createCell(22);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore15());
-			
-			cell = row.createCell(23);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore16());
-			
-			cell = row.createCell(24);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore17());
-			
-			cell = row.createCell(25);
-			cell.setCellStyle(bodyStyle);
-			cell.setCellValue(pDTO.getScore18());*/
-			
-			listNm ++;
+				int age = Integer.parseInt(pDTO.getAge());
+				log.info("age : " + age);
+				cell = row.createCell(5);
+				cell.setCellStyle(bodyStyle);
+				cell.setCellValue(age);
+
+				cell = row.createCell(6);
+				cell.setCellStyle(bodyStyle);
+				cell.setCellValue(CmmUtil.nvl(pDTO.getResidence()));
+
+				cell = row.createCell(7);
+				cell.setCellStyle(bodyStyle);
+				cell.setCellValue(CmmUtil.nvl(pDTO.getJob()));
+
+				for (int j = 0; j < pDTO.getScore().size(); j++) {
+					cell = row.createCell(j + 8);
+					cell.setCellStyle(bodyStyle);
+					cell.setCellValue(Integer.valueOf(pDTO.getScore().get(j).toString()));
+					
+				}
+
+				// 문항시작 ( 변형을 해서 코드를 줄일 필요있음 ) getscore"1" ?
+				/*
+				 * cell = row.createCell(8); cell.setCellStyle(bodyStyle);
+				 * cell.setCellValue(pDTO.getScore1());
+				 */
+
+				listNm++;
+			}
 		}
-
 		return wb;
 	}
 }

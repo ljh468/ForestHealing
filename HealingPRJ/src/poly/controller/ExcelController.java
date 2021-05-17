@@ -38,7 +38,7 @@ public class ExcelController {
 	public void excelDown(HttpServletResponse response) throws Exception {
 
 		// List 예제
-
+		log.info("excelDown start");
 		List<StudentDTO> rlist = new ArrayList<StudentDTO>();
 		StudentDTO rDTO = new StudentDTO();
 
@@ -205,7 +205,7 @@ public class ExcelController {
 		wb.write(response.getOutputStream());
 
 		wb.close();
-
+		log.info("excelDown end");
 	}
 
 	@RequestMapping(value = "/excelUpload")
