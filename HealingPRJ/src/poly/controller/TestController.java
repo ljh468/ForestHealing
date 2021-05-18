@@ -74,11 +74,6 @@ public class TestController {
 			 */
        }
        		
-       
-      
-
-		 
-
 		// json 변수에 프론트에서 온 데이터 넣기
 //	         String json = params.get("list").toString();
 //	         log.info("json : " + json);
