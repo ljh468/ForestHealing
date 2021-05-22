@@ -1,273 +1,349 @@
 package poly.controller;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Map;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import poly.dto.serviceInsertVO;
-import poly.service.IExcelService;
+import poly.dto.HealingInsertDTO;
+import poly.dto.PreventSerivceDTO;
+import poly.dto.ProgramInsertDTO;
+import poly.dto.ReceiptInsertDTO;
+import poly.dto.ServiceInsertDTO;
 import poly.service.ITestService;
-import poly.util.CmmUtil;
-import poly.util.DateUtil;
 
 @Controller
 public class TestController {
-	
-	private Logger log = Logger.getLogger(this.getClass());
 
+	private Logger log = Logger.getLogger(this.getClass());
+	
 	@Resource(name = "TestService")
 	private ITestService testService;
-
-	@Resource(name = "ExcelService")
-	private IExcelService excelService;
-
-	@RequestMapping(value = "test")
-	public String test(@RequestParam(value = "list") Map<String, String> map, HttpServletRequest request,
-			HttpServletResponse reponse) {
-		log.info("test start");
-		log.info("test end");
-
-		return "/";
-	}
-
-	// 서비스 만족도 컨트롤러
-	@RequestMapping(value = "insertForm/serviceInsertForm")
-	public String serviceInsertForm(HttpServletRequest request, HttpServletResponse reponse) 
-	throws IOException{
-
-		log.info("serviceInsertForm start");
-		log.info("serviceInsertForm end");
-
+		
+	
+//서비스 만족도 시작.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+	//서비스 만족도 컨트롤러
+	@RequestMapping(value="insertForm/serviceInsertForm")
+	public String index(HttpServletRequest request, HttpServletResponse reponse) { 
+		
+		log.info("hi");
 		return "/insertForm/serviceInsertForm";
 	}
-
+	
 	@RequestMapping(value = "insertForm/serviceInsertForm/insertData")
     @ResponseBody
-    //@RequestParam(value="list")  @Model 
-    public String insertData(@ModelAttribute serviceInsertVO servList, HttpServletResponse response) throws Exception{
-       //@RequestParam Map params 
-       //ServiceInsertList < serviceDto>
-       log.info("insertForm/serviceInsertForm/insertData start");
-       //여기서는 mapper 쪽에 servList.getServiceInsertList() 를 넘겨주면됨 getServiceInsertList() 는 serviceInserDTO 형태임
-       for(int i = 0 ; i<servList.getServiceInsertList().size();i++) {
-          log.info(servList.getServiceInsertList().get(i).getAgency());
-          log.info(servList.getServiceInsertList().get(i).getSex());
-          log.info(servList.getServiceInsertList().get(i).getDate());
-          log.info(servList.getServiceInsertList().get(i).getScore().get(0));
-          log.info(servList.getServiceInsertList().get(i).getScore().get(17));
-			/*
-			 * for(int j=0; j<servList.getServiceInsertList().get(i).getScore().size(); j++)
-			 * { log.info(servList.getServiceInsertList().get(i).getScore().get(j)); }
-			 */
+    public String serviceInsertData(@ModelAttribute ServiceInsertDTO serviceDtoList, HttpServletResponse response) throws Exception{
+      
+		log.info("insertForm/serviceInsertForm/insertData start");
+       
+		//log 찍어보기
+		for(int i = 0 ; i<serviceDtoList.getServiceDtoList().size();i++) {
+          log.info("agency : " + serviceDtoList.getServiceDtoList().get(i).getAgency() + " | date : " + serviceDtoList.getServiceDtoList().get(i).getDate() + 
+        		  " | ptcProgram : " + serviceDtoList.getServiceDtoList().get(i).getPtcProgram() + " | sex : " + serviceDtoList.getServiceDtoList().get(i).getSex() + 
+        		  " | age : " + serviceDtoList.getServiceDtoList().get(i).getAge() + " | residence" + serviceDtoList.getServiceDtoList().get(i).getResidence() +
+        		  " | job : " + serviceDtoList.getServiceDtoList().get(i).getJob() + " | scoreList : " + serviceDtoList.getServiceDtoList().get(i).getScoreList());
        }
-       		
-		// json 변수에 프론트에서 온 데이터 넣기
-//	         String json = params.get("list").toString();
-//	         log.info("json : " + json);
-//	         ObjectMapper mapper = new ObjectMapper();
-//	         
-//	         //List형태로 변환
-//	         List<Map<String, Object>> list = mapper.readValue(json, new TypeReference<List<Map<String, Object>>>(){}); 
-//	         
-//	         String agency = CmmUtil.nvl(list.get(0).get("agency").toString());
-//	         
-//	         //List형의 DTO 담기 위해 선언
-//	         List<serviceInsertDTO> serviceDtoList = new ArrayList<serviceInsertDTO>();
-//	         
-//	         //DTO에 넣기
-//	         for(int i=0; i<list.size(); i++) { 
-//	            
-//	            //빈값들어오면 더이상 for문 안돌게
-//	            // + 이 구조로 간다하면 for문안에 jsp 알러트 창 띄울예정
-//	            if(CmmUtil.nvl(list.get(i).get("sex").toString()).equals("")) {
-//	               break;
-//	            } else {
-//	               
-//	               serviceInsertDTO pDTO = new serviceInsertDTO();
-//	               pDTO.setAgency(CmmUtil.nvl(list.get(i).get("agency").toString()));
-//	               pDTO.setDate(CmmUtil.nvl(list.get(i).get("date").toString()));
-//	               pDTO.setPtcProgram(CmmUtil.nvl(list.get(i).get("ptcProgram").toString()));
-//	               pDTO.setSex(CmmUtil.nvl(list.get(i).get("sex").toString()));
-//	               pDTO.setAge(CmmUtil.nvl(list.get(i).get("age").toString()));
-//	               pDTO.setResidence(CmmUtil.nvl(list.get(i).get("residence").toString()));
-//	               pDTO.setJob(CmmUtil.nvl(list.get(i).get("job").toString()));
-//	               pDTO.setScore1(CmmUtil.nvl(list.get(i).get("score1").toString()));
-//	               pDTO.setScore2(CmmUtil.nvl(list.get(i).get("score2").toString()));
-//	               pDTO.setScore3(CmmUtil.nvl(list.get(i).get("score3").toString()));
-//	               pDTO.setScore4(CmmUtil.nvl(list.get(i).get("score4").toString()));
-//	               pDTO.setScore5(CmmUtil.nvl(list.get(i).get("score5").toString()));
-//	               pDTO.setScore6(CmmUtil.nvl(list.get(i).get("score6").toString()));
-//	               pDTO.setScore7(CmmUtil.nvl(list.get(i).get("score7").toString()));
-//	               pDTO.setScore8(CmmUtil.nvl(list.get(i).get("score8").toString()));
-//	               pDTO.setScore9(CmmUtil.nvl(list.get(i).get("score9").toString()));
-//	               pDTO.setScore10(CmmUtil.nvl(list.get(i).get("score10").toString()));
-//	               pDTO.setScore11(CmmUtil.nvl(list.get(i).get("score11").toString()));
-//	               pDTO.setScore12(CmmUtil.nvl(list.get(i).get("score12").toString()));
-//	               pDTO.setScore13(CmmUtil.nvl(list.get(i).get("score13").toString()));
-//	               pDTO.setScore14(CmmUtil.nvl(list.get(i).get("score14").toString()));
-//	               pDTO.setScore15(CmmUtil.nvl(list.get(i).get("score15").toString()));
-//	               pDTO.setScore16(CmmUtil.nvl(list.get(i).get("score16").toString()));
-//	               pDTO.setScore17(CmmUtil.nvl(list.get(i).get("score17").toString()));
-//	               pDTO.setScore18(CmmUtil.nvl(list.get(i).get("score18").toString()));
-//	               
-//	               //List에 DTO 넣기
-//	               serviceDtoList.add(pDTO);
-//	               pDTO = null;
-//	            }
-//	         }
-//	         
-	         log.info("excelService.excelDownload start!");
-	         XSSFWorkbook wb = excelService.excelDownload(servList);
-	         log.info("excelService.excelDownload end!");
-//	         // 컨텐츠 타입과 파일명 지정
-		//
-	         response.setContentType("ms-vnd/excel");
-	         response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
-		//
-	         // 엑셀 출력
-	         String projectPath = System.getProperty("user.home");
-	         log.info(projectPath);
-	         String name = "_서비스환경만족도";
-	         String date = DateUtil.getDateTime();
-	         log.info(date);
-	         // 21.05.13_폴리텍
-	         String agency = servList.getServiceInsertList().get(0).getAgency();
-	         FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
+//       log.info("excelService.excelDownload start!");
+//       XSSFWorkbook wb = excelService.excelDownload(serviceDtoList);
+//       log.info("excelService.excelDownload end!");
+//       
+//       // 컨텐츠 타입과 파일명 지정
+//
+//       response.setContentType("ms-vnd/excel");
+//       response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
+//
+//       // 엑셀 출력
+//       String projectPath = System.getProperty("user.home");
+//       log.info(projectPath);
+//       String name = "_서비스환경만족도";
+//       String date = DateUtil.getDateTime();
+//       log.info(date);
+//       // 21.05.13_폴리텍
+//       
+//       FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
+//
+//       log.info(output);
+//       wb.write(output);
+//       wb.close();
+       
+       log.info("insertForm/serviceInsertForm/insertData end");
+       return "succees";
+    }
+//서비스 만족도 끝. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	
+	
+//프로그램 만족도 시작.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+	//프로그램 만족도 컨트롤러
+	@RequestMapping(value="insertForm/programInsertForm")
+	public String programInsertForm(HttpServletRequest request, HttpServletResponse reponse) { 
 		
-	         log.info(output);
-	         wb.write(output);
-	         wb.close();
-
-		log.info("insertForm/serviceInsertForm/insertData end");
-		return "succees";
-	}
-
-	// 재훈이형 여기입니다.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-	// 프로그램 만족도 컨트롤러
-	@RequestMapping(value = "insertForm/programInsertForm")
-	public String programInsertForm(HttpServletRequest request, HttpServletResponse reponse) {
-
 		log.info(this.getClass().getName() + ".programInsertForm");
-
+		
 		return "/insertForm/programInsertForm";
 	}
+	
+	@RequestMapping(value = "insertForm/programInsertForm/insertData")
+	@ResponseBody
+	public String programInsertData(@ModelAttribute ProgramInsertDTO programDtoList, HttpServletResponse response)
+			throws Exception {
 
-	// 상담&치유 서비스 중 접수면접 Sheet 컨트롤러
-	@RequestMapping(value = "insertForm/receiptInsertForm")
-	public String receiptInsertForm(HttpServletRequest request, HttpServletResponse reponse) {
+		log.info("insertForm/programInsertForm/insertData start");
+		// log 찍어보기
+		for (int i = 0; i < programDtoList.getProgramDtoList().size(); i++) {
+			log.info("agency : " + programDtoList.getProgramDtoList().get(i).getAgency() + " | date : "
+					+ programDtoList.getProgramDtoList().get(i).getDate() + " | ptcProgram : "
+					+ programDtoList.getProgramDtoList().get(i).getPtcProgram() + " | sex : "
+					+ programDtoList.getProgramDtoList().get(i).getSex() + " | age : "
+					+ programDtoList.getProgramDtoList().get(i).getAge() + " | residence"
+					+ programDtoList.getProgramDtoList().get(i).getResidence() + " | job : "
+					+ programDtoList.getProgramDtoList().get(i).getJob() + " | scoreList : "
+					+ programDtoList.getProgramDtoList().get(i).getScoreList());
+			
+		}
 
+//       log.info("excelService.excelDownload start!");
+//       XSSFWorkbook wb = excelService.excelDownload(serviceDtoList);
+//       log.info("excelService.excelDownload end!");
+//       
+//       // 컨텐츠 타입과 파일명 지정
+//
+//       response.setContentType("ms-vnd/excel");
+//       response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
+//
+//       // 엑셀 출력
+//       String projectPath = System.getProperty("user.home");
+//       log.info(projectPath);
+//       String name = "_서비스환경만족도";
+//       String date = DateUtil.getDateTime();
+//       log.info(date);
+//       // 21.05.13_폴리텍
+//       
+//       FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
+//
+//       log.info(output);
+//       wb.write(output);
+//       wb.close();
+       
+       log.info("insertForm/serviceInsertForm/insertData end");
+       return "succees";
+    }
+//프로그램 만족도 끝.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+	
+	
+//상담&치유 접수면접 서비스 효과평가 시작. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	//상담&치유 서비스 중 접수면접 Sheet 컨트롤러
+	@RequestMapping(value="insertForm/receiptInsertForm")
+	public String receiptInsertForm(HttpServletRequest request, HttpServletResponse reponse) { 
+		
 		log.info(this.getClass().getName() + ".receiptInsertForm");
-
+		
 		return "/insertForm/receiptInsertForm";
 	}
+	
+	@RequestMapping(value = "insertForm/receiptInsertForm/insertData", method = RequestMethod.POST)
+	@ResponseBody
+	public String receiptInsertData(@ModelAttribute ReceiptInsertDTO receiptDtoList, HttpServletResponse response)
+			throws Exception {
 
-	// 예방서비스 효과평가 컨트롤로
-	@RequestMapping(value = "insertForm/preventInsertForm")
-	public String preventInsertForm(HttpServletRequest request, HttpServletResponse reponse) {
+		log.info("insertForm/receiptInsertForm/insertData start");
+		// log 찍어보기
+		for (int i = 0; i < receiptDtoList.getReceiptDtoList().size(); i++) {
+			log.info("agency : " + receiptDtoList.getReceiptDtoList().get(i).getAgency() + " | date : "
+					+ receiptDtoList.getReceiptDtoList().get(i).getDate() + " | contents : "
+					+ receiptDtoList.getReceiptDtoList().get(i).getContents() + " | session : "
+					+ receiptDtoList.getReceiptDtoList().get(i).getSession() + " | name : "
+					+ receiptDtoList.getReceiptDtoList().get(i).getName() + " | sex : " 
+					+ receiptDtoList.getReceiptDtoList().get(i).getSex() + " | age : "
+					+ receiptDtoList.getReceiptDtoList().get(i).getAge() + " | residence"
+					+ receiptDtoList.getReceiptDtoList().get(i).getResidence() + " | job : "
+					+ receiptDtoList.getReceiptDtoList().get(i).getJob() + " | pastExp : "
+					+ receiptDtoList.getReceiptDtoList().get(i).getPastExp() + " | scoreList : "
+				    + receiptDtoList.getReceiptDtoList().get(i).getScoreList());
+			
+		}
+		
 
+		
+
+//       log.info("excelService.excelDownload start!");
+//       XSSFWorkbook wb = excelService.excelDownload(serviceDtoList);
+//       log.info("excelService.excelDownload end!");
+//       
+//       // 컨텐츠 타입과 파일명 지정
+//
+//       response.setContentType("ms-vnd/excel");
+//       response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
+//
+//       // 엑셀 출력
+//       String projectPath = System.getProperty("user.home");
+//       log.info(projectPath);
+//       String name = "_서비스환경만족도";
+//       String date = DateUtil.getDateTime();
+//       log.info(date);
+//       // 21.05.13_폴리텍
+//       
+//       FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
+//
+//       log.info(output);
+//       wb.write(output);
+//       wb.close();
+       
+       log.info("insertForm/receiptInsertForm/insertData end");
+       return "succees";
+    }
+	
+//상담&치유 접수면접 서비스 효과평가 끝 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+
+	
+//예방 서비스 효과평가 시작 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	//예방서비스 효과평가 컨트롤로
+	@RequestMapping(value="insertForm/preventInsertForm")
+	public String preventInsertForm(HttpServletRequest request, HttpServletResponse reponse) { 
+		
 		log.info(this.getClass().getName() + ".preventInsertForm");
-
+		
 		return "/insertForm/preventInsertForm";
 	}
+	
+	@RequestMapping(value = "insertForm/preventInsertForm/insertData", method = RequestMethod.POST)
+	@ResponseBody
+	public String preventInsertData(@ModelAttribute PreventSerivceDTO preventDtoList, HttpServletResponse response)
+			throws Exception {
 
-	// 힐링서비스 효과평가 컨트롤로
-	@RequestMapping(value = "insertForm/healingInsertForm")
-	public String healingInsertForm(HttpServletRequest request, HttpServletResponse reponse) {
+		log.info("insertForm/preventInsertData/insertData start");
+		// log 찍어보기
+		for (int i = 0; i < preventDtoList.getPreventDtoList().size(); i++) {
+			log.info("agency : " + preventDtoList.getPreventDtoList().get(i).getAgency() + " | date : "
+					+ preventDtoList.getPreventDtoList().get(i).getDate() +  " | name : "
+					+ preventDtoList.getPreventDtoList().get(i).getName() + " | sex : " 
+					+ preventDtoList.getPreventDtoList().get(i).getSex() + " | age : "
+					+ preventDtoList.getPreventDtoList().get(i).getAge() + " | residence"
+					+ preventDtoList.getPreventDtoList().get(i).getResidence() + " | job : "
+					+ preventDtoList.getPreventDtoList().get(i).getJob() + " | pastStress : "
+					+ preventDtoList.getPreventDtoList().get(i).getPastStress() + " | scoreList : "
+				    + preventDtoList.getPreventDtoList().get(i).getScoreList());
+			
+		}
+		
 
+		
+
+//       log.info("excelService.excelDownload start!");
+//       XSSFWorkbook wb = excelService.excelDownload(serviceDtoList);
+//       log.info("excelService.excelDownload end!");
+//       
+//       // 컨텐츠 타입과 파일명 지정
+//
+//       response.setContentType("ms-vnd/excel");
+//       response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
+//
+//       // 엑셀 출력
+//       String projectPath = System.getProperty("user.home");
+//       log.info(projectPath);
+//       String name = "_서비스환경만족도";
+//       String date = DateUtil.getDateTime();
+//       log.info(date);
+//       // 21.05.13_폴리텍
+//       
+//       FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
+//
+//       log.info(output);
+//       wb.write(output);
+//       wb.close();
+       
+       log.info("insertForm/preventInsertData/insertData end");
+       return "succees";
+    }
+//예방 서비스 효과평가 끝 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+
+	
+//힐링 서비스 효과평가 시작 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	//힐링서비스 효과평가 컨트롤로
+	@RequestMapping(value="insertForm/healingInsertForm")
+	public String healingInsertForm(HttpServletRequest request, HttpServletResponse reponse) { 
+		
 		log.info(this.getClass().getName() + ".healingInsertForm");
-
+		
 		return "/insertForm/healingInsertForm";
 	}
+	@RequestMapping(value = "insertForm/healingInsertForm/insertData", method = RequestMethod.POST)
+	@ResponseBody
+	public String healinInsertData(@ModelAttribute HealingInsertDTO healingDtoList, HttpServletResponse response)
+			throws Exception {
 
-///////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////
+		log.info("insertForm/preventInsertData/insertData start");
+		// log 찍어보기
+		for (int i = 0; i < healingDtoList.getHealingDtoList().size(); i++) {
+			log.info("agency : " + healingDtoList.getHealingDtoList().get(i).getAgency() + " | date : "
+					+ healingDtoList.getHealingDtoList().get(i).getDate() +  " | name : "
+					+ healingDtoList.getHealingDtoList().get(i).getName() + " | sex : " 
+					+ healingDtoList.getHealingDtoList().get(i).getSex() + " | age : "
+					+ healingDtoList.getHealingDtoList().get(i).getAge() + " | residence"
+					+ healingDtoList.getHealingDtoList().get(i).getResidence() + " | job : "
+					+ healingDtoList.getHealingDtoList().get(i).getJob() + " | pastStress : "
+					+ healingDtoList.getHealingDtoList().get(i).getPastStress() + " | scoreList : "
+				    + healingDtoList.getHealingDtoList().get(i).getScoreList());
+			
+		}
+		
 
-	@RequestMapping(value = "index")
-	public String index(HttpServletRequest request, HttpServletResponse reponse) throws IOException {
-		log.info("hi");
+		
 
-		return "/index";
-	}
+//       log.info("excelService.excelDownload start!");
+//       XSSFWorkbook wb = excelService.excelDownload(serviceDtoList);
+//       log.info("excelService.excelDownload end!");
+//       
+//       // 컨텐츠 타입과 파일명 지정
+//
+//       response.setContentType("ms-vnd/excel");
+//       response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
+//
+//       // 엑셀 출력
+//       String projectPath = System.getProperty("user.home");
+//       log.info(projectPath);
+//       String name = "_서비스환경만족도";
+//       String date = DateUtil.getDateTime();
+//       log.info(date);
+//       // 21.05.13_폴리텍
+//       
+//       FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
+//
+//       log.info(output);
+//       wb.write(output);
+//       wb.close();
+       
+       log.info("insertForm/preventInsertData/insertData end");
+       return "succees";
+    }
+	
+//힐링 서비스 효과평가 끝 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	
+	/*//POI 예제
+	@RequestMapping(value = "excel/testRead")
+	public String excelTestRead(HttpServletRequest request, HttpServletResponse reponse) throws Exception {
+		log.info(this.getClass().getName() + ".excelTestRead Start !");
+		
+		InsertPreventExcelUtil test = new InsertPreventExcelUtil();
+		
+		List<PreventSerivceDTO> sList = test.getPreventExcelData();
+		
+		PreventSerivceDTO a = new PreventSerivceDTO();
+		
+		System.out.println(sList.get(0).getId());
+		
+		a.showAll(sList);
+		
+		log.info(this.getClass().getName() + ".excelTestRead End !");
+		return "success";
+	}*/
 
-	// 만족도및 효과평가 이재훈
-	@RequestMapping(value = "index2")
-	public String index2(HttpServletRequest request, HttpServletResponse reponse) {
 
-		log.info("hi");
-		return "/index2";
-	}
 
-	@RequestMapping(value = "seBygroup")
-	public String seBygroup(HttpServletRequest request, HttpServletResponse reponse) {
-
-		log.info("seBygroup");
-		return "/seBygroup";
-	}
-
-	@RequestMapping(value = "seBysubject")
-	public String seBysubject(HttpServletRequest request, HttpServletResponse reponse) {
-
-		log.info("seBysubject");
-		return "/seBysubject";
-	}
-
-	@RequestMapping(value = "seBysubject2")
-	public String seBysubject2(HttpServletRequest request, HttpServletResponse reponse) {
-
-		log.info("seBysubject2");
-		return "/seBysubject2";
-	}
-
-	// 운영결과 페이지 호출 _ 유연준
-	@RequestMapping(value = "YearMonthResult")
-	public String resultProgram(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		log.info("프로그램 결과");
-		return "/YearMonthResult";
-	}
-
-	@RequestMapping(value = "YearMonthResult2")
-	public String resultProgram2(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		log.info("프로그램 결과");
-		return "/YearMonthResult2";
-	}
-
-	@RequestMapping(value = "YearMonthResult3")
-	public String resultProgram3(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		log.info("프로그램 결과");
-		return "/YearMonthResult3";
-	}
-
-	@RequestMapping(value = "aa")
-	public String fadsam(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		log.info("프로그램 결과");
-		return "/resProgram_chart";
-	}
-
-	// 운영결과 페이지 차트 호출 _ 유연준
-	@RequestMapping(value = "resProgram_chart")
-	public String resultProgram_chart(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String name = CmmUtil.nvl(request.getParameter("name"));
-
-		log.info("프로그램 차트 가기");
-		log.info(name);
-		return "/resProgram_chart";
-	}
 }

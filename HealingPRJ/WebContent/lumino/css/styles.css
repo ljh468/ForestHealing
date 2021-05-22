@@ -201,8 +201,8 @@ a.btn:active, button:active {
   color: #1b3548; }
 
 .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary, .btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
-  background-color: #28a745;
-  border-color: #28a745; }
+  background-color: #30a5ff;
+  border-color: #30a5ff; }
 
 .btn-success, .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success, .btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active {
   background-color: #8ad919;
@@ -217,10 +217,10 @@ a.btn:active, button:active {
   border-color: #f9243f; }
 
 .btn-link, .page-link, .text-primary {
-  color: #28a745 !important; }
+  color: #30a5ff !important; }
 
 .btn-link:focus, .btn-link:hover, .page-link:focus, .page-link:hover, a.text-primary:focus, a.text-primary:hover {
-  color: #28a745 !important; }
+  color: #50b3ff !important; }
 
 .bg-primary {
   color: #1b3548;
@@ -251,10 +251,10 @@ a.bg-teal:hover {
 
 .bg-info, .bg-blue {
   color: #fff;
-  background-color: #28a745; }
+  background-color: #30a5ff; }
 
 a.bg-info:hover, a.bg-blue:hover {
-  background-color: #28a745 }
+  background-color: #30a5ff; }
 
 .bg-info a, .bg-blue a {
   color: rgba(255, 255, 255, 0.75); }
@@ -989,8 +989,7 @@ h1.page-header {
   margin: 0; }
 
 .chat .panel-body {
-  overflow-y: scroll;
-  height: 300px; }
+  overflow-x: scroll; }
 
 .chat-body small {
   margin-left: 5px; }
@@ -1031,88 +1030,3 @@ p.back-link {
   margin-bottom: 20px;
   font-size: 12px;
   text-transform: uppercase; }
-
-  /* 차트 CSS */
-
-::selection { background: #5f74a0; color: #fff; }
-::-moz-selection { background: #5f74a0; color: #fff; }
-::-webkit-selection { background: #5f74a0; color: #fff; }
-
-br { display: block; line-height: 1.6em; } 
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
-ol, ul { list-style: none; }
-
-input, textarea { 
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  outline: none; 
-}
-
-blockquote, q { quotes: none; }
-blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
-strong, b { font-weight: bold; } 
-
-table { border-collapse: collapse; border-spacing: 0; }
-img { border: 0; max-width: 100%; }
-
-#wrapper {
-  display: block;
-  width: 1100px;
-  background: #fff;
-  margin: 0 auto;
-  padding: 8px 15px;
-  -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
-}
-
-#keywords {
-  margin: 0 auto;
-  font-size: 1.2em;
-  margin-bottom: 12px;
-  width: 1050px;
-}
-
-
-#keywords thead {
-  cursor: pointer;
-  background: #c9dff0;
-}
-#keywords thead tr th { 
-  font-weight: bold;
-  padding: 10px 20px;
-  padding-left: 42px;
-  border :1px solid black;
-}
-#keywords thead tr th span { 
-  padding-right: 18px;
-  background-repeat: no-repeat;
-  background-position: 100% 100%;
-}
-
-#keywords thead tr th.headerSortUp, #keywords thead tr th.headerSortDown {
-  background: #acc8dd;
-}
-
-#keywords thead tr th.headerSortUp span {
-  background-image: url('https://i.imgur.com/SP99ZPJ.png');
-}
-#keywords thead tr th.headerSortDown span {
-  background-image: url('https://i.imgur.com/RkA9MBo.png');
-}
-
-
-#keywords tbody tr { 
-  color: #333;
-}
-#keywords tbody tr td {
-  text-align: center;
-  padding: 1px 1px;
-  border :1px solid rgb(75, 73, 73);
-}
-#keywords tbody tr td.lalign {
-  text-align: left;
-}
