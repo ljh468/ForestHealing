@@ -99,7 +99,8 @@ public class ExcelManager {
 	        return studentList;
 	    }
 	 
-	    private static Object getValueFromCell(Cell cell) {
+	    @SuppressWarnings("unused")
+		private static Object getValueFromCell(Cell cell) {
 	        switch (cell.getCellType()) {
 	        case STRING:
 	            return cell.getStringCellValue();

@@ -14,8 +14,8 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
-import poly.dto.serviceInsertDTO;
-import poly.dto.serviceInsertVO;
+import poly.dto.ServiceInsertDTO;
+import poly.dto.ServiceInsertVO;
 import poly.service.IExcelService;
 import poly.util.CmmUtil;
 
@@ -25,11 +25,12 @@ public class ExcelService implements IExcelService {
 	private Logger log = Logger.getLogger(this.getClass());
 
 	@Override
-	public XSSFWorkbook excelDownload(serviceInsertVO servList) throws IOException {
-
+	public XSSFWorkbook excelDownload(ServiceInsertDTO serviceDtoList) throws IOException {
+		
+		log.info(log.getClass().getName() + "excelDownload start");
 		/* int res = 0; */
 		// 워크북 생성
-
+		
 		XSSFWorkbook wb = new XSSFWorkbook();
 
 		Sheet sheet = wb.createSheet("서비스환경만족도");
@@ -107,7 +108,7 @@ public class ExcelService implements IExcelService {
 		cell.setCellStyle(headStyle);
 		cell.setCellValue("직업");
 
-		int scoreCount = servList.getServiceInsertList().get(0).getScore().size();
+		int scoreCount = serviceDtoList.getServiceDtoList().get(0).getScoreList().size();
 		for (int i = 0; i < scoreCount; i++) {
 			cell = row.createCell(i + 8);
 			cell.setCellStyle(headStyle);
@@ -129,7 +130,7 @@ public class ExcelService implements IExcelService {
 		// 데이터 부분 생성
 		int listNm = 0;
 
-		for (serviceInsertDTO pDTO : servList.getServiceInsertList()) {
+		for (ServiceInsertDTO pDTO : serviceDtoList.getServiceDtoList()) {
 
 			row = sheet.createRow(rowNo++);
 
@@ -179,10 +180,10 @@ public class ExcelService implements IExcelService {
 				cell.setCellStyle(bodyStyle);
 				cell.setCellValue(CmmUtil.nvl(pDTO.getJob()));
 
-				for (int j = 0; j < pDTO.getScore().size(); j++) {
+				for (int j = 0; j < pDTO.getScoreList().size(); j++) {
 					cell = row.createCell(j + 8);
 					cell.setCellStyle(bodyStyle);
-					cell.setCellValue(Integer.valueOf(pDTO.getScore().get(j).toString()));
+					cell.setCellValue(Integer.valueOf(pDTO.getScoreList().get(j).toString()));
 					
 				}
 
@@ -195,6 +196,7 @@ public class ExcelService implements IExcelService {
 				listNm++;
 			}
 		}
+		log.info(log.getClass().getName() + "excelDownload end");
 		return wb;
 	}
 }
