@@ -34,8 +34,9 @@ public class TestController {
 
 	@Resource(name = "TestService")
 	private ITestService testService;
+	
+	
 
-//서비스 만족도 시작.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
 	// 서비스 만족도 컨트롤러
 	@RequestMapping(value = "insertForm/serviceInsertForm")
 	public String index(HttpServletRequest request, HttpServletResponse reponse) {
@@ -98,9 +99,8 @@ public class TestController {
 		log.info("insertForm/serviceInsertForm/insertData end");
 		return "succees";
 	}
-//서비스 만족도 끝. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
+	//서비스 만족도 END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 
-//프로그램 만족도 시작.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
 	// 프로그램 만족도 컨트롤러
 	@RequestMapping(value = "insertForm/programInsertForm")
 	public String programInsertForm(HttpServletRequest request, HttpServletResponse reponse) {
@@ -129,30 +129,31 @@ public class TestController {
 
 		}
 
-//       log.info("excelService.excelDownload start!");
-//       XSSFWorkbook wb = excelService.excelDownload(serviceDtoList);
-//       log.info("excelService.excelDownload end!");
-//       
-//       // 컨텐츠 타입과 파일명 지정
-//
-//       response.setContentType("ms-vnd/excel");
-//       response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
-//
-//       // 엑셀 출력
-//       String projectPath = System.getProperty("user.home");
-//       log.info(projectPath);
-//       String name = "_서비스환경만족도";
-//       String date = DateUtil.getDateTime();
-//       log.info(date);
-//       // 21.05.13_폴리텍
-//       
-//       FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
-//
-//       log.info(output);
-//       wb.write(output);
-//       wb.close();
+       log.info("excelService.excelDownload start!");
+       XSSFWorkbook wb = excelService.excelDownload(programDtoList);
+       log.info("excelService.excelDownload end!");
+       
+       // 컨텐츠 타입과 파일명 지정
 
-		log.info("insertForm/serviceInsertForm/insertData end");
+       response.setContentType("ms-vnd/excel");
+       response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
+
+       // 엑셀 출력
+       String projectPath = System.getProperty("user.home");
+       log.info(projectPath);
+       String name = "_프로그램만족도";
+       String date = DateUtil.getDateTime();
+       String agency = programDtoList.getProgramDtoList().get(0).getAgency();
+       log.info(date);
+       // 21.05.13_폴리텍
+       
+       FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
+
+       log.info(output);
+       wb.write(output);
+       wb.close();
+
+		log.info("insertForm/programInsertForm/insertData end");
 		return "succees";
 	}
 //프로그램 만족도 끝.~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
@@ -172,7 +173,7 @@ public class TestController {
 	public String receiptInsertData(@ModelAttribute ReceiptInsertDTO receiptDtoList, HttpServletResponse response)
 			throws Exception {
 
-		log.info("insertForm/receiptInsertForm/insertData start");
+		log.info("insertForm/receiptInsertForm/receiptinsertData start");
 		// log 찍어보기
 		for (int i = 0; i < receiptDtoList.getReceiptDtoList().size(); i++) {
 			log.info("agency : " + receiptDtoList.getReceiptDtoList().get(i).getAgency() + " | date : "
@@ -189,30 +190,31 @@ public class TestController {
 
 		}
 
-//       log.info("excelService.excelDownload start!");
-//       XSSFWorkbook wb = excelService.excelDownload(serviceDtoList);
-//       log.info("excelService.excelDownload end!");
-//       
-//       // 컨텐츠 타입과 파일명 지정
-//
-//       response.setContentType("ms-vnd/excel");
-//       response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
-//
-//       // 엑셀 출력
-//       String projectPath = System.getProperty("user.home");
-//       log.info(projectPath);
-//       String name = "_서비스환경만족도";
-//       String date = DateUtil.getDateTime();
-//       log.info(date);
-//       // 21.05.13_폴리텍
-//       
-//       FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
-//
-//       log.info(output);
-//       wb.write(output);
-//       wb.close();
+       log.info("excelService.excelDownload start!");
+       XSSFWorkbook wb = excelService.excelDownload(receiptDtoList);
+       log.info("excelService.excelDownload end!");
+       
+       // 컨텐츠 타입과 파일명 지정
 
-		log.info("insertForm/receiptInsertForm/insertData end");
+       response.setContentType("ms-vnd/excel");
+       response.setHeader("Content-Disposition", "attachment;filename=].xlsx");
+
+       // 엑셀 출력
+       String projectPath = System.getProperty("user.home");
+       log.info(projectPath);
+       String name = "_상담치유서비스";
+       String date = DateUtil.getDateTime();
+       String agency = receiptDtoList.getReceiptDtoList().get(0).getAgency();
+       log.info(date);
+       // 21.05.13_폴리텍
+       
+       FileOutputStream output = new FileOutputStream("C:\\excel\\"+File.separator+date+"_"+agency+name+".xlsx");
+
+       log.info(output);
+       wb.write(output);
+       wb.close();
+
+		log.info("insertForm/receiptInsertForm/receiptinsertData end");
 		return "succees";
 	}
 
