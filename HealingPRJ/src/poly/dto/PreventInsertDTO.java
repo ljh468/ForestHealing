@@ -2,7 +2,7 @@ package poly.dto;
 
 import java.util.List;
 
-public class PreventSerivceDTO {
+public class PreventInsertDTO {
 	private String agency;
 	private String date;
 	public String name;
@@ -13,7 +13,7 @@ public class PreventSerivceDTO {
 	public String ptcProgram;
 	public String pastStress;
 	private List<List<String>> scoreList;
-	private List<PreventSerivceDTO> preventDtoList;
+	private List<PreventInsertDTO> preventDtoList;
 	
 	
 	public String getAgency() {
@@ -28,10 +28,10 @@ public class PreventSerivceDTO {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public List<PreventSerivceDTO> getPreventDtoList() {
+	public List<PreventInsertDTO> getPreventDtoList() {
 		return preventDtoList;
 	}
-	public void setPreventDtoList(List<PreventSerivceDTO> preventDtoList) {
+	public void setPreventDtoList(List<PreventInsertDTO> preventDtoList) {
 		this.preventDtoList = preventDtoList;
 	}
 	public List<List<String>> getScoreList() {

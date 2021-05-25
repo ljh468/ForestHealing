@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.IInsertDataMapper">
+
+	<!-- 서비스 만족도 데이터 넣기 -->
+	<insert id="serviceInsertData" parameterType="ServiceInsertDTO">
+		INSERT INTO SERVICE_ENV_SATISFACTION
+		(
+		SERVICE_SEQ,
+		OPENDAY,
+		BIZ_REG_NUM,
+		SEX,
+		AGE,
+		RESIDENCE,
+		JOB,
+		PTCPROGRAM,
+		AGENCY,
+		DATE,
+		SCORE1,	SCORE2,	SCORE3,	SCORE4,	SCORE5,	SCORE6,	SCORE7,
+		SCORE8,	SCORE9,	SCORE10, OPINION1, SCORE11,	SCORE12, SCORE13, SCORE14,
+		SCORE15, SCORE16, OPINION2,	SCORE17, SCORE18
+		)
+		VALUES
+		<foreach item="serviceDtoList" index="index" collection="serviceDtoList" separator=",">
+		(
+		(SELECT IFNULL(MAX(A.SERVICE_SEQ),0)+1 FROM SERVICE_ENV_SATISFACTION A),
+		'2021-05-24',
+		12315234,
+		#{serviceDtoList.sex},
+		#{serviceDtoList.age},
+		#{serviceDtoList.residence},
+		#{serviceDtoList.job},
+		#{serviceDtoList.ptcProgram},
+		#{serviceDtoList.agency},
+		#{serviceDtoList.date},
+		<foreach item="scoreList" index="index" collection="serviceDtoList.scoreList" separator=",">
+			#{scoreList}
+		</foreach>
+		)
+	</foreach>
+	</insert>
+	
+	
+	<!-- 프로그램 만족도 데이터 넣기 -->
+	<insert id="programInsertData" parameterType="ProgramInsertDTO">
+		INSERT INTO PROGRAM_SATISFACTION
+		(
+		PROGRAM_SEQ,
+		OPENDAY,
+		BIZ_REG_NUM,
+		SEX,
+		AGE,
+		RESIDENCE,
+		JOB,
+		PTCPROGRAM,
+		AGENCY,
+		DATE,
+		PROGRAMNAME,
+		TEACHER,
+		PLACE,
+		SCORE1,	SCORE2,	SCORE3,	SCORE4,	SCORE5,	SCORE6,	SCORE7,
+		SCORE8,	SCORE9,	OPINION1
+		)
+		VALUES
+		<foreach item="programDtoList" index="index" collection="programDtoList" separator=",">
+		(
+		(SELECT IFNULL(MAX(A.PROGRAM_SEQ),0)+1 FROM PROGRAM_SATISFACTION A),
+		'2021-05-24',
+		12315234,
+		#{programDtoList.sex},
+		#{programDtoList.age},
+		#{programDtoList.residence},
+		#{programDtoList.job},
+		#{programDtoList.ptcProgram},
+		#{programDtoList.agency},
+		#{programDtoList.date},
+		#{programDtoList.programName},
+		#{programDtoList.teacher},
+		#{programDtoList.place},
+		<foreach item="scoreList" index="index" collection="programDtoList.scoreList" separator=",">
+			#{scoreList}
+		</foreach>
+		)
+	</foreach>
+	</insert>	
+	
+	
+	<!-- 예방서비스 효과평가 데이터 넣기 -->
+	<insert id="preventInsertData" parameterType="PreventInsertDTO">
+		INSERT INTO PREVENT_SERVICE
+		(
+		PREVENT_SEQ,
+		OPENDAY,
+		BIZ_REG_NUM,
+		AGENCY,
+		DATE,
+		NAME,
+		SEX,
+		AGE,
+		RESIDENCE,
+		JOB,
+		PTCPROGRAM,
+		PASTSTRESS,
+		SCORE11, SCORE12, SCORE21, SCORE22, SCORE31, SCORE32, SCORE41, SCORE42,
+		SCORE51, SCORE52, SCORE61, SCORE62, SCORE71, SCORE72, SCORE81, SCORE82,
+		SCORE91, SCORE92, SCORE101, SCORE102, SCORE111, SCORE112, SCORE121,
+		SCORE122, SCORE131, SCORE132, SCORE141, SCORE142, SCORE151, SCORE152,
+		SCORE161, SCORE162, SCORE171, SCORE172, SCORE181, SCORE182, SCORE191,
+		SCORE192, SCORE201, SCORE202
+		)
+		VALUES
+		<foreach item="preventDtoList" index="index" collection="preventDtoList" separator=",">
+		(
+		(SELECT IFNULL(MAX(A.PREVENT_SEQ),0)+1 FROM PREVENT_SERVICE A),
+		'2021-05-24',
+		12315234,
+		#{preventDtoList.agency},
+		#{preventDtoList.date},
+		#{preventDtoList.name},
+		#{preventDtoList.sex},
+		#{preventDtoList.age},
+		#{preventDtoList.residence},
+		#{preventDtoList.job},
+		#{preventDtoList.ptcProgram},
+		#{preventDtoList.pastStress},
+		<foreach item="scoreList" index="index" collection="preventDtoList.scoreList" separator=",">
+			<foreach item="score" index="index" collection="scoreList" separator=",">
+				#{score}
+			</foreach>
+		</foreach>
+		)
+	</foreach>
+	</insert>	
+	
+	<!-- 예방서비스 효과평가 데이터 넣기 -->
+	<insert id="healingInsertData" parameterType="HealingInsertDTO">
+		INSERT INTO HEALING_SERVICE
+		(
+		HEALING_SEQ,
+		OPENDAY,
+		BIZ_REG_NUM,
+		AGENCY,
+		DATE,
+		NAME,
+		SEX,
+		AGE,
+		RESIDENCE,
+		JOB,
+		PTCPROGRAM,
+		PASTSTRESS,
+		SCORE11, SCORE12, SCORE21, SCORE22, SCORE31, SCORE32, SCORE41, SCORE42,
+		SCORE51, SCORE52, SCORE61, SCORE62, SCORE71, SCORE72, SCORE81, SCORE82,
+		SCORE91, SCORE92, SCORE101, SCORE102, SCORE111, SCORE112, SCORE121,
+		SCORE122, SCORE131, SCORE132, SCORE141, SCORE142, SCORE151, SCORE152,
+		SCORE161, SCORE162, SCORE171, SCORE172, SCORE181, SCORE182, SCORE191,
+		SCORE192, SCORE201, SCORE202, SCORE211, SCORE212, SCORE221, SCORE222,
+		SCORE231, SCORE232, SCORE241, SCORE242, SCORE251, SCORE252, SCORE261,
+		SCORE262, SCORE271, SCORE272, SCORE281, SCORE282
+		)
+		VALUES
+		<foreach item="healingDtoList" index="index" collection="healingDtoList" separator=",">
+		(
+		(SELECT IFNULL(MAX(A.HEALING_SEQ),0)+1 FROM HEALING_SERVICE A),
+		'2021-05-24',
+		12315234,
+		#{healingDtoList.agency},
+		#{healingDtoList.date},
+		#{healingDtoList.name},
+		#{healingDtoList.sex},
+		#{healingDtoList.age},
+		#{healingDtoList.residence},
+		#{healingDtoList.job},
+		#{healingDtoList.ptcProgram},
+		#{healingDtoList.pastStress},
+		<foreach item="scoreList" index="index" collection="healingDtoList.scoreList" separator=",">
+			<foreach item="score" index="index" collection="scoreList" separator=",">
+				#{score}
+			</foreach>
+		</foreach>
+		)
+	</foreach>
+	</insert>	
+
+
+</mapper>
+
+

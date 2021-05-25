@@ -88,28 +88,26 @@ body {
 
 
 			</div>
+		</div>
 			<div class="col-md-12">
 
 				<div class="panel panel-default chat">
 
-					<div class="panel-heading" style="display: flex;">
-						<p
+					<div class="panel-heading" style="display: flex;height: auto !important;flex-flow: row-reverse;">
+						<!-- <p
 							style="margin: 0; padding: 0 1rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">서비스환경
-							만족도</p>
+							만족도</p> -->
 						<div
-							style="flex: auto; padding: 0 1rem; flex-basis: auto; white-space: nowrap;">
+							style="padding: 0 1rem;flex-basis: auto;white-space: nowrap;align-self: center;">
 							<input type="button" class="btn btn-success btn-sm" value="추가"
 								onclick="add_div()"> 
-								<input type="button"
-								class="btn btn-danger btn-sm" value="삭제"
-								onclick="remove_div(this)">
 								<input type="button"
 								class="btn btn-default btn-sm" value="전송"
 								onclick="action()">
 						</div>
-						<div style="flex: auto; padding: 0 1rem; flex-basis: auto; white-space: nowrap;">
+						<div style="flex: auto;padding: 0 1rem;flex-basis: auto;white-space: nowrap;display: inline-flex;overflow: hidden;">
 							<h4 style="float : left; margin-right : 10px;">기관명</h4> 
-							<div style="width: 120px; float: left; margin-right: 30px;">
+							<div style="width: 120px;float: left;margin-right: 30px;flex: auto;padding: 0 1rem;flex-basis: auto;white-space: nowrap;max-width: 300px;">
 								<input class="form-control" name='form-agency' placeholder="기관명">
 							</div>
 							
@@ -133,7 +131,7 @@ body {
 					<div class="panel-body" style="overflow-x: scroll; height: auto;">
 						<!--  -->
 
-						<div style="width: 2100px; height: 70px">
+						<div style="width: 2380px; height: 70px">
 							<div
 								style="width: 60px; float: left; margin-right: 10px; text-align: center; -webkit-text-emphasis-style: open;">
 								<h4 style="font-weight: 600">성별</h4>
@@ -205,6 +203,10 @@ body {
 								</h4>
 							</div>
 							<div
+								style="width: 140px; float: left; margin-right: 20px; text-align: center; -webkit-text-emphasis-style: open;">
+								<h4 style="font-weight: 600">기타의견</h4>
+							</div>
+							<div
 								style="width: 60px; float: left; margin-right: 20px; text-align: center">
 								<h4 style="font-weight: 600">
 									운영<br>(문항1)
@@ -240,6 +242,11 @@ body {
 									식사<br>(문항6)
 								</h4>
 							</div>
+							
+							<div
+								style="width: 140px; float: left; margin-right: 20px; text-align: center; -webkit-text-emphasis-style: open;">
+								<h4 style="font-weight: 600">기타의견</h4>
+							</div>
 							<div
 								style="width: 90px; float: left; margin-right: 20px; text-align: center">
 								<h4 style="font-weight: 600">잠재적 관광수요(문항8)</h4>
@@ -253,7 +260,7 @@ body {
 						<%
 							for (int i = 0; i < 20; i++) {
 						%>
-						<div style="width: 2100px; height: 60px" name="form-main">
+						<div style="width: 2380px; height: 60px" name="form-main">
 							<!--  -->
 							<div style="width: 60px; float: left; margin-right: 10px;">
 								<input class="form-control" name='form-sex' placeholder="성별">
@@ -349,6 +356,10 @@ body {
 							<div style="width: 60px; float: left; margin-right: 20px;">
 								<input class="form-control" name='form-score10' placeholder="점수">
 							</div>
+							
+							<div style="width: 140px; float: left; margin-right: 10px; margin-left: 10px">
+								<input class="form-control" name='form-opinion1' placeholder="기타의견">
+							</div>
 
 							<div
 								style="width: 60px; float: left; margin-right: 25px; margin-left: 5px">
@@ -373,6 +384,10 @@ body {
 
 							<div style="width: 60px; float: left; margin-right: 20px;">
 								<input class="form-control" name='form-score16' placeholder="점수">
+							</div>
+							
+							<div style="width: 140px; float: left; margin-right: 10px; margin-left: 10px">
+								<input class="form-control" name='form-opinion2' placeholder="기타의견">
 							</div>
 
 							<div style="width: 60px; float: left; margin-right: 35px; margin-left: 15px">
@@ -407,7 +422,7 @@ body {
 		<!--test구간  -->
 
 		<!--  -->
-	</div>
+	
 	<!--/.main-->
 
 	<script src="/lumino/js/jquery-1.11.1.min.js"></script>
@@ -447,10 +462,10 @@ body {
       let date = document.getElementsByName('form-date')[0].value;
       let ptcProgram = document.getElementsByName('form-ptcProgram')[0].value;
       
-      
       let formArr = document.getElementsByName('form-main');
       
       for(let i = 0; i < formArr.length; i++) {
+    	  
          let sex = document.getElementsByName('form-sex')[i].value;
          let age = document.getElementsByName('form-age')[i].value;
          let residence = document.getElementsByName('form-residence')[i].value;
@@ -473,30 +488,37 @@ body {
          let score16 = document.getElementsByName('form-score16')[i].value;
          let score17 = document.getElementsByName('form-score17')[i].value;
          let score18 = document.getElementsByName('form-score18')[i].value;
+         let opinion1 = document.getElementsByName('form-opinion1')[i].value;
+         let opinion2 = document.getElementsByName('form-opinion2')[i].value;
          
 		 let scoreList = [score1, score2, score3, score4, score5, score6, score7, score8, score9
-			 , score10, score11, score12, score13, score14, score15, score16, score17, score18];
+			 , score10, opinion1, score11, score12, score13, score14, score15, score16,opinion2, score17, score18];
          
-         param['serviceDtoList['+i+'].agency']=agency;
-         param['serviceDtoList['+i+'].data']=date; 
-         param['serviceDtoList['+i+'].ptcProgram']=ptcProgram;
-         param['serviceDtoList['+i+'].sex']=sex;
-         param['serviceDtoList['+i+'].age']=age;
-         param['serviceDtoList['+i+'].residence']=residence;
-         param['serviceDtoList['+i+'].job']=job;
-         for(let j = 0; j < scoreList.length; j++) {
-        	 if(scoreList[j]=="") {
-		         param['serviceDtoList['+i+'].scoreList['+j+']'] ="0"; 
-        	 }else {
-		         param['serviceDtoList['+i+'].scoreList['+j+']'] =scoreList[j]; 
-        	 }
-         }
+		 if(sex=="") { 
+			 break;
+		 } else { 
+	         param['serviceDtoList['+i+'].agency']=agency;
+	         param['serviceDtoList['+i+'].date']=date; 
+	         param['serviceDtoList['+i+'].ptcProgram']=ptcProgram;
+	         param['serviceDtoList['+i+'].sex']=sex;
+	         param['serviceDtoList['+i+'].age']=age;
+	         param['serviceDtoList['+i+'].residence']=residence;
+	         param['serviceDtoList['+i+'].job']=job;
+	         for(let j = 0; j < scoreList.length; j++) {
+	        	 if(scoreList[j]=="") {
+			         param['serviceDtoList['+i+'].scoreList['+j+']'] ="0"; 
+	        	 }else {
+			         param['serviceDtoList['+i+'].scoreList['+j+']'] =scoreList[j]; 
+	        	 }
+	         }
+		 }
+		 
+		 
 
       }
       console.table(param);
       $.ajax({
          url: "/insertForm/serviceInsertForm/insertData.do",
-         type: "post",
          data: param, 
          success:function(result) {
             console.log(result);
