@@ -561,15 +561,15 @@ public class ExcelService implements IExcelService {
 		
 		cell = row.createCell(10);
 		cell.setCellStyle(headStyle);
-		cell.setCellValue("시작 회기 ");
+		cell.setCellValue("회기");
 		
 		cell = row.createCell(11);
 		cell.setCellStyle(headStyle);
-		cell.setCellValue("중간 회기 ");
+		cell.setCellValue("회당시간");
 		
 		cell = row.createCell(12);
 		cell.setCellStyle(headStyle);
-		cell.setCellValue("종결 회기 ");
+		cell.setCellValue("월사용료 ");
 		
 		ArrayList<String> pList = new ArrayList<>();
 		pList.add("변화동기");
@@ -612,20 +612,6 @@ public class ExcelService implements IExcelService {
 			}
 			questionCnt = questionCnt + 3;
 		}
-			
-		cell = row.createCell(70);
-		cell.setCellStyle(headStyle);
-		cell.setCellValue("강사 평균");
-
-		cell = row.createCell(71);
-		cell.setCellStyle(headStyle);
-		cell.setCellValue("구성/품질 평균");
-		
-		cell = row.createCell(72);
-		cell.setCellStyle(headStyle);
-		cell.setCellValue("효과성 평균");
-		
-		
 		
 		// 데이터 부분 생성
 		int listNm = 0;
@@ -682,37 +668,40 @@ public class ExcelService implements IExcelService {
 				cell.setCellStyle(bodyStyle);
 				cell.setCellValue(CmmUtil.nvl(pDTO.getContents()));
 				
+				// 사전 중간 종결 데이터는  1/1/1형태로 되어있음
+				// 데이터를 잘라서 넣어줌
+				String session[] = pDTO.getSession().split("/"); 
+
 				cell = row.createCell(10);
 				cell.setCellStyle(bodyStyle);
-				cell.setCellValue(CmmUtil.nvl(pDTO.getPlace()));
+				cell.setCellValue(CmmUtil.nvl(session[0]));
+				
+				cell = row.createCell(11);
+				cell.setCellStyle(bodyStyle);
+				cell.setCellValue(CmmUtil.nvl(session[1]));
+				
+				cell = row.createCell(12);
+				cell.setCellStyle(bodyStyle);
+				cell.setCellValue(CmmUtil.nvl(session[2]));
 				
 				
-				
-				for (int j = 0; j < pDTO.getScoreList().size(); j++) {
-					cell = row.createCell(j + 11);
+				for (int k = 0; k < pDTO.getScoreList().size(); k++) {
+					cell = row.createCell(k + 13);
 					cell.setCellStyle(bodyStyle);
-					cell.setCellValue(pDTO.getScoreList().get(j).toString());
+					cell.setCellValue(pDTO.getScoreList().get(k).toString());
 					
 				}
 
-				cell = row.createCell(21);
-				cell.setCellStyle(headStyle);
-				cell.setCellValue("강사 평균");
-
-				cell = row.createCell(22);
-				cell.setCellStyle(headStyle);
-				cell.setCellValue("구성/품질 평균");
-				
-				cell = row.createCell(23);
-				cell.setCellStyle(headStyle);
-				cell.setCellValue("효과성 평균");
-				
 				listNm++;
 			}
 		}
 		log.info(log.getClass().getName() + "program excelDownload end");
 		return wb;
 	}
-
+	
+	/**
+	 * 예방 서비스 엑셀다운로드
+	 */
+	
 }
 
