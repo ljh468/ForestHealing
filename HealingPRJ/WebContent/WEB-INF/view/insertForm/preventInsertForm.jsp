@@ -236,121 +236,121 @@
 							<input class="form-control" name='form-score1-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 20px;">
-							<input class="form-control" name='form-score1-2' placeholder="중간">
+							<input class="form-control" name='form-score1-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score2-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 20px;">
-							<input class="form-control" name='form-score2-2' placeholder="중간">
+							<input class="form-control" name='form-score2-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score3-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score3-2' placeholder="중간">
+							<input class="form-control" name='form-score3-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score4-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 20px;">
-							<input class="form-control" name='form-score4-2' placeholder="중간">
+							<input class="form-control" name='form-score4-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score5-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 20px;">
-							<input class="form-control" name='form-score5-2' placeholder="중간">
+							<input class="form-control" name='form-score5-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score6-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score6-2' placeholder="중간">
+							<input class="form-control" name='form-score6-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score7-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 20px;">
-							<input class="form-control" name='form-score7-2' placeholder="중간">
+							<input class="form-control" name='form-score7-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score8-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 20px;">
-							<input class="form-control" name='form-score8-2' placeholder="중간">
+							<input class="form-control" name='form-score8-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score9-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 20px;">
-							<input class="form-control" name='form-score9-2' placeholder="중간">
+							<input class="form-control" name='form-score9-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score10-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score10-2' placeholder="중간">
+							<input class="form-control" name='form-score10-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score11-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 20px;">
-							<input class="form-control" name='form-score11-2' placeholder="중간">
+							<input class="form-control" name='form-score11-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score12-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score12-2' placeholder="중간">
+							<input class="form-control" name='form-score12-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score13-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 20px;">
-							<input class="form-control" name='form-score13-2' placeholder="중간">
+							<input class="form-control" name='form-score13-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score14-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 20px;">
-							<input class="form-control" name='form-score14-2' placeholder="중간">
+							<input class="form-control" name='form-score14-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 10px;">
 							<input class="form-control" name='form-score15-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 20px;">
-							<input class="form-control" name='form-score15-2' placeholder="중간">
+							<input class="form-control" name='form-score15-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 10px;">
 							<input class="form-control" name='form-score16-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 20px;">
-							<input class="form-control" name='form-score16-2' placeholder="중간">
+							<input class="form-control" name='form-score16-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score17-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score17-2' placeholder="중간">
+							<input class="form-control" name='form-score17-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score18-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 20px;">
-							<input class="form-control" name='form-score18-2' placeholder="중간">
+							<input class="form-control" name='form-score18-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score19-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 20px;">
-							<input class="form-control" name='form-score19-2' placeholder="중간">
+							<input class="form-control" name='form-score19-2' placeholder="사후">
 						</div>
 						<div style="width: 60px; float: left; margin-right: 10px;">
 							<input class="form-control" name='form-score20-1' placeholder="사전">
 						</div>
 						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score20-2' placeholder="중간">
+							<input class="form-control" name='form-score20-2' placeholder="사후">
 						</div>
 						</div>
 						<% }  %>

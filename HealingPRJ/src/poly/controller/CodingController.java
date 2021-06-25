@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +25,7 @@ import poly.service.IInsertDataService;
 import poly.service.ITestService;
 import poly.util.DateUtil;
 
+@Controller
 public class CodingController {
 
 	private Logger log = Logger.getLogger(this.getClass());
