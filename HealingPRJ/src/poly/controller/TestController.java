@@ -49,21 +49,21 @@ public class TestController {
 	public String seBygroup(HttpServletRequest request, HttpServletResponse reponse) {
 
 		log.info("seBygroup");
-		return "/seBygroup";
+		return "seBy/seBygroup";
 	}
 
 	@RequestMapping(value = "seBy/seBysubject")
 	public String seBysubject(HttpServletRequest request, HttpServletResponse reponse) {
 
 		log.info("seBysubject");
-		return "/seBysubject";
+		return "seBy/seBysubject";
 	}
 
 	@RequestMapping(value = "seBy/seBysubject2")
 	public String seBysubject2(HttpServletRequest request, HttpServletResponse reponse) {
 
 		log.info("seBysubject2");
-		return "/seBysubject2";
+		return "seBy/seBysubject2";
 	}
 
 	// 운영결과 페이지 호출 _ 유연준
