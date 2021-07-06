@@ -49,23 +49,18 @@ public class CodingController {
 		return "/insertForm/serviceInsertForm";
 	}
 
-	@RequestMapping(value = "insertForm/serviceInsertForm/insertData", method = RequestMethod.POST)
+	@RequestMapping(value = "insertForm/serviceInsertForm/insertData")
 	@ResponseBody
-	public String serviceInsertData(@ModelAttribute ServiceInsertDTO serviceDtoList, HttpServletResponse response)
-			throws Exception {
+	public void serviceInsertData(@ModelAttribute ServiceInsertDTO serviceDtoList, HttpServletResponse response) throws Exception {
 
 		log.info("insertForm/serviceInsertForm/insertData start");
 
-		// log 찍어보기
-		for (int i = 0; i < serviceDtoList.getServiceDtoList().size(); i++) {
-			log.info("agency : " + serviceDtoList.getServiceDtoList().get(i).getAgency() + " | date : "
-					+ serviceDtoList.getServiceDtoList().get(i).getDate() + " | ptcProgram : "
-					+ serviceDtoList.getServiceDtoList().get(i).getPtcProgram() + " | sex : "
-					+ serviceDtoList.getServiceDtoList().get(i).getSex() + " | age : "
-					+ serviceDtoList.getServiceDtoList().get(i).getAge() + " | residence"
-					+ serviceDtoList.getServiceDtoList().get(i).getResidence() + " | job : "
-					+ serviceDtoList.getServiceDtoList().get(i).getJob() + " | scoreList : "
-					+ serviceDtoList.getServiceDtoList().get(i).getScoreList());
+		//log 찍어보기
+		for(int i = 0 ; i<serviceDtoList.getServiceDtoList().size();i++) {
+			log.info("agency : " + serviceDtoList.getServiceDtoList().get(i).getAgency() + " | date : " + serviceDtoList.getServiceDtoList().get(i).getDate() + 
+		    " | ptcProgram : " + serviceDtoList.getServiceDtoList().get(i).getPtcProgram() + " | sex : " + serviceDtoList.getServiceDtoList().get(i).getSex() + 
+		    " | age : " + serviceDtoList.getServiceDtoList().get(i).getAge() + " | residence" + serviceDtoList.getServiceDtoList().get(i).getResidence() +
+		    " | job : " + serviceDtoList.getServiceDtoList().get(i).getJob() + " | scoreList : " + serviceDtoList.getServiceDtoList().get(i).getScoreList());
 		}
 
 		// 엑셀 데이터로 변환하여 Workbook 으로 가져오기
@@ -98,21 +93,14 @@ public class CodingController {
 		wb.close();
 
 		// 데이터 저장하기
-		int result = 0;
-
-		if (serviceDtoList == null) {
-			log.info("serviceDtoList is null !!");
-		} else {
-			result = insertDataService.serviceInsertData(serviceDtoList);
-		}
-
-		if (result != 0) {
+		int result = insertDataService.serviceInsertData(serviceDtoList);
+		
+		if(result != 0) { 
 			log.info("insert success");
-		} else {
+		} else { 
 			log.info("insert fail");
 		}
 		log.info("insertForm/serviceInsertForm/insertData end");
-		return "succees";
 	}
 // 서비스 만족도 END ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ////////////////////////////////////////////////////////////////////////////////////
@@ -172,17 +160,11 @@ public class CodingController {
 		wb.write(output);
 		wb.close();
 
-		int result = 0;
-
-		if (programDtoList == null) {
-			log.info("programDtoList is null !!");
-		} else {
-			result = insertDataService.programInsertData(programDtoList);
-		}
-
-		if (result != 0) {
+		int result = insertDataService.programInsertData(programDtoList);
+		
+		if(result != 0) { 
 			log.info("insert success");
-		} else {
+		} else { 
 			log.info("insert fail");
 		}
 
@@ -248,6 +230,14 @@ public class CodingController {
 		log.info(output);
 		wb.write(output);
 		wb.close();
+		
+		int result = insertDataService.receiptInsertData(receiptDtoList);
+		
+		if(result != 0) { 
+			log.info("insert success");
+		} else { 
+			log.info("insert fail");
+		}
 
 		log.info("insertForm/receiptInsertForm/receiptinsertData end");
 		return "succees";
@@ -309,17 +299,11 @@ public class CodingController {
 		//wb.write(output);
 		//wb.close();
 
-		int result = 0;
-
-		if (preventDtoList == null) {
-			log.info("preventDtoList is null !!");
-		} else {
-			result = insertDataService.preventInsertData(preventDtoList);
-		}
-
-		if (result != 0) {
+		int result = insertDataService.preventInsertData(preventDtoList);
+		
+		if(result != 0) { 
 			log.info("insert success");
-		} else {
+		} else { 
 			log.info("insert fail");
 		}
 
@@ -382,17 +366,11 @@ public class CodingController {
 		//wb.write(output);
 		//wb.close();
 
-		int result = 0;
-
-		if (healingDtoList == null) {
-			log.info("healingDtoList is null !!");
-		} else {
-			result = insertDataService.healingInsertData(healingDtoList);
-		}
-
-		if (result != 0) {
+		int result = insertDataService.healingInsertData(healingDtoList);
+		
+		if(result != 0) { 
 			log.info("insert success");
-		} else {
+		} else { 
 			log.info("insert fail");
 		}
 

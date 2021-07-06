@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.IOperateMapper">
+	<insert id="insertOperateResultProc" parameterType="BasicInfoDTO">
+		INSERT INTO
+		BASIC_INFO
+		(
+			OPENDAY,
+			AGENCY,
+			OM,
+			ENDDAY,
+			DAYS_TO_STAY,
+			RESIDENCE,
+			PART_MAN_CNT,
+			PART_WOMAN_CNT,
+			LEAD_MAN_CNT,
+			LEAD_WOMAN_CNT,
+			
+			SUPPORT,
+			INCOME_TYPE,
+			PART_TYPE,
+			BIZ_PURPOSE,
+			SERVICE_TYPE,
+			PROGRAM_IN_OUT,
+			ROOM_PART_PEOPLE,
+			ROOM_PART_ROOM,
+			ROOM_LEAD_PEOPLE,
+			ROOM_LEAD_ROOM,
+			ROOM_ETC_PEOPLE,
+			ROOM_ETC_ROOM,
+			MEAL_TYPE,
+			MEAL_PART,
+			MEAL_LEAD,
+			MEAL_ETC,
+			PROGRAM_OPINION,
+			SERVICE_OPINION,
+			OVERALL_OPINION
+			
+			
+			
+			
+		)
+		values
+		(
+			#{openday},
+			#{agency},
+			#{om},
+			#{endday},
+			#{days_to_stay},
+			#{residence},
+			#{part_man_cnt},
+			#{part_woman_cnt},
+			#{lead_man_cnt},
+			#{lead_woman_cnt},
+			
+			CONCAT_WS(',', <foreach collection="support" item="support" separator=",">#{support}</foreach>),
+			CONCAT_WS(',', <foreach collection="income_type" item="income_type" separator=",">#{income_type}</foreach>),
+			CONCAT_WS(',', <foreach collection="part_type" item="part_type" separator=",">#{part_type}</foreach>),
+			CONCAT_WS(',', <foreach collection="biz_purpose" item="biz_purpose" separator=",">#{biz_purpose}</foreach>),
+			CONCAT_WS(',', <foreach collection="service_type" item="service_type" separator=",">#{service_type}</foreach>),
+			CONCAT_WS(',', <foreach collection="program_in_out" item="program_in_out" separator=",">{ #{program_in_out.program},#{program_in_out.in_tutor},#{program_in_out.out_tutor} }</foreach>),
+			
+			#{room_part_people},
+			#{room_part_room},
+			#{room_lead_people},
+			#{room_lead_room},
+			#{room_etc_people},
+			#{room_etc_room},
+			CONCAT_WS(',', <foreach collection="meal_type" item="meal_type" separator=",">#{meal_type}</foreach>),
+			#{meal_part},
+			#{meal_lead},
+			#{meal_etc},
+			#{program_opinion},
+			#{service_opinion},
+			#{overall_opinion}
+			
+		)
+	</insert>
+	
+</mapper>

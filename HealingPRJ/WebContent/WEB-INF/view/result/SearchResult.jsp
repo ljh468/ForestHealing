@@ -17,7 +17,7 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 	<!-- 홍두표 - 나눔스퀘어 폰트 불러오기 -->
@@ -55,14 +55,21 @@
 		}) 
 	}
 </script>
-
+<script src="/lumino/js/jquery-1.11.1.min.js"></script>
+	<script src="/lumino/js/bootstrap.min.js"></script>
+	<script src="/lumino/js/chart.min.js"></script>
+	<script src="/lumino/js/chart-data.js"></script>
+	<script src="/lumino/js/easypiechart.js"></script>
+	<script src="/lumino/js/easypiechart-data.js"></script>
+	<script src="/lumino/js/bootstrap-datepicker.js"></script>
+	<script src="/lumino/js/custom.js"></script>
 </head>
 <body>
-	
-	<%@ include file="/WEB-INF/view/top.jsp" %>
-	<%@ include file="/WEB-INF/view/sidebar.jsp" %>
-	<!--/.sidebar-->
-		
+ <!--top jsp  -->
+	<div>
+	  <%@ include file="/WEB-INF/view/top.jsp" %>
+	 <%@ include file="/WEB-INF/view/sidebar.jsp" %>
+	</div>
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -93,18 +100,6 @@
 		
 		<div id="resProgram_chart"></div>
 	</div>
-	
-	
-	
-	<script src="/lumino/js/jquery-1.11.1.min.js"></script>
-	<script src="/lumino/js/bootstrap.min.js"></script>
-	<script src="/lumino/js/chart.min.js"></script>
-	<script src="/lumino/js/chart-data.js"></script>
-	<script src="/lumino/js/easypiechart.js"></script>
-	<script src="/lumino/js/easypiechart-data.js"></script>
-	<script src="/lumino/js/bootstrap-datepicker.js"></script>
-	<script src="/lumino/js/custom.js"></script>
-	
-		
+
 </body>
 </html>

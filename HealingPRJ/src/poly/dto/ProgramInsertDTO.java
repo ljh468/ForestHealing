@@ -17,6 +17,7 @@ public class ProgramInsertDTO{
 	private List<String> scoreList;
 	
 	private List<ProgramInsertDTO> programDtoList;
+	
 
 	public String getAgency() {
 		return agency;

@@ -9,24 +9,22 @@
 		(
 		SERVICE_SEQ,
 		OPENDAY,
-		BIZ_REG_NUM,
 		SEX,
 		AGE,
 		RESIDENCE,
 		JOB,
-		PTCPROGRAM,
+		PART_PROGRAM,
 		AGENCY,
-		DATE,
+		EVAL_DATE,
 		SCORE1,	SCORE2,	SCORE3,	SCORE4,	SCORE5,	SCORE6,	SCORE7,
-		SCORE8,	SCORE9,	SCORE10, OPINION1, SCORE11,	SCORE12, SCORE13, SCORE14,
-		SCORE15, SCORE16, OPINION2,	SCORE17, SCORE18
+		SCORE8,	SCORE9,	SCORE10, FACILITY_OPINION, SCORE11,	SCORE12, SCORE13, SCORE14,
+		SCORE15, SCORE16, OPERATION_OPINION, SCORE17, SCORE18
 		)
 		VALUES
 		<foreach item="serviceDtoList" index="index" collection="serviceDtoList" separator=",">
 		(
 		(SELECT IFNULL(MAX(A.SERVICE_SEQ),0)+1 FROM SERVICE_ENV_SATISFACTION A),
-		'2021-05-24',
-		12315234,
+		#{serviceDtoList.date},
 		#{serviceDtoList.sex},
 		#{serviceDtoList.age},
 		#{serviceDtoList.residence},
@@ -48,26 +46,24 @@
 		(
 		PROGRAM_SEQ,
 		OPENDAY,
-		BIZ_REG_NUM,
 		SEX,
 		AGE,
 		RESIDENCE,
 		JOB,
-		PTCPROGRAM,
+		PART_PROGRAM,
 		AGENCY,
 		DATE,
-		PROGRAMNAME,
+		PROGRAM_NAME,
 		TEACHER,
 		PLACE,
 		SCORE1,	SCORE2,	SCORE3,	SCORE4,	SCORE5,	SCORE6,	SCORE7,
-		SCORE8,	SCORE9,	OPINION1
+		SCORE8,	SCORE9,	ETC_OPINION
 		)
 		VALUES
 		<foreach item="programDtoList" index="index" collection="programDtoList" separator=",">
 		(
 		(SELECT IFNULL(MAX(A.PROGRAM_SEQ),0)+1 FROM PROGRAM_SATISFACTION A),
 		'2021-05-24',
-		12315234,
 		#{programDtoList.sex},
 		#{programDtoList.age},
 		#{programDtoList.residence},
@@ -92,16 +88,15 @@
 		(
 		PREVENT_SEQ,
 		OPENDAY,
-		BIZ_REG_NUM,
 		AGENCY,
-		DATE,
 		NAME,
 		SEX,
 		AGE,
 		RESIDENCE,
 		JOB,
-		PTCPROGRAM,
-		PASTSTRESS,
+		PART_PROGRAM,
+		PAST_STRESS_EXPERIENCE,
+		EVAL_DATE,
 		SCORE11, SCORE12, SCORE21, SCORE22, SCORE31, SCORE32, SCORE41, SCORE42,
 		SCORE51, SCORE52, SCORE61, SCORE62, SCORE71, SCORE72, SCORE81, SCORE82,
 		SCORE91, SCORE92, SCORE101, SCORE102, SCORE111, SCORE112, SCORE121,
@@ -113,10 +108,8 @@
 		<foreach item="preventDtoList" index="index" collection="preventDtoList" separator=",">
 		(
 		(SELECT IFNULL(MAX(A.PREVENT_SEQ),0)+1 FROM PREVENT_SERVICE A),
-		'2021-05-24',
-		12315234,
-		#{preventDtoList.agency},
 		#{preventDtoList.date},
+		#{preventDtoList.agency},
 		#{preventDtoList.name},
 		#{preventDtoList.sex},
 		#{preventDtoList.age},
@@ -124,6 +117,7 @@
 		#{preventDtoList.job},
 		#{preventDtoList.ptcProgram},
 		#{preventDtoList.pastStress},
+		#{preventDtoList.date},
 		<foreach item="scoreList" index="index" collection="preventDtoList.scoreList" separator=",">
 			<foreach item="score" index="index" collection="scoreList" separator=",">
 				#{score}
@@ -133,22 +127,21 @@
 	</foreach>
 	</insert>	
 	
-	<!-- 예방서비스 효과평가 데이터 넣기 -->
+	<!-- 힐링서비스 효과평가 데이터 넣기 -->
 	<insert id="healingInsertData" parameterType="HealingInsertDTO">
 		INSERT INTO HEALING_SERVICE
 		(
 		HEALING_SEQ,
 		OPENDAY,
-		BIZ_REG_NUM,
 		AGENCY,
-		DATE,
 		NAME,
 		SEX,
 		AGE,
 		RESIDENCE,
 		JOB,
-		PTCPROGRAM,
-		PASTSTRESS,
+		PART_PROGRAM,
+		PAST_STRESS_EXPERIENCE,
+		EVAL_DATE,
 		SCORE11, SCORE12, SCORE21, SCORE22, SCORE31, SCORE32, SCORE41, SCORE42,
 		SCORE51, SCORE52, SCORE61, SCORE62, SCORE71, SCORE72, SCORE81, SCORE82,
 		SCORE91, SCORE92, SCORE101, SCORE102, SCORE111, SCORE112, SCORE121,
@@ -162,10 +155,8 @@
 		<foreach item="healingDtoList" index="index" collection="healingDtoList" separator=",">
 		(
 		(SELECT IFNULL(MAX(A.HEALING_SEQ),0)+1 FROM HEALING_SERVICE A),
-		'2021-05-24',
-		12315234,
-		#{healingDtoList.agency},
 		#{healingDtoList.date},
+		#{healingDtoList.agency},
 		#{healingDtoList.name},
 		#{healingDtoList.sex},
 		#{healingDtoList.age},
@@ -173,7 +164,58 @@
 		#{healingDtoList.job},
 		#{healingDtoList.ptcProgram},
 		#{healingDtoList.pastStress},
+		#{healingDtoList.date},
 		<foreach item="scoreList" index="index" collection="healingDtoList.scoreList" separator=",">
+			<foreach item="score" index="index" collection="scoreList" separator=",">
+				#{score}
+			</foreach>
+		</foreach>
+		)
+	</foreach>
+	</insert>	
+	
+	
+	<!-- 접수서비스 효과평가 데이터 넣기 -->
+	<insert id="receiptInsertData" parameterType="ReceiptInsertDTO">
+		INSERT INTO COUNSEL_SERVICE
+		(
+		COUNSEL_SEQ,
+		OPENDAY,
+		AGENCY,
+		NAME,
+		SEX,
+		AGE,
+		RESIDENCE,
+		JOB,
+		COUNSEL_CONTENTS,
+		EVAL_DATE,
+		SESSION,
+		PAST_STRESS_EXPERIENCE,
+		SCORE11, SCORE12, SCORE13, SCORE21, SCORE22, SCORE23, SCORE31, SCORE32,
+		SCORE33, SCORE41, SCORE42, SCORE43, SCORE51, SCORE52, SCORE53, SCORE61,
+		SCORE62, SCORE63, SCORE71, SCORE72, SCORE73, SCORE81, SCORE82,
+		SCORE83, SCORE91, SCORE92, SCORE93, SCORE101, SCORE102, SCORE103,
+		SCORE111, SCORE112, SCORE113, SCORE121, SCORE122, SCORE123, SCORE131,
+		SCORE132, SCORE133, SCORE141, SCORE142, SCORE143, SCORE151, SCORE152,
+		SCORE153, SCORE161, SCORE162, SCORE163, SCORE171, SCORE172, SCORE173,
+		SCORE181, SCORE182, SCORE183, SCORE191, SCORE192, SCORE193
+		)
+		VALUES
+		<foreach item="receiptDtoList" index="index" collection="receiptDtoList" separator=",">
+		(
+		(SELECT IFNULL(MAX(A.COUNSEL_SEQ),0)+1 FROM COUNSEL_SERVICE A),
+		#{receiptDtoList.date},
+		#{receiptDtoList.agency},
+		#{receiptDtoList.name},
+		#{receiptDtoList.sex},
+		#{receiptDtoList.age},
+		#{receiptDtoList.residence},
+		#{receiptDtoList.job},
+		#{receiptDtoList.contents},
+		#{receiptDtoList.date},
+		#{receiptDtoList.session},
+		#{receiptDtoList.pastExp},
+		<foreach item="scoreList" index="index" collection="receiptDtoList.scoreList" separator=",">
 			<foreach item="score" index="index" collection="scoreList" separator=",">
 				#{score}
 			</foreach>

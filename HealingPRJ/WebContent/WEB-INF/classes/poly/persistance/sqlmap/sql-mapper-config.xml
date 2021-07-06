@@ -2,12 +2,17 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	<typeAliases>
-		<!-- 사용할 DTO 등록 -->
-		<typeAlias alias="ServiceInsertDTO" type="poly.dto.ServiceInsertDTO" />
+    <typeAliases>
+    	<!-- 사용할 DTO 등록  -->
+    	<typeAlias alias="BasicInfoDTO" type="poly.dto.BasicInfoDTO" />
+		<typeAlias alias="HealingInsertDTO" type="poly.dto.HealingInsertDTO" />
+		<typeAlias alias="IncomeDTO" type="poly.dto.IncomeDTO" />
+		<typeAlias alias="PreventInsertDTO" type="poly.dto.PreventInsertDTO" />
+    	<typeAlias alias="ProgramInOutDTO" type="poly.dto.ProgramInOutDTO"/>
 		<typeAlias alias="ProgramInsertDTO" type="poly.dto.ProgramInsertDTO" />
 		<typeAlias alias="ReceiptInsertDTO" type="poly.dto.ReceiptInsertDTO" />
-		<typeAlias alias="PreventInsertDTO" type="poly.dto.PreventInsertDTO" />
-		<typeAlias alias="HealingInsertDTO"	type="poly.dto.HealingInsertDTO" />
-	</typeAliases>
+    	<typeAlias alias="ServiceInsertDTO" type="poly.dto.ServiceInsertDTO" />
+		<typeAlias alias="StudentDTO" type="poly.dto.StudentDTO" />
+		
+    </typeAliases>
 </configuration>

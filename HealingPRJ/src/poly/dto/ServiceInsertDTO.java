@@ -12,7 +12,6 @@ public class ServiceInsertDTO {
 	private String residence;
 	private String job;
 	private List<String> scoreList;
-	
 	private List<ServiceInsertDTO> serviceDtoList;
 	
 	public List<ServiceInsertDTO> getServiceDtoList() {

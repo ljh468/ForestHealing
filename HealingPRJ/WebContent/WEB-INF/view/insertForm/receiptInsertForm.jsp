@@ -10,16 +10,7 @@
 	<link href="/lumino/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/lumino/css/datepicker3.css" rel="stylesheet">
 	<link href="/lumino/css/styles.css" rel="stylesheet">
-	
-	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-	<!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-
-
 	<!-- 홍두표 - 나눔스퀘어 폰트 불러오기 -->
 	<style>
 		@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
@@ -35,17 +26,13 @@
 		}
 	</style>
 	<!-- 홍두표 - 나눔스퀘어 폰트 불러오기 -->
-
-
 </head>
 <body>
 	<!--/.sidebar Sart-->
-
 	<%@ include file="/WEB-INF/view/top.jsp"%>
 	<%@ include file="/WEB-INF/view/sidebar.jsp"%>
-
 	<!--/.sidebar End-->
-		
+	
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -71,21 +58,20 @@
 			<div class="col-md-12">
 			<div class="col-md-3">
 				<div class="form-group">
-					<label>입력양식</label>
-					<select class="form-control">
-						<option>서비스환경 만족도</option>
-						<option>프로그램 만족도</option>
-						<option>상담&치유 서비스 효과평가</option>
-						<option>예방서비스 효과평가</option>
-						<option>힐링서비스 효과평가</option>
+					<label>입력양식</label> 
+					<select class="form-control" onchange="location.href=this.value">
+						<option value="http://localhost:9000/insertForm/serviceInsertForm.do">서비스환경 만족도</option>
+						<option value="http://localhost:9000/insertForm/programInsertForm.do">프로그램 만족도</option>
+						<option value="http://localhost:9000/insertForm/receiptInsertForm.do" selected>상담&치유서비스 효과평가</option>
+						<option value="http://localhost:9000/insertForm/preventInsertForm.do">예방서비스 효과평가</option>
+						<option value="http://localhost:9000/insertForm/healingInsertForm.do">힐링서비스 효과평가</option>
 					</select>
 				</div>
-			</div>
 			</div>
 			<!-- 고르기 버튼 끝 -->
 			
 			
-		</div>
+			</div>
 			<div class="col-md-12">
 				
 				<div class="panel panel-default chat">
@@ -184,265 +170,252 @@
 					
 						<!-- <div id="insertForm"> -->
 						<%for(int i=0; i<20; i++)  { %>
-						<div style="width: 5100px; height: 70px;" name='form-main'>
-						
-						<!--  -->
-						<div style="width: 120px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-name' placeholder="이름">
-						</div>
-						<!--  -->
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-sex' placeholder="성별">
-						</div>
-						<!--  -->
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-age' placeholder="연령">
-						</div>
-						<div style="width: 90px; float: left; margin-right: 10px;">
-							<select class="form-control" name='form-residence' style="height: 46px;">
-								<option>서울</option>
-								<option>부산</option>
-								<option>대구</option>
-								<option>인천</option>
-								<option>광주</option>
-								<option>대전</option>
-								<option>울산</option>
-								<option>세종</option>
-								<option>경기</option>
-								<option>강원</option>
-								<option>충북</option>
-								<option>충남</option>
-								<option>전북</option>
-								<option>전남</option>
-								<option>경북</option>
-								<option>경남</option>
-								<option>제주</option>
-							</select>
-						</div>
-						<!--  -->
-						<div style="width: 120px; float: left; margin-right: 10px;">
-							<select class="form-control" name='form-job' style="height: 46px;">
-								<option>학생</option>
-								<option>자영업</option>
-								<option>서비스직</option>
-								<option>판매영업직</option>
-								<option>기능/생산직</option>
-								<option>단순노무직</option>
-								<option>고위공직</option>
-								<option>임직원</option>
-								<option>전문직</option>
-								<option>일반사무직</option>
-								<option>농림어업축산직</option>
-								<option>주부</option>
-								<option>무직</option>
-								<option>기타</option>
-							</select>
-						</div>
-						<!--  -->
-						<div style="width: 120px; float: left; margin-right: 30px;">
-							<input class="form-control" name='form-pastExp' placeholder="1=유  / 2=무">
-						</div>
-						<!--  -->
-						<!--  -->
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score1-1' placeholder="사전">
-						</div>
-						
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score1-2' placeholder="중간">
-						</div>
-						
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score1-3' placeholder="종결">
-						</div>
-						<!--  -->
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score2-1' placeholder="사전">
-						</div>
-						
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score2-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score2-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score3-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score3-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score3-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score4-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score4-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score4-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score5-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score5-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control"  name='form-score5-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control"  name='form-score6-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control"  name='form-score6-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control"  name='form-score6-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control"  name='form-score7-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control"  name='form-score7-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control"  name='form-score7-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control"  name='form-score8-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control"  name='form-score8-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control"  name='form-score8-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score9-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score9-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score9-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score10-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score10-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score10-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score11-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score11-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score11-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score12-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score12-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score12-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score13-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score13-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score13-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score14-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score14-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score14-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score15-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score15-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score15-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score16-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score16-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score16-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score17-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score17-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score17-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score18-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score18-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score18-3' placeholder="종결">
-						</div>
-						<div style="width: 60px; float: left; margin-right: 10px;">
-							<input class="form-control" name='form-score19-1' placeholder="사전">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 10px;">
-							<input class="form-control" name='form-score19-2' placeholder="중간">
-						</div>
-						<div style="width: 60px; float: left;margin-right: 30px;">
-							<input class="form-control" name='form-score19-3' placeholder="종결">
-						</div>
-						
-						<!--  -->
+						<div id="insertForm">
+							<div style="width: 5100px; height: 60px;" name='form-main'>
+							
+							<!--  -->
+							<div style="width: 120px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-name' placeholder="이름">
+							</div>
+							<!--  -->
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-sex' placeholder="성별">
+							</div>
+							<!--  -->
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-age' placeholder="연령">
+							</div>
+							<div style="width: 90px; float: left; margin-right: 10px;">
+								<select class="form-control" name='form-residence' style="height: 46px;">
+									<option>서울</option>
+									<option>부산</option>
+									<option>대구</option>
+									<option>인천</option>
+									<option>광주</option>
+									<option>대전</option>
+									<option>울산</option>
+									<option>세종</option>
+									<option>경기</option>
+									<option>강원</option>
+									<option>충북</option>
+									<option>충남</option>
+									<option>전북</option>
+									<option>전남</option>
+									<option>경북</option>
+									<option>경남</option>
+									<option>제주</option>
+								</select>
+							</div>
+							<!--  -->
+							<div style="width: 120px; float: left; margin-right: 10px;">
+								<select class="form-control" name='form-job' style="height: 46px;">
+									<option>학생</option>
+									<option>자영업</option>
+									<option>서비스직</option>
+									<option>판매영업직</option>
+									<option>기능/생산직</option>
+									<option>단순노무직</option>
+									<option>고위공직</option>
+									<option>임직원</option>
+									<option>전문직</option>
+									<option>일반사무직</option>
+									<option>농림어업축산직</option>
+									<option>주부</option>
+									<option>무직</option>
+									<option>기타</option>
+								</select>
+							</div>
+							<!--  -->
+							<div style="width: 120px; float: left; margin-right: 30px;">
+								<input class="form-control" name='form-pastExp' placeholder="1=유  / 2=무">
+							</div>
+							<!--  -->
+							<!--  -->
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score1-1' placeholder="사전">
+							</div>
+							
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score1-2' placeholder="중간">
+							</div>
+							
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score1-3' placeholder="종결">
+							</div>
+							<!--  -->
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score2-1' placeholder="사전">
+							</div>
+							
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score2-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score2-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score3-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score3-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score3-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score4-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score4-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score4-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score5-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score5-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control"  name='form-score5-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control"  name='form-score6-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control"  name='form-score6-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control"  name='form-score6-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control"  name='form-score7-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control"  name='form-score7-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control"  name='form-score7-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control"  name='form-score8-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control"  name='form-score8-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control"  name='form-score8-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score9-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score9-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score9-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score10-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score10-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score10-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score11-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score11-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score11-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score12-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score12-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score12-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score13-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score13-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score13-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score14-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score14-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score14-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score15-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score15-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score15-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score16-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score16-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score16-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score17-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score17-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score17-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score18-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score18-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score18-3' placeholder="종결">
+							</div>
+							<div style="width: 60px; float: left; margin-right: 10px;">
+								<input class="form-control" name='form-score19-1' placeholder="사전">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 10px;">
+								<input class="form-control" name='form-score19-2' placeholder="중간">
+							</div>
+							<div style="width: 60px; float: left;margin-right: 30px;">
+								<input class="form-control" name='form-score19-3' placeholder="종결">
+							</div>
+							<!--  -->
+							</div>
 						</div>
 						<% }  %>
-					<!-- </div> -->
-					
-				<div id="field"></div>
-						<!--  -->
-						
+						<div id="field"></div>
+					</div>
 				</div>
-				</div>
-				
 			</div>
-				
 		</div>
-		<!--  -->
-		
-		
-		
-		<!--test구간  -->
-
-		<!--  -->
-	<!--/.main-->
-	
+	</div>
 	<script src="/lumino/js/jquery-1.11.1.min.js"></script>
 	<script src="/lumino/js/bootstrap.min.js"></script>
 	<script src="/lumino/js/chart.min.js"></script>
@@ -451,33 +424,6 @@
 	<script src="/lumino/js/easypiechart-data.js"></script>
 	<script src="/lumino/js/bootstrap-datepicker.js"></script>
 	<script src="/lumino/js/custom.js"></script>
-	
-	
-	<!--홍석민 버튼 활성화 비활성화 -->
-
-	<script type="text/javascript">
-		var insertBtn = document.getElementById('insertInfo');
-		var loadBtn = document.getElementById('loadExcel');
-		
-		function btn_insertInfo() {
-			if(insertBtn.disabled==false) {
-				loadBtn.disabled = false;
-				insertBtn.disabled = 'disabled';		
-			}
-		}
-		function btn_loadExcel() {
-			if(loadBtn.disabled==false) {
-				insertBtn.disabled = false;
-				loadBtn.disabled = 'disabled';	
-			}
-		}
-
-		
-	</script>
-	
-	
-	<!--test구간  -->
-
 	<script type="text/javascript">
 		function add_div() {
 
@@ -510,6 +456,22 @@
 		
 		let formArr = document.getElementsByName('form-main');
 		
+		  //유효성 검사
+	      if(agency.trim() == '') {
+	    	  alert('기관을 입력해주세요.');
+	    	  return false;
+	      } else if(date.trim() == '') { 
+	    	  alert('실시일자를 입력해주세요.');
+	    	  return false;
+	      } else if(contents.trim() == '') { 
+	    	  alert('참여프로그램을 입력해주세요.');
+	    	  return false;
+	      } else if(session.trim() == '') { 
+	    	  alert('회기를 입력해주세요.');
+	    	  return false;
+	      }
+		
+		
 		for(let i = 0; i < formArr.length; i++) {
 			let name = document.getElementsByName('form-name')[i].value;
 			let sex = document.getElementsByName('form-sex')[i].value;
@@ -517,26 +479,61 @@
 			let residence = document.getElementsByName('form-residence')[i].value;
 			let job = document.getElementsByName('form-job')[i].value;
 			let pastExp = document.getElementsByName('form-pastExp')[i].value;
-			 
-			 param['receiptDtoList['+i+'].agency']=agency;
-	         param['receiptDtoList['+i+'].date']=date; 
-	         param['receiptDtoList['+i+'].contents']=contents; 
-	         param['receiptDtoList['+i+'].session']=session; 
-	         param['receiptDtoList['+i+'].name']=name; 
-	         param['receiptDtoList['+i+'].sex']=sex;
-	         param['receiptDtoList['+i+'].age']=age;
-	         param['receiptDtoList['+i+'].residence']=residence;
-	         param['receiptDtoList['+i+'].job']=job;
-	         param['receiptDtoList['+i+'].pastExp']=pastExp;
-	         
-	         for(let j = 0; j < 19; j++) {
-				for(let x = 1; x < 4; x++) {
-					param['receiptDtoList['+i+'].scoreList['+j+']['+(x-1)+']'] = document.getElementsByName('form-score'+(j+1)+'-'+x)[i].value;
+			
+			
+			if(sex.trim() == '' && name.trim() == '') {
+	       	 	
+	         } else {
+	        	 if(name.trim() == '') { 
+	 	        	alert('이름을 입력해주세요.');
+	 	        	console.log(i);
+	 	       		return document.getElementsByName('form-name')[i].focus();
+	        	 } else if(sex.trim() == '') { 
+		 	        alert('성별을 입력해주세요.');
+		 	        console.log(i);
+		 	       	return document.getElementsByName('form-sex')[i].focus();
+		        } else if(age.trim() == '') { 
+		 	        alert('나이를 입력해주세요.');
+		 	        console.log(i);
+		 	       	return document.getElementsByName('form-age')[i].focus();
+		        } else if(residence.trim() == '') { 
+		 	        alert('거주지 입력해주세요.');
+		 	        console.log(i);
+		 	       	return document.getElementsByName('form-residence')[i].focus();
+		        } else if(job.trim() == '') { 
+		 	        alert('직업을 입력해주세요.');
+		 	        console.log(i);
+		 	       	return document.getElementsByName('form-job')[i].focus();
+		        } else if(pastExp.trim() == '') { 
+		 	        alert('과거 상담 서비스 경험을 입력해주세요.');
+		 	        console.log(i);
+		 	       	return document.getElementsByName('form-pastExp')[i].focus();
+		        }
+		         for(let j = 0; j < 19; j++) {
+					for(let x = 1; x < 4; x++) {
+						if(document.getElementsByName('form-score'+(j+1)+'-'+x)[i].value.trim() == '') { 
+							alert('점수를 입력해주세요.');
+							return document.getElementsByName('form-score'+(j+1)+'-'+x)[i].focus();
+						}
+						param['receiptDtoList['+i+'].scoreList['+j+']['+(x-1)+']'] = document.getElementsByName('form-score'+(j+1)+'-'+x)[i].value;
+					}
 				}
-			}
+	         }
+			 if(sex=="") {
+				 break;
+			 } else { 
+				 param['receiptDtoList['+i+'].agency']=agency;
+		         param['receiptDtoList['+i+'].date']=date; 
+		         param['receiptDtoList['+i+'].contents']=contents; 
+		         param['receiptDtoList['+i+'].session']=session; 
+		         param['receiptDtoList['+i+'].name']=name; 
+		         param['receiptDtoList['+i+'].sex']=sex;
+		         param['receiptDtoList['+i+'].age']=age;
+		         param['receiptDtoList['+i+'].residence']=residence;
+		         param['receiptDtoList['+i+'].job']=job;
+		         param['receiptDtoList['+i+'].pastExp']=pastExp;
+			 }
 		}
-		
-		
 		 console.log(param);
 	      $.ajax({
 	         url: "/insertForm/receiptInsertForm/insertData.do",
@@ -551,9 +548,5 @@
 	      })
 	}
 	</script>
-	
-	
-	
-		
 </body>
 </html>

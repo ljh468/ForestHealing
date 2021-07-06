@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import poly.dto.HealingInsertDTO;
 import poly.dto.PreventInsertDTO;
 import poly.dto.ProgramInsertDTO;
+import poly.dto.ReceiptInsertDTO;
 import poly.dto.ServiceInsertDTO;
 import poly.persistance.mapper.IInsertDataMapper;
 import poly.service.IInsertDataService;
@@ -23,9 +24,7 @@ public class InsertDataService implements IInsertDataService {
 	@Override
 	public int serviceInsertData(ServiceInsertDTO serviceDtoList) throws Exception {
 		log.info(this.getClass().getName() + "serviceInsertData Start !!");
-		
 		int result = insertDataMapper.serviceInsertData(serviceDtoList);
-		
 		log.info(this.getClass().getName() + "serviceInsertData End !!");
 		return result;
 	}
@@ -33,9 +32,7 @@ public class InsertDataService implements IInsertDataService {
 	@Override
 	public int programInsertData(ProgramInsertDTO programDtoList) throws Exception {
 		log.info(this.getClass().getName() + "programInsertData Start !!");
-		
 		int result = insertDataMapper.programInsertData(programDtoList);
-		
 		log.info(this.getClass().getName() + "programInsertData End !!");
 		return result;
 	}
@@ -43,10 +40,9 @@ public class InsertDataService implements IInsertDataService {
 	@Override
 	public int preventInsertData(PreventInsertDTO preventDtoList) throws Exception {
 		log.info(this.getClass().getName() + "preventInsertData Start !!");
-		
 		int result = insertDataMapper.preventInsertData(preventDtoList);
 		log.info(this.getClass().getName() + "preventInsertData End !!");
-		return 0;
+		return result;
 	}
 
 	@Override
@@ -54,9 +50,15 @@ public class InsertDataService implements IInsertDataService {
 		log.info(this.getClass().getName() + "healingInsertData Start !!");
 		int result = insertDataMapper.healingInsertData(healingDtoList);
 		log.info(this.getClass().getName() + "healingInsertData End !!");
-		return 0;
+		return result;
 	} 
 	
-
+	@Override
+	public int receiptInsertData(ReceiptInsertDTO receiptDtoList) throws Exception {
+		log.info(this.getClass().getName() + ".receiptInsertData Start !!");
+		int result = insertDataMapper.receiptInsertData(receiptDtoList);
+		log.info(this.getClass().getName() + ".receiptInsertData End !!");
+		return result;
+	} 
 
 }

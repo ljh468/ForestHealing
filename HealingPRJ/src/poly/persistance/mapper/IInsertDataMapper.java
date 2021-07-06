@@ -4,6 +4,7 @@ import config.Mapper;
 import poly.dto.HealingInsertDTO;
 import poly.dto.PreventInsertDTO;
 import poly.dto.ProgramInsertDTO;
+import poly.dto.ReceiptInsertDTO;
 import poly.dto.ServiceInsertDTO;
 
 @Mapper("InsertDataMapper")
@@ -17,4 +18,5 @@ public interface IInsertDataMapper {
 	
 	public int healingInsertData(HealingInsertDTO healingDtoList) throws Exception;
 
+	public int receiptInsertData(ReceiptInsertDTO receiptDtoList) throws Exception;
 }

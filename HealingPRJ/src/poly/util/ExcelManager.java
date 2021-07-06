@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.DateUtil;
@@ -20,7 +21,7 @@ import poly.dto.StudentDTO;
 
 public class ExcelManager {
 	
-	 public static List<StudentDTO> getStudentList() throws EncryptedDocumentException, IOException {
+	 public static List<StudentDTO> getStudentList() throws EncryptedDocumentException, IOException, InvalidFormatException {
 	        List<StudentDTO> studentList = new ArrayList<StudentDTO>();
 	 
 	        String filePath = "C:\\excel\\test01.xlsx";

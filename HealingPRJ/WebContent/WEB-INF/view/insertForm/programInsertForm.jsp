@@ -10,16 +10,7 @@
 	<link href="/lumino/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/lumino/css/datepicker3.css" rel="stylesheet">
 	<link href="/lumino/css/styles.css" rel="stylesheet">
-	
-	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-	<!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-
-
 	<!-- 홍두표 - 나눔스퀘어 폰트 불러오기 -->
 	<style>
 		@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
@@ -35,17 +26,12 @@
 		}
 	</style>
 	<!-- 홍두표 - 나눔스퀘어 폰트 불러오기 -->
-
-
 </head>
 <body>
 	<!--/.sidebar Sart-->
-
 	<%@ include file="/WEB-INF/view/top.jsp"%>
 	<%@ include file="/WEB-INF/view/sidebar.jsp"%>
-
 	<!--/.sidebar End-->
-		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -71,19 +57,20 @@
 			<div class="col-md-12">
 			<div class="col-md-3">
 				<div class="form-group">
-					<label>입력양식</label>
-					<select class="form-control">
-						<option>서비스환경 만족도</option>
-						<option>프로그램 만족도</option>
-						<option>예방서비스 효과평가</option>
-						<option>힐링서비스 효과평가</option>
+					<label>입력양식</label> 
+					<select class="form-control" onchange="location.href=this.value">
+						<option value="http://localhost:9000/insertForm/serviceInsertForm.do">서비스환경 만족도</option>
+						<option value="http://localhost:9000/insertForm/programInsertForm.do" selected>프로그램 만족도</option>
+						<option value="http://localhost:9000/insertForm/receiptInsertForm.do">상담&치유서비스 효과평가</option>
+						<option value="http://localhost:9000/insertForm/preventInsertForm.do">예방서비스 효과평가</option>
+						<option value="http://localhost:9000/insertForm/healingInsertForm.do">힐링서비스 효과평가</option>
 					</select>
 				</div>
 			</div>
 			<!-- 고르기 버튼 끝 -->
-			</div>
-		</div>
 			
+			
+			</div>
 			<div class="col-md-12">
 				
 				<div class="panel panel-default chat">
@@ -217,106 +204,94 @@
 						<%
 							for(int i=0; i<20; i++)  { 
 						%>
-						
-						<div style="width: 1400px; height: 60px;" name="form-main">
-							<!--  -->
-							<div style="width: 60px; float: left; margin-right: 10px;">
-								<input class="form-control" name='form-sex' placeholder="성별">
-							</div>
-							<!--  -->
-							<div style="width: 60px; float: left; margin-right: 10px;">
-								<input class="form-control" name='form-age' placeholder="연령">
-							</div>
-							<div style="width: 90px; float: left; margin-right: 10px;">
-								<select class="form-control" name='form-residence' style="height: 46px;">
-									<option>서울</option>
-									<option>부산</option>
-									<option>대구</option>
-									<option>인천</option>
-									<option>광주</option>
-									<option>대전</option>
-									<option>울산</option>
-									<option>세종</option>
-									<option>경기</option>
-									<option>강원</option>
-									<option>충북</option>
-									<option>충남</option>
-									<option>전북</option>
-									<option>전남</option>
-									<option>경북</option>
-									<option>경남</option>
-									<option>제주</option>
-								</select>
-							</div>
-							<div style="width: 120px; float: left; margin-right: 10px;">
-								<select class="form-control" name='form-job' style="height: 46px;">
-									<option>학생</option>
-									<option>자영업</option>
-									<option>서비스직</option>
-									<option>판매영업직</option>
-									<option>기능/생산직</option>
-									<option>단순노무직</option>
-									<option>고위공직</option>
-									<option>임직원</option>
-									<option>전문직</option>
-									<option>일반사무직</option>
-									<option>농림어업축산직</option>
-									<option>주부</option>
-									<option>무직</option>
-									<option>기타</option>
-								</select>
-							</div>
-							<div style="width: 60px; float: left; margin-right: 20px;">
-								<input class="form-control" name='form-score1' placeholder="점수">
-							</div>
-							<div style="width: 60px; float: left;margin-right: 20px;">
-								<input class="form-control" name='form-score2' placeholder="점수">
-							</div>
-							<div style="width: 60px; float: left;margin-right: 20px;">
-								<input class="form-control" name='form-score3' placeholder="점수">
-							</div>
-							<div style="width: 60px; float: left;margin-right: 27px;margin-left: 8px;">
-								<input class="form-control" name='form-score4' placeholder="점수">
-							</div>
-							<div style="width: 60px; float: left; margin-right: 27px;margin-left: 8px;">
-								<input class="form-control" name='form-score5' placeholder="점수">
-							</div>
-							<div style="width: 60px; float: left; margin-right: 27px;margin-left: 8px;">
-								<input class="form-control" name='form-score6' placeholder="점수">
-							</div>
-							<div style="width: 60px; float: left; margin-right: 20px;">
-								<input class="form-control" name='form-score7' placeholder="점수">
-							</div>
-							<div style="width: 60px; float: left;margin-right: 20px;">
-								<input class="form-control" name='form-score8' placeholder="점수">
-							</div>
-							<div style="width: 60px; float: left;margin-right: 20px;">
-								<input class="form-control" name='form-score9' placeholder="점수">
-							</div>
-							<div style="width: 140px; float: left; margin-right: 10px; margin-left: 10px">
-								<input class="form-control" name='form-opinion1' placeholder="기타의견">
+						<div id="insertForm">						
+							<div style="width: 1400px; height: 60px;" name='form-main'>
+								<!--  -->
+								<div style="width: 60px; float: left; margin-right: 10px;">
+									<input class="form-control" name='form-sex' placeholder="성별">
+								</div>
+								<!--  -->
+								<div style="width: 60px; float: left; margin-right: 10px;">
+									<input class="form-control" name='form-age' placeholder="연령">
+								</div>
+								<div style="width: 90px; float: left; margin-right: 10px;">
+									<select class="form-control" name='form-residence' style="height: 46px;">
+										<option>서울</option>
+										<option>부산</option>
+										<option>대구</option>
+										<option>인천</option>
+										<option>광주</option>
+										<option>대전</option>
+										<option>울산</option>
+										<option>세종</option>
+										<option>경기</option>
+										<option>강원</option>
+										<option>충북</option>
+										<option>충남</option>
+										<option>전북</option>
+										<option>전남</option>
+										<option>경북</option>
+										<option>경남</option>
+										<option>제주</option>
+									</select>
+								</div>
+								<div style="width: 120px; float: left; margin-right: 10px;">
+									<select class="form-control" name='form-job' style="height: 46px;">
+										<option>학생</option>
+										<option>자영업</option>
+										<option>서비스직</option>
+										<option>판매영업직</option>
+										<option>기능/생산직</option>
+										<option>단순노무직</option>
+										<option>고위공직</option>
+										<option>임직원</option>
+										<option>전문직</option>
+										<option>일반사무직</option>
+										<option>농림어업축산직</option>
+										<option>주부</option>
+										<option>무직</option>
+										<option>기타</option>
+									</select>
+								</div>
+								<div style="width: 60px; float: left; margin-right: 20px;">
+									<input class="form-control" name='form-score1' placeholder="점수">
+								</div>
+								<div style="width: 60px; float: left;margin-right: 20px;">
+									<input class="form-control" name='form-score2' placeholder="점수">
+								</div>
+								<div style="width: 60px; float: left;margin-right: 20px;">
+									<input class="form-control" name='form-score3' placeholder="점수">
+								</div>
+								<div style="width: 60px; float: left;margin-right: 27px;margin-left: 8px;">
+									<input class="form-control" name='form-score4' placeholder="점수">
+								</div>
+								<div style="width: 60px; float: left; margin-right: 27px;margin-left: 8px;">
+									<input class="form-control" name='form-score5' placeholder="점수">
+								</div>
+								<div style="width: 60px; float: left; margin-right: 27px;margin-left: 8px;">
+									<input class="form-control" name='form-score6' placeholder="점수">
+								</div>
+								<div style="width: 60px; float: left; margin-right: 20px;">
+									<input class="form-control" name='form-score7' placeholder="점수">
+								</div>
+								<div style="width: 60px; float: left;margin-right: 20px;">
+									<input class="form-control" name='form-score8' placeholder="점수">
+								</div>
+								<div style="width: 60px; float: left;margin-right: 20px;">
+									<input class="form-control" name='form-score9' placeholder="점수">
+								</div>
+								<div style="width: 140px; float: left; margin-right: 10px; margin-left: 10px">
+									<input class="form-control" name='form-opinion1' placeholder="기타의견">
+								</div>
 							</div>
 						</div>
 						<% }  %>
-					<!-- </div> -->
-					
-				<div id="field"></div>
-						<!--  -->
-						
+						<div id="field"></div>
+					</div>
 				</div>
-				</div>
-				
 			</div>
-				
 		</div>
-		<!--  -->
-		
-		
-		
-		<!--test구간  -->
-
-		<!--  -->
-		<!--/.main-->
+	</div>	
 	
 	<script src="/lumino/js/jquery-1.11.1.min.js"></script>
 	<script src="/lumino/js/bootstrap.min.js"></script>
@@ -326,33 +301,6 @@
 	<script src="/lumino/js/easypiechart-data.js"></script>
 	<script src="/lumino/js/bootstrap-datepicker.js"></script>
 	<script src="/lumino/js/custom.js"></script>
-	
-	
-	<!--홍석민 버튼 활성화 비활성화 -->
-
-	<script type="text/javascript">
-		var insertBtn = document.getElementById('insertInfo');
-		var loadBtn = document.getElementById('loadExcel');
-		
-		function btn_insertInfo() {
-			if(insertBtn.disabled==false) {
-				loadBtn.disabled = false;
-				insertBtn.disabled = 'disabled';		
-			}
-		}
-		function btn_loadExcel() {
-			if(loadBtn.disabled==false) {
-				insertBtn.disabled = false;
-				loadBtn.disabled = 'disabled';	
-			}
-		}
-
-		
-	</script>
-	
-	
-	<!--test구간  -->
-
 	<script type="text/javascript">
 		function add_div() {
 
@@ -385,6 +333,24 @@
 		
 		let formArr = document.getElementsByName('form-main');
 		
+		//유효성 검사
+	      if(agency.trim() == '') {
+	    	  alert('기관을 입력해주세요.');
+	    	  return false;
+	      } else if(date.trim() == '') { 
+	    	  alert('실시일자를 입력해주세요.');
+	    	  return false;
+	      } else if(ptcProgram.trim() == '') { 
+	    	  alert('참여프로그램을 입력해주세요.');
+	    	  return false;
+	      } else if(teacher.trim() == '') { 
+	    	  alert('강사명을 입력해주세요.');
+	    	  return false;
+	      } else if(place.trim() == '') { 
+	    	  alert('장소를 입력해주세요.');
+	    	  return false;
+	      } 
+		
 		for(let i = 0; i < formArr.length; i++) {
 			let sex = document.getElementsByName('form-sex')[i].value;
 			let age = document.getElementsByName('form-age')[i].value;
@@ -400,6 +366,54 @@
 			let score8 = document.getElementsByName('form-score8')[i].value;
 			let score9 = document.getElementsByName('form-score9')[i].value;
 			let opinion1 = document.getElementsByName('form-opinion1')[i].value;
+			
+			if(sex.trim() == '' && age.trim() == '') {
+	       	 	
+	         } else {
+	        	 if(sex.trim() == '') { 
+		 	        	alert('성별을 입력해주세요.');
+		 	       		return document.getElementsByName('form-sex')[i].focus();
+	        	 	} else if(age.trim() == '') { 
+		 	        	alert('연령을 입력해주세요.');
+		 	       		return document.getElementsByName('form-age')[i].focus();
+	        	 	} else if(residence.trim() == '') {
+		 	        	alert('거주지를 입력해주세요.');
+		 	       		return document.getElementsByName('form-residence')[i].focus();
+	        	 	} else if(job.trim() == '') {
+		 	        	alert('직업을 입력해주세요.');
+		 	       		return document.getElementsByName('form-job')[i].focus();
+	        	 	} else if(score1.trim() == '') {
+		 	        	alert('점수를 입력해주세요.');
+		 	       		return document.getElementsByName('form-score1')[i].focus();
+	        	 	} else if(score2.trim() == '') {
+		 	        	alert('점수를 입력해주세요.');
+		 	       		return document.getElementsByName('form-score2')[i].focus();
+	        	 	} else if(score3.trim() == '') {
+	 	        		alert('점수를 입력해주세요.');
+	 	       			return document.getElementsByName('form-score3')[i].focus();
+	        	 	} else if(score4.trim() == '') {
+	 	        		alert('점수를 입력해주세요.');
+	 	       			return document.getElementsByName('form-score4')[i].focus();
+	        	 	} else if(score5.trim() == '') {
+	 	        		alert('점수를 입력해주세요.');
+	 	       			return document.getElementsByName('form-score5')[i].focus();
+	        	 	} else if(score6.trim() == '') {
+	 	        		alert('점수를 입력해주세요.');
+	 	       			return document.getElementsByName('form-score6')[i].focus();
+	        	 	} else if(score7.trim() == '') {
+	 	        		alert('점수를 입력해주세요.');
+	 	       			return document.getElementsByName('form-score7')[i].focus();
+	        	 	} else if(score8.trim() == '') {
+	 	        		alert('점수를 입력해주세요.');
+	 	       			return document.getElementsByName('form-score8')[i].focus();
+	        	 	} else if(score9.trim() == '') {
+	 	        		alert('점수를 입력해주세요.');
+	 	       			return document.getElementsByName('form-score9')[i].focus();
+	        	 	} else if(score9.trim() == '') {
+		 	        	alert('점수를 입력해주세요.');
+		 	       		return document.getElementsByName('form-score9')[i].focus();
+		        	}
+	         }
 			
 			let scoreList = [score1, score2, score3, score4, score5, score6, score7, score8, score9, opinion1];
 			 

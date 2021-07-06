@@ -30,40 +30,49 @@ public class TestController {
 	private ITestService testService;
 	
 	
-	@RequestMapping(value = "index")
-	public String index(HttpServletRequest request, HttpServletResponse reponse) throws IOException {
+	@RequestMapping(value = "old_index")
+	public String old_index(HttpServletRequest request, HttpServletResponse reponse) throws IOException {
 		log.info("hi");
 
-		return "/index";
+		return "/old_index";
 	}
 
 	// 만족도및 효과평가 이재훈
-	@RequestMapping(value = "index2")
-	public String index2(HttpServletRequest request, HttpServletResponse reponse) {
+	@RequestMapping(value = "old_index2")
+	public String old_index2(HttpServletRequest request, HttpServletResponse reponse) {
 
 		log.info("hi");
-		return "/index2";
+		return "/old_index2";
 	}
+	
+	@RequestMapping(value = "old_index3")
+	public String old_index3(HttpServletRequest request, HttpServletResponse reponse) {
 
+		log.info("hi");
+		return "/old_index3";
+	}
+	
+
+	
 	@RequestMapping(value = "seBy/seBygroup")
 	public String seBygroup(HttpServletRequest request, HttpServletResponse reponse) {
 
 		log.info("seBygroup");
-		return "seBy/seBygroup";
+		return "/seBy/seBygroup";
 	}
 
 	@RequestMapping(value = "seBy/seBysubject")
 	public String seBysubject(HttpServletRequest request, HttpServletResponse reponse) {
 
 		log.info("seBysubject");
-		return "seBy/seBysubject";
+		return "/seBy/seBysubject";
 	}
 
 	@RequestMapping(value = "seBy/seBysubject2")
 	public String seBysubject2(HttpServletRequest request, HttpServletResponse reponse) {
 
 		log.info("seBysubject2");
-		return "seBy/seBysubject2";
+		return "/seBy/seBysubject2";
 	}
 
 	// 운영결과 페이지 호출 _ 유연준
@@ -104,5 +113,5 @@ public class TestController {
 		log.info(name);
 		return "/resProgram_chart";
 	}
-
+	
 }

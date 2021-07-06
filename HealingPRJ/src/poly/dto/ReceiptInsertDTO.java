@@ -14,9 +14,7 @@ public class ReceiptInsertDTO {
 	private String job;
 	private String pastExp;
 	private List<List<String>> scoreList;
-	
 	private List<ReceiptInsertDTO> receiptDtoList;
-	
 	public String getAgency() {
 		return agency;
 	}
