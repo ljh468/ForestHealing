@@ -25,10 +25,10 @@ public class ResultController {
 	//운영결과 페이지 호출 _ 유연준
 	@RequestMapping(value ="result/YearMonthResult")
 	public String resultProgram(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
 		log.info("연월 프로그램 결과");
 		return "result/YearMonthResult";
 	}
+	
 	@RequestMapping(value ="result/YearMonthResult_chart")
 	public String YearMonthResult_chart(BasicInfoDTO uDTO, HttpServletResponse response) throws Exception {
 		log.info("연월 프로그램 차트 실행");
@@ -65,7 +65,6 @@ public class ResultController {
 
 	@RequestMapping(value ="result/SearchResult")
 	public String SearchResult(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
 		log.info("주제어별 결과");
 		return "result/SearchResult";
 	}

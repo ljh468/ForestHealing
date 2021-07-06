@@ -54,23 +54,8 @@
 		<!--홍석민이 만들고 있음  -->
 		<div class="row">
 			<!-- 고르기 버튼 시작-->
-			<div class="col-md-12">
-			<div class="col-md-3">
-				<div class="form-group">
-					<label>입력양식</label> 
-					<select class="form-control" onchange="location.href=this.value">
-						<option value="http://localhost:9000/insertForm/serviceInsertForm.do">서비스환경 만족도</option>
-						<option value="http://localhost:9000/insertForm/programInsertForm.do" selected>프로그램 만족도</option>
-						<option value="http://localhost:9000/insertForm/receiptInsertForm.do">상담&치유서비스 효과평가</option>
-						<option value="http://localhost:9000/insertForm/preventInsertForm.do">예방서비스 효과평가</option>
-						<option value="http://localhost:9000/insertForm/healingInsertForm.do">힐링서비스 효과평가</option>
-					</select>
-				</div>
-			</div>
+			<%@ include file="/WEB-INF/view/select.jsp"%>
 			<!-- 고르기 버튼 끝 -->
-			
-			
-			</div>
 			<div class="col-md-12">
 				
 				<div class="panel panel-default chat">

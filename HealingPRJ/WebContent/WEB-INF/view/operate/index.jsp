@@ -43,7 +43,6 @@
 
 	<!-- submit css -->
 	<style>
-		body,
 		.button,
 		.tick {
 			display: flex;
