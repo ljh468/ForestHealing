@@ -47,8 +47,8 @@ public class ResultController {
 	@RequestMapping(value ="result/ProgramResult_chart")
 	public String ProgramResult_chart(BasicInfoDTO bDTO, HttpServletResponse response,Model model) throws Exception {
 		log.info("프로그램 차트 실행");
-		log.info(bDTO.getOpenday());
-		log.info(bDTO.getAgency());
+		log.info("bDTO.getOpenday() : "+ bDTO.getOpenday());
+		log.info("bDTO.getAgency() : " + bDTO.getAgency());
 		log.info("시설서비스 만족도 평가 시작");
 		//List<ServiceSaf_avgDTO> Service_env_satList = testService.getServiceSaf(uDTO);
 		/*
@@ -56,7 +56,7 @@ public class ResultController {
 		 * model.addAttribute("Service_env_satList", Service_env_satList); }
 		 */
 		List<BasicInfoDTO> basicList = resultService.getBasiclist(bDTO);
-		log.info(basicList.get(0).getResidence());
+		log.info("basicList : " + basicList.get(0).getAgency());
 		model.addAttribute("basicList", basicList);
 		log.info("시설서비스 만족도 평가 종료");
 		log.info("프로그램 차트 종료");

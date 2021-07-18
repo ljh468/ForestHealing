@@ -39,7 +39,7 @@
 	<script>
 	 function search(){
 		var openday = $("#openday").val();
-		var agency = $("#agency").val();
+		var agency = $("#agency").val().trim();
 		console.log(openday)
 		console.log(agency);
 		var search = {"openday":openday,"agency":agency};
@@ -53,7 +53,7 @@
 				$("#ProgramResult_chart").html(data);
 			},
 			error:function (e){
-				alert("error");
+				alert("조회를 할 수 없습니다.");
 			}
 		})
 	} 

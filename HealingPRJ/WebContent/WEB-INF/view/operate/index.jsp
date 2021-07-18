@@ -13,7 +13,7 @@
 	<link href="/lumino/css/styles.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/checkstyle.css">
 
-
+자바스크립트 alert 디자인
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i"
 		rel="stylesheet">

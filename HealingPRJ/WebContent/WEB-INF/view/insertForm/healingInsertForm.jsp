@@ -406,6 +406,7 @@
 	<script src="/lumino/js/easypiechart-data.js"></script>
 	<script src="/lumino/js/bootstrap-datepicker.js"></script>
 	<script src="/lumino/js/custom.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	
 	<!--홍석민 버튼 활성화 비활성화 -->
 	<script type="text/javascript">
@@ -512,7 +513,13 @@
 	         type: "POST",
 	         data: param, 
 	         success:function(result) {
-	            console.log(result);
+	        	 swal({
+	 				title : "전송 성공 !!",
+	 				text : "확인 버튼을 눌러주세요.",
+	 				icon : "success"
+	 			}).then(function() {
+	 				window.location.reload();
+	 			});
 	         },
 	         error:function(e) {
 	            console.log(e);

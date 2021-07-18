@@ -584,7 +584,13 @@ body {
 				url : "/insertForm/serviceInsertForm/insertData.do",
 				data : param,
 				success : function(result) {
-					console.log(result);
+					swal({
+		 				title : "전송 성공 !!",
+		 				text : "확인 버튼을 눌러주세요.",
+		 				icon : "success"
+		 			}).then(function() {
+		 				window.location.reload();
+		 			});
 				},
 				error : function(e) {
 					console.log(e);
