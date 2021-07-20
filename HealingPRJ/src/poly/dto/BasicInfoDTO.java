@@ -17,6 +17,7 @@ public class BasicInfoDTO {
 	private List<String> support;
 	private List<String> income_type;
 	private List<String> part_type;
+	private List<String> age_group;
 	private List<String> biz_purpose;
 	private List<String> service_type;
 	private List<ProgramInOutDTO> program_in_out;
@@ -26,13 +27,14 @@ public class BasicInfoDTO {
 	private String room_lead_room;
 	private String room_etc_people;
 	private String room_etc_room;
-	private List<String> meal_type;
+	private String meal_type;
 	private String meal_part;
 	private String meal_lead;
 	private String meal_etc;
 	private String program_opinion;
 	private String service_opinion;
 	private String overall_opinion;
+	
 	public String getBasic_info_seq() {
 		return basic_info_seq;
 	}
@@ -117,6 +119,12 @@ public class BasicInfoDTO {
 	public void setPart_type(List<String> part_type) {
 		this.part_type = part_type;
 	}
+	public List<String> getAge_group() {
+		return age_group;
+	}
+	public void setAge_group(List<String> age_group) {
+		this.age_group = age_group;
+	}
 	public List<String> getBiz_purpose() {
 		return biz_purpose;
 	}
@@ -171,10 +179,10 @@ public class BasicInfoDTO {
 	public void setRoom_etc_room(String room_etc_room) {
 		this.room_etc_room = room_etc_room;
 	}
-	public List<String> getMeal_type() {
+	public String getMeal_type() {
 		return meal_type;
 	}
-	public void setMeal_type(List<String> meal_type) {
+	public void setMeal_type(String meal_type) {
 		this.meal_type = meal_type;
 	}
 	public String getMeal_part() {

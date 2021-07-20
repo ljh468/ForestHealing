@@ -67,7 +67,7 @@
 			#{room_lead_room},
 			#{room_etc_people},
 			#{room_etc_room},
-			CONCAT_WS(',', <foreach collection="meal_type" item="meal_type" separator=",">#{meal_type}</foreach>),
+			#{meal_type},
 			#{meal_part},
 			#{meal_lead},
 			#{meal_etc},
@@ -78,4 +78,22 @@
 		)
 	</insert>
 	
+	<!-- 프로그램 저장 -->
+	<insert id="insertProgramList" parameterType="ProgramInOutDTO" >
+		INSERT INTO
+			PROGRAM_INFO
+			(
+				AGENCY,
+				OPENDAY,
+				PROGRAM,
+				IN_TUTOR,
+				OUT_TUTOR
+			) values (
+				#{agency},
+				#{openday},
+				#{program},
+				#{in_tutor},
+				#{out_tutor}
+			)
+	</insert>
 </mapper>

@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import poly.dto.BasicInfoDTO;
+import poly.dto.ProgramInOutDTO;
 import poly.persistance.mapper.IOperateMapper;
 import poly.service.IOperateService;
 
@@ -23,6 +24,12 @@ public class OperateService implements IOperateService {
 		new BasicInfoDTO().getAll(bDTO);
 		log.info(this.getClass()+"------out");
 		return operateMapper.insertOperateResultProc(bDTO);
+	}
+	
+	// PROGRAM_INFO 테이블 만들면 프로그램저장 _210720 이재훈
+	@Override
+	public int insertProgramList(ProgramInOutDTO prDTO) {
+		return operateMapper.insertProgramList(prDTO);
 	}
 
 }
