@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import poly.dto.BasicInfoDTO;
+import poly.dto.InOutDTO;
 import poly.dto.ProgramInOutDTO;
 import poly.service.IOperateService;
 
@@ -37,14 +38,16 @@ public class OperateController {
 		log.info(this.getClass() + "--- in");
 
 		String agency = bDTO.getAgency();
+		log.info("agency : " + agency);
 		String openday = bDTO.getOpenday();
+		log.info("openday : " + openday);
 
 		/**
-		 * program_info테이블은  단체명, 시작일자, 프로그램명, intutor, oututor로 이루어짐 
-		 * 현재 단체명, 시작일자로 외래키를 잡음
-		 * 변경할 필요 있음
+		 * program_info테이블은 단체명, 시작일자, 프로그램명, intutor, oututor로 이루어짐 현재 단체명, 시작일자로 외래키로 잡음
+		 * 변경해도 됨 _0720이재훈
 		 */
 		int res2 = 0;
+		log.info("in_out_size : " + bDTO.getProgram_in_out().size());
 		for (int i = 0; i < bDTO.getProgram_in_out().size(); i++) {
 			String program_name = bDTO.getProgram_in_out().get(i).getProgram();
 			String in_tutor = bDTO.getProgram_in_out().get(i).getIn_tutor();
@@ -63,7 +66,7 @@ public class OperateController {
 		}
 
 		int res = operateService.insertOperateResultProc(bDTO);
-		if (res != 0 && res2 != 0) {
+		if (res != 0 && res2 !=0) {
 			msg = "입력이 정상적으로 처리되었습니다.";
 			url = "operate/insertOperateResult.do";
 		} else {

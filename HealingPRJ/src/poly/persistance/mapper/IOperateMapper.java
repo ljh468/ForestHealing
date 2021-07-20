@@ -2,6 +2,7 @@ package poly.persistance.mapper;
 
 import config.Mapper;
 import poly.dto.BasicInfoDTO;
+import poly.dto.InOutDTO;
 import poly.dto.ProgramInOutDTO;
 
 @Mapper("IOperateMapper")

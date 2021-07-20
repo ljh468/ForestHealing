@@ -13,6 +13,8 @@
 		<typeAlias alias="ReceiptInsertDTO" type="poly.dto.ReceiptInsertDTO" />
     	<typeAlias alias="ServiceInsertDTO" type="poly.dto.ServiceInsertDTO" />
 		<typeAlias alias="StudentDTO" type="poly.dto.StudentDTO" />
+		<typeAlias alias="ProgramInOutDTO" type="poly.dto.ProgramInOutDTO" />
+		<typeAlias alias="InOutDTO" type="poly.dto.InOutDTO" />
 		
     </typeAliases>
 </configuration>

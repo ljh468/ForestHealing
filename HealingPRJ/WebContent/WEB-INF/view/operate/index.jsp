@@ -254,10 +254,10 @@ body {
 								<label class="col-md-2 control-label">사업목적</label>
 								<div class="col-md-10">
 									<label class="checkbox-wrap checkbox-success"> <input
-										type="radio" name="biz_purpose" id="income" value="사회공헌사업">사회공헌사업<span
+										type="radio" name="biz_purpose" id="business" value="사회공헌사업">사회공헌사업<span
 										class="checkmark"></span>
 									</label> <label class="checkbox-wrap checkbox-success"> <input
-										type="radio" name="biz_purpose" id="income" value="수익사업">수익사업<span
+										type="radio" name="biz_purpose" id="business" value="수익사업">수익사업<span
 										class="checkmark"></span>
 									</label>
 								</div>
@@ -314,13 +314,13 @@ body {
 								<label class="col-md-2 control-label">수입구분</label>
 								<div class="col-md-10">
 									<label class="checkbox-wrap checkbox-success"> <input
-										type="radio" name="income_type" id="business" value="녹색자금">녹색자금<span
+										type="radio" name="income_type" id="income" value="녹색자금">녹색자금<span
 										class="checkmark"></span>
 									</label> <label class="checkbox-wrap checkbox-success"> <input
-										type="radio" name="income_type" id="business"
+										type="radio" name="income_type" id="income"
 										value="산림복지바우처">산림복지바우처<span class="checkmark"></span>
 									</label> <label class="checkbox-wrap checkbox-success"> <input
-										type="radio" name="income_type" id="business" value="기타">기타<span
+										type="radio" name="income_type" id="income" value="기타">기타<span
 										class="checkmark"></span>
 									</label>
 								</div>
@@ -981,7 +981,7 @@ body {
 		console.table(object);
 		// 프로그램 결과 데이터가 담긴 object객체를 컨트롤러로 전달 
 		$.ajax({
-			url: "/operate/insertOperateResultProc.do",
+			url: "/insertOperateResultProc.do",
 			method: "post",
 			data: object,
 			success: function (res) {
