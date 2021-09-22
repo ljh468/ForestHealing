@@ -1,15 +1,19 @@
 package poly.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import poly.dto.HealingInsertDTO;
+import poly.dto.HrvInsertDTO;
 import poly.dto.PreventInsertDTO;
 import poly.dto.ProgramInsertDTO;
 import poly.dto.ReceiptInsertDTO;
 import poly.dto.ServiceInsertDTO;
+import poly.dto.VibraInsertDTO;
 import poly.persistance.mapper.IInsertDataMapper;
 import poly.service.IInsertDataService;
 
@@ -58,6 +62,38 @@ public class InsertDataService implements IInsertDataService {
 		log.info(this.getClass().getName() + ".receiptInsertData Start !!");
 		int result = insertDataMapper.receiptInsertData(receiptDtoList);
 		log.info(this.getClass().getName() + ".receiptInsertData End !!");
+		return result;
+	} 
+	
+	@Override
+	public int hrvInsertData(HrvInsertDTO hrvDtoList) throws Exception {
+		log.info(this.getClass().getName() + ".hrvInsertData Start !!");
+		int result = insertDataMapper.hrvInsertData(hrvDtoList);
+		log.info(this.getClass().getName() + ".hrvInsertData End !!");
+		return result;
+	}
+
+	@Override
+	public int hasAgencyStartDate(HealingInsertDTO hiDTO) throws Exception {
+		log.info(this.getClass().getName() + ".hasAgencyStartDate Service Start !!");
+		int result = insertDataMapper.hasAgencyStartDate(hiDTO);
+		log.info(this.getClass().getName() + ".hasAgencyStartDate Service End !!");
+		return result;
+	}
+
+	@Override
+	public List<HealingInsertDTO> getPreviousList(HealingInsertDTO hiDTO) throws Exception {
+		log.info(this.getClass().getName() + ".getPreviousList Service Start !!");
+		List<HealingInsertDTO> hList = insertDataMapper.getPreviousList(hiDTO);
+		log.info(this.getClass().getName() + ".getPreviousList Service End !!");
+		return hList;
+	} 
+
+	@Override
+	public int vibraInsertData(VibraInsertDTO vibraDtoList) throws Exception {
+		log.info(this.getClass().getName() + ".vibraInsertData Start !!");
+		int result = insertDataMapper.vibraInsertData(vibraDtoList);
+		log.info(this.getClass().getName() + ".vibraInsertData End !!");
 		return result;
 	} 
 

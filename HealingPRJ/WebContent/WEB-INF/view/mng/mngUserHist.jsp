@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import ="poly.util.CmmUtil" %>
+<%@ page import ="java.util.List" %>
+<%@ page import ="poly.dto.HistoryDTO" %>
+
+
+<%
+	List<HistoryDTO> hList = (List<HistoryDTO>)request.getAttribute("hList");
+%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,106 +80,96 @@ body {
 		<!-- 홍두표 - 사용자 이용 기록 조회 -->
 		<div class="panel panel-default ">
 			<div class="panel-heading">
-				사용자 이용 기록 <span
-					class="pull-right clickable panel-toggle panel-button-tab-left"><em
-					class="fa fa-toggle-up"></em></span>
+				<h4 style="float : left; margin: 13px 10px 13px 0px;">사용자 이용 기록 | </h4>
+				<h4 style="float : left; margin: 13px 10px 13px 0px;">작성자</h4> 
+				<div style="width: 120px;float: left;margin-right: 10px;flex: auto;flex-basis: auto;white-space: nowrap;max-width: 300px;">
+					<input class="form-control form-reg_id" id='form-reg_id' placeholder="작성자">
+				</div>
+				<div style="float: left; margin: 2px 10px 2px 0px;">
+					<input type="button" class="btn btn-default btn-sm" value="조회" onclick="search()">
+				</div>
 			</div>
 
-			<div class="panel-body timeline-container">
-				<ul class="timeline">
-					<li>
-						<div class="timeline-badge primary">
-							<i class="glyphicon glyphicon-user"></i>
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<span class="timeline-title"
-									style="display: inline-block; margin-bottom: 3px; font-size: smaller;">홍두표
-									- 관리자 | </span> <span style="display: inline-block; font-size: small">2021-03-24
-									15:36</span>
+			<div class="panel-body timeline-container" id="main-div">
+				<ul class="timeline" id="timeline">
+					<%for(int i=0; i<hList.size(); i++) { 
+						if(hList.get(i).getReg_id().equals("관리자")) {
+					%>
+							<li>
+								<div class="timeline-badge primary">
+									<i class="glyphicon glyphicon-user"></i>
+								</div>
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<span class="timeline-title" style="display: inline-block; margin-bottom: 3px; font-size: smaller;"><%=hList.get(i).getReg_id()%> | </span> 
+										<span style="display: inline-block; font-size: small"><%=hList.get(i).getDate()%></span>
+									</div>
+									<div class="timeline-body">
+										<span><%=hList.get(i).getDescription()%></span>
+									</div>
+								</div>
+							</li>
+						<%							
+						} else {
+						%>
+						<li>
+							<div class="timeline-badge">
+								<i class="glyphicon glyphicon-user"></i>
 							</div>
-							<div class="timeline-body">
-								<span>이재훈(님) 권한 변경</span>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<span class="timeline-title"
+										style="display: inline-block; margin-bottom: 3px; font-size: smaller;"><%=hList.get(i).getReg_id()%>
+										- 직원 | </span> <span style="display: inline-block; font-size: small"><%=hList.get(i).getDate()%></span>
+								</div>
+								<div class="timeline-body">
+									<span><%=hList.get(i).getDescription()%></span>
+								</div>
 							</div>
-						</div>
-					</li>
-					<li>
-						<div class="timeline-badge">
-							<i class="glyphicon glyphicon-user"></i>
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<span class="timeline-title"
-									style="display: inline-block; margin-bottom: 3px; font-size: smaller;">홍석민
-									- 직원 | </span> <span style="display: inline-block; font-size: small">2021-03-24
-									14:00</span>
-							</div>
-							<div class="timeline-body">
-								<span>해당 일자에 홈페이지 접속</span>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="timeline-badge">
-							<i class="glyphicon glyphicon-user"></i>
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<span class="timeline-title"
-									style="display: inline-block; margin-bottom: 3px; font-size: smaller;">이재훈
-									- 관리자 | </span> <span style="display: inline-block; font-size: small">2021-03-23
-									20:15</span>
-							</div>
-							<div class="timeline-body">
-								<span>프로그램 하부 메뉴 변경</span>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="timeline-badge">
-							<i class="glyphicon glyphicon-user"></i>
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<span class="timeline-title"
-									style="display: inline-block; margin-bottom: 3px; font-size: smaller;">유연준
-									- 관리자 | </span> <span style="display: inline-block; font-size: small">2021-03-23
-									18:14</span>
-							</div>
-							<div class="timeline-body">
-								<span>홍석민(님) 권한 변경</span>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="timeline-badge primary">
-							<i class="glyphicon glyphicon-user"></i>
-						</div>
-						<div class="timeline-panel">
-							<div class="timeline-heading">
-								<span class="timeline-title"
-									style="display: inline-block; margin-bottom: 3px; font-size: smaller;">홍두표
-									- 관리자 | </span> <span style="display: inline-block; font-size: small">2021-03-20
-									18:14</span>
-							</div>
-							<div class="timeline-body">
-								<span>해당 일자에 홈페이지 접속</span>
-							</div>
-						</div>
-					</li>
+						</li>
+					<%
+						}
+					} 
+					%>
 				</ul>
 			</div>
 		</div>
-		<!-- <div class="row">
-			<div class="col-lg-12">
-				<div class="panel panel-default chat" style="word-break: break-all;">
-					사용중입니다.
+
+		<!--관리자 복사용 -->
+		<li style="display: none;">
+			<div class="timeline-badge primary">
+				<i class="glyphicon glyphicon-user"></i>
+			</div>
+			<div class="timeline-panel">
+				<div class="timeline-heading">
+					<span class="timeline-title"
+						style="display: inline-block; margin-bottom: 3px; font-size: smaller;">홍두표
+						- 관리자 | </span> <span style="display: inline-block; font-size: small">2021-03-24
+						15:36</span>
+				</div>
+				<div class="timeline-body">
+					<span>이재훈(님) 권한 변경</span>
 				</div>
 			</div>
-		</div> -->
+		</li>
 
-		<!--  -->
-
+		<!--직원 복사용 -->
+		<li style="display:none;">
+			<div class="timeline-badge">
+				<i class="glyphicon glyphicon-user"></i>
+			</div>
+			<div class="timeline-panel">
+				<div class="timeline-heading">
+					<span class="timeline-title"
+						style="display: inline-block; margin-bottom: 3px; font-size: smaller;">홍석민
+						- 직원 | </span> <span style="display: inline-block; font-size: small">2021-03-24
+						14:00</span>
+				</div>
+				<div class="timeline-body">
+					<span>해당 일자에 홈페이지 접속</span>
+				</div>
+			</div>
+		</li>
 
 	</div>
 	<!--/.main-->
@@ -183,15 +183,40 @@ body {
 	<script src="/lumino/js/bootstrap-datepicker.js"></script>
 	<script src="/lumino/js/custom.js"></script>
 	<script>
-		window.onload = function() {
-			var chart1 = document.getElementById("line-chart").getContext("2d");
-			window.myLine = new Chart(chart1).Line(lineChartData, {
-				responsive : true,
-				scaleLineColor : "rgba(0,0,0,.2)",
-				scaleGridLineColor : "rgba(0,0,0,.05)",
-				scaleFontColor : "#c5c7cc"
+		function search() {
+			let reg_id = document.getElementById('form-reg_id').value;
+			
+			$.ajax({
+				url: "/mng/mngGetUserHist/searchList.do",
+				type: "POST",
+				data: {"reg_id" : reg_id}, 
+				success:function(result) {
+					if(result.length==0) { 
+						alert('조회 결과가 없습니다.');
+						return false;
+					} 
+					console.log(result[0].reg_id);
+					$('#timeline').css("display","none");
+					let a = document.getElementById('main-div');
+					let text = "<ul class='timeline'>";
+					for(var i=0; i<result.length; i++) { 
+						text += "<li>";
+						text += "<div class='timeline-badge'><i class='glyphicon glyphicon-user'></i>";
+						text += "</div><div class='timeline-panel'>";
+						text += "<div class='timeline-heading'><span class='timeline-title' style='display: inline-block; margin-bottom: 3px; font-size: smaller;'>";
+						text += result[i].reg_id + "| </span> ";
+						text += "<span style='display: inline-block; font-size: small'>"+result[i].date + result[i].time+"</span></div>";
+						text += "<div class='timeline-body'><span>"+result[i].description+"</span>";
+						text += "</div></div></li>";
+					}
+					text += "</ul>";
+					a.innerHTML = text;
+				},
+				error:function(e) {
+					console.log(e);
+				}
 			});
-		};
+		}
 	</script>
 
 </body>

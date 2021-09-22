@@ -8,5 +8,7 @@ public interface IResultService {
 
 	 List<BasicInfoDTO> getBasiclist(BasicInfoDTO bDTO) throws Exception;
 
+	List<BasicInfoDTO> getProgrmaList(BasicInfoDTO bDTO)throws Exception;
+
 
 }

@@ -53,9 +53,8 @@
 		
 		<!--홍석민이 만들고 있음  -->
 		<div class="row">
-			<!-- 고르기 버튼 시작-->
+			<!--고르기버튼 include -->
 			<%@ include file="/WEB-INF/view/select.jsp"%>
-			<!-- 고르기 버튼 끝 -->
 			<div class="col-md-12">
 				
 				<div class="panel panel-default chat">
@@ -107,11 +106,11 @@
 					</div>
 				
 				
-					<div class="panel-body" style="overflow-x: scroll; height: auto;">
+					<div class="panel-body" style="overflow-x: scroll; height: auto; overflow-y: hidden;">
 						<!--  -->
 						<div style="width: 1400px; height: 70px">
 							<div
-								style="width: 60px; float: left; margin-right: 10px; text-align: center; -webkit-text-emphasis-style: open;">
+								style="width: 60px; float: left; margin-right: 10px; text-align: center; margin-left:30px; -webkit-text-emphasis-style: open;">
 								<h4 style="font-weight: 600">성별</h4>
 							</div>
 							<div
@@ -185,17 +184,15 @@
 								<h4 style="font-weight: 600">기타의견</h4>
 							</div>
 						</div>
-						
+						<div id="parent">
 						<%
 							for(int i=0; i<20; i++)  { 
 						%>
-						<div id="insertForm">						
-							<div style="width: 1400px; height: 60px;" name='form-main'>
-								<!--  -->
+							<div class="insertForm" style="width: 1400px; height: 60px;" name='form-main' id="child<%=i%>">						
+								<button onclick="delete_info(<%=i%>)" style="font-size:70%; display:block; margin-top:7px; margin-right:5px; float: left;">X</button>
 								<div style="width: 60px; float: left; margin-right: 10px;">
 									<input class="form-control" name='form-sex' placeholder="성별">
 								</div>
-								<!--  -->
 								<div style="width: 60px; float: left; margin-right: 10px;">
 									<input class="form-control" name='form-age' placeholder="연령">
 								</div>
@@ -269,8 +266,8 @@
 									<input class="form-control" name='form-opinion1' placeholder="기타의견">
 								</div>
 							</div>
-						</div>
 						<% }  %>
+						</div>
 						<div id="field"></div>
 					</div>
 				</div>
@@ -430,13 +427,7 @@
 	         url: "/insertForm/programInsertForm/insertData.do",
 	         data: param, 
 	         success:function(result) {
-	        	 swal({
-		 				title : "전송 성공 !!",
-		 				text : "확인 버튼을 눌러주세요.",
-		 				icon : "success"
-		 			}).then(function() {
-		 				window.location.reload();
-		 			});
+	            console.log(result);
 	         },
 	         error:function(e) {
 	            console.log(e);
@@ -444,9 +435,13 @@
 	      })
 	}
 	</script>
-	
-	
-	
+	<script>
+	function delete_info(num) {
+		let parent = document.getElementById('parent');
+		let child = document.getElementById('child'+num);
 		
+		parent.removeChild(child);
+    }
+	</script>
 </body>
 </html>

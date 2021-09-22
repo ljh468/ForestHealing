@@ -23,9 +23,18 @@ public class ResultService implements IResultService {
 	public List<BasicInfoDTO> getBasiclist(BasicInfoDTO bDTO) throws Exception {
 		log.info("시비스 단 실행 시작");
 		log.info("서비스 단에서의 기업명  : " + bDTO.getAgency());
+		log.info("서비스 단에서의 기업명  : " + bDTO.getOpenday());
 		List<BasicInfoDTO> basicInfo = resultMapper.getBasicInfo(bDTO);
 		log.info("서비스 단 종료 ");
 		return basicInfo;
 	}
+
+	@Override
+	public List<BasicInfoDTO> getProgrmaList(BasicInfoDTO bDTO) throws Exception {
+		log.info("서비스 단 프로그램 리스트 가져오기 시작");
+		List<BasicInfoDTO> rList = resultMapper.getProgramList(bDTO);
+		return rList;
+	}
+
 
 }

@@ -60,7 +60,7 @@ public class DateUtil {
 	 */
 	public static String getDateTime() {
 
-		return getDateTime("yyyy.MM.dd");
+		return getDateTime("yyyy.MM.dd HH:mm");
 
 	}
 }

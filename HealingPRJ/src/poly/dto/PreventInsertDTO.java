@@ -12,10 +12,24 @@ public class PreventInsertDTO {
 	public String job;
 	public String ptcProgram;
 	public String pastStress;
-	private List<List<String>> scoreList;
+	public String pv;
+	private List<String> scoreList;
 	private List<PreventInsertDTO> preventDtoList;
 	
 	
+	
+	public String getPv() {
+		return pv;
+	}
+	public void setPv(String pv) {
+		this.pv = pv;
+	}
+	public List<String> getScoreList() {
+		return scoreList;
+	}
+	public void setScoreList(List<String> scoreList) {
+		this.scoreList = scoreList;
+	}
 	public String getAgency() {
 		return agency;
 	}
@@ -34,13 +48,6 @@ public class PreventInsertDTO {
 	public void setPreventDtoList(List<PreventInsertDTO> preventDtoList) {
 		this.preventDtoList = preventDtoList;
 	}
-	public List<List<String>> getScoreList() {
-		return scoreList;
-	}
-	public void setScoreList(List<List<String>> scoreList) {
-		this.scoreList = scoreList;
-	}
-
 	public String getSex() {
 		return sex;
 	}

@@ -13,7 +13,7 @@
 		AGE,
 		RESIDENCE,
 		JOB,
-		PART_PROGRAM,
+		PTCPROGRAM,
 		AGENCY,
 		EVAL_DATE,
 		SCORE1,	SCORE2,	SCORE3,	SCORE4,	SCORE5,	SCORE6,	SCORE7,
@@ -50,7 +50,7 @@
 		AGE,
 		RESIDENCE,
 		JOB,
-		PART_PROGRAM,
+		PTCPROGRAM,
 		AGENCY,
 		DATE,
 		PROGRAM_NAME,
@@ -94,15 +94,12 @@
 		AGE,
 		RESIDENCE,
 		JOB,
-		PART_PROGRAM,
+		PTCPROGRAM,
 		PAST_STRESS_EXPERIENCE,
 		EVAL_DATE,
-		SCORE11, SCORE12, SCORE21, SCORE22, SCORE31, SCORE32, SCORE41, SCORE42,
-		SCORE51, SCORE52, SCORE61, SCORE62, SCORE71, SCORE72, SCORE81, SCORE82,
-		SCORE91, SCORE92, SCORE101, SCORE102, SCORE111, SCORE112, SCORE121,
-		SCORE122, SCORE131, SCORE132, SCORE141, SCORE142, SCORE151, SCORE152,
-		SCORE161, SCORE162, SCORE171, SCORE172, SCORE181, SCORE182, SCORE191,
-		SCORE192, SCORE201, SCORE202
+		PV,
+		SCORE1, SCORE2, SCORE3, SCORE4, SCORE5, SCORE6, SCORE7, SCORE8, SCORE9, SCORE10,
+		SCORE11, SCORE12, SCORE13, SCORE14, SCORE15, SCORE16, SCORE17, SCORE18, SCORE19, SCORE20
 		)
 		VALUES
 		<foreach item="preventDtoList" index="index" collection="preventDtoList" separator=",">
@@ -116,12 +113,11 @@
 		#{preventDtoList.residence},
 		#{preventDtoList.job},
 		#{preventDtoList.ptcProgram},
-		#{preventDtoList.pastStress},
+		#{preventDtoList.past_stress_experience},
 		#{preventDtoList.date},
+		#{preventDtoList.pv},
 		<foreach item="scoreList" index="index" collection="preventDtoList.scoreList" separator=",">
-			<foreach item="score" index="index" collection="scoreList" separator=",">
-				#{score}
-			</foreach>
+			#{scoreList}
 		</foreach>
 		)
 	</foreach>
@@ -139,17 +135,13 @@
 		AGE,
 		RESIDENCE,
 		JOB,
-		PART_PROGRAM,
+		PTCPROGRAM,
 		PAST_STRESS_EXPERIENCE,
 		EVAL_DATE,
-		SCORE11, SCORE12, SCORE21, SCORE22, SCORE31, SCORE32, SCORE41, SCORE42,
-		SCORE51, SCORE52, SCORE61, SCORE62, SCORE71, SCORE72, SCORE81, SCORE82,
-		SCORE91, SCORE92, SCORE101, SCORE102, SCORE111, SCORE112, SCORE121,
-		SCORE122, SCORE131, SCORE132, SCORE141, SCORE142, SCORE151, SCORE152,
-		SCORE161, SCORE162, SCORE171, SCORE172, SCORE181, SCORE182, SCORE191,
-		SCORE192, SCORE201, SCORE202, SCORE211, SCORE212, SCORE221, SCORE222,
-		SCORE231, SCORE232, SCORE241, SCORE242, SCORE251, SCORE252, SCORE261,
-		SCORE262, SCORE271, SCORE272, SCORE281, SCORE282
+		PV,
+		SCORE1, SCORE2, SCORE3, SCORE4, SCORE5, SCORE6, SCORE7, SCORE8, SCORE9, SCORE10,
+		SCORE11, SCORE12, SCORE13, SCORE14, SCORE15, SCORE16, SCORE17, SCORE18, SCORE19, SCORE20,
+		SCORE21, SCORE22, SCORE23, SCORE24, SCORE25, SCORE26, SCORE27, SCORE28
 		)
 		VALUES
 		<foreach item="healingDtoList" index="index" collection="healingDtoList" separator=",">
@@ -163,12 +155,11 @@
 		#{healingDtoList.residence},
 		#{healingDtoList.job},
 		#{healingDtoList.ptcProgram},
-		#{healingDtoList.pastStress},
+		#{healingDtoList.past_stress_experience},
 		#{healingDtoList.date},
+		#{healingDtoList.pv},
 		<foreach item="scoreList" index="index" collection="healingDtoList.scoreList" separator=",">
-			<foreach item="score" index="index" collection="scoreList" separator=",">
-				#{score}
-			</foreach>
+			#{scoreList}
 		</foreach>
 		)
 	</foreach>
@@ -191,14 +182,14 @@
 		EVAL_DATE,
 		SESSION,
 		PAST_STRESS_EXPERIENCE,
-		SCORE11, SCORE12, SCORE13, SCORE21, SCORE22, SCORE23, SCORE31, SCORE32,
-		SCORE33, SCORE41, SCORE42, SCORE43, SCORE51, SCORE52, SCORE53, SCORE61,
-		SCORE62, SCORE63, SCORE71, SCORE72, SCORE73, SCORE81, SCORE82,
-		SCORE83, SCORE91, SCORE92, SCORE93, SCORE101, SCORE102, SCORE103,
-		SCORE111, SCORE112, SCORE113, SCORE121, SCORE122, SCORE123, SCORE131,
-		SCORE132, SCORE133, SCORE141, SCORE142, SCORE143, SCORE151, SCORE152,
-		SCORE153, SCORE161, SCORE162, SCORE163, SCORE171, SCORE172, SCORE173,
-		SCORE181, SCORE182, SCORE183, SCORE191, SCORE192, SCORE193
+		PV,
+		SCORE1, SCORE2, SCORE3, SCORE4, SCORE5, SCORE6, SCORE7, SCORE8, SCORE9, SCORE10,
+		SCORE11, SCORE12, SCORE13, SCORE14, SCORE15, SCORE16, SCORE17, SCORE18, SCORE19,
+		SCORE20, SCORE21, SCORE22, SCORE23, SCORE24, SCORE25, SCORE26, SCORE27, SCORE28, SCORE29,
+		SCORE30, SCORE31, SCORE32, SCORE33, SCORE34, SCORE35, SCORE36, SCORE37, SCORE38, SCORE39,
+		SCORE40, SCORE41, SCORE42, SCORE43, SCORE44, SCORE45, SCORE46, SCORE47, SCORE48, SCORE49,
+		SCORE50, SCORE51, SCORE52, SCORE53, SCORE54, SCORE55, SCORE56, SCORE57, SCORE58, SCORE59,
+		SCORE60, SCORE61, SCORE62
 		)
 		VALUES
 		<foreach item="receiptDtoList" index="index" collection="receiptDtoList" separator=",">
@@ -215,15 +206,108 @@
 		#{receiptDtoList.date},
 		#{receiptDtoList.session},
 		#{receiptDtoList.pastExp},
+		#{receiptDtoList.pv},
 		<foreach item="scoreList" index="index" collection="receiptDtoList.scoreList" separator=",">
-			<foreach item="score" index="index" collection="scoreList" separator=",">
-				#{score}
-			</foreach>
+			#{scoreList}
 		</foreach>
 		)
 	</foreach>
 	</insert>	
+	
+	<!-- HRV 데이터 넣기 -->
+	<insert id="hrvInsertData" parameterType="HrvInsertDTO">
+		INSERT INTO HRV_SERVICE
+		(
+		HRV_SEQ,
+		OPENDAY,
+		AGENCY,
+		NAME,
+		AGE,
+		SEX,
+		EQUIPMENT,
+		ID,
+		JUMIN,
+		NUM8,
+		NUM1,NUM2,NUM3,NUM4,NUM5,NUM6,NUM7
+		)
+		VALUES
+		<foreach item="hrvDtoList" index="index" collection="hrvDtoList" separator=",">
+		(
+		(SELECT IFNULL(MAX(A.HRV_SEQ),0)+1 FROM HRV_SERVICE A),
+		#{hrvDtoList.date},
+		#{hrvDtoList.agency},
+		#{hrvDtoList.name},
+		#{hrvDtoList.age},
+		#{hrvDtoList.sex},
+		#{hrvDtoList.equipment},
+		#{hrvDtoList.id},
+		#{hrvDtoList.jumin},
+		#{hrvDtoList.num8},
+		<foreach item="scoreList" index="index" collection="hrvDtoList.scoreList" separator=",">
+			#{scoreList}
+		</foreach>
+		)
+	</foreach>
+	</insert>
 
+	<!-- 기관명 및 실시일자 조회 -->
+	<select id="hasAgencyStartDate" parameterType="HealingInsertDTO" resultType="int">
+		SELECT COUNT(*) 
+		FROM healing_service
+		WHERE agency = #{agency} 
+		AND openday = #{openday};
+	</select>
+
+	<!-- 기관명 및 실시일자 조회 후 사전 데이터 불러오기 -->
+	<select id="getPreviousList" parameterType="HealingInsertDTO"
+	resultType="HealingInsertDTO">
+	SELECT 
+	OPENDAY, AGENCY, NAME, SEX, AGE, RESIDENCE, JOB, PTCPROGRAM, PAST_STRESS_EXPERIENCE,
+	EVAL_DATE, PV, 
+	CONCAT(SCORE1, ', ', SCORE2, ', ', SCORE3, ', ',
+		SCORE4, ', ', SCORE5, ', ', SCORE6, ', ', SCORE7, ', ', SCORE8, ', ',
+		SCORE9, ', ', SCORE10, ', ', SCORE11, ', ', SCORE12, ', ', SCORE13, ', ', 
+		SCORE14, ', ', SCORE15, ', ', SCORE16, ', ', SCORE17, ', ', SCORE18, ', ', 
+		SCORE19, ', ', SCORE20, ', ', SCORE21, ', ', SCORE22, ', ', SCORE23, ', ', 
+		SCORE24, ', ', SCORE25, ', ', SCORE26, ', ', SCORE27, ', ', SCORE28) as scoreString2List
+	FROM healing_service
+	WHERE AGENCY = #{agency}
+	AND OPENDAY = #{openday};
+	</select>
+	
+	<!--바이브라 데이터 넣기 -->
+	<insert id="vibraInsertData" parameterType="VibraInsertDTO">
+		INSERT INTO VIBRA_SERVICE
+		(
+		VIBRA_SEQ,
+		OPENDAY,
+		AGENCY,
+		NAME,
+		AGE,
+		SEX,
+		EQUIPMENT,
+		ID,
+		JUMIN,
+		NUM1,NUM2,NUM3,NUM4,NUM5,NUM6,NUM7,NUM8,NUM9,NUM10
+		)
+		VALUES
+		<foreach item="vibraDtoList" index="index" collection="vibraDtoList" separator=",">
+		(
+		(SELECT IFNULL(MAX(A.VIBRA_SEQ),0)+1 FROM VIBRA_SERVICE A),
+		#{vibraDtoList.date},
+		#{vibraDtoList.agency},
+		#{vibraDtoList.name},
+		#{vibraDtoList.age},
+		#{vibraDtoList.sex},
+		#{vibraDtoList.equipment},
+		#{vibraDtoList.id},
+		#{vibraDtoList.jumin},
+		<foreach item="scoreList" index="index" collection="vibraDtoList.scoreList" separator=",">
+			#{scoreList}
+		</foreach>
+		)
+	</foreach>
+	</insert>
 
 </mapper>
 

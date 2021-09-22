@@ -78,50 +78,50 @@
             <div style=" border-bottom:1px solid black; width:508px; line-height: 30px; height: 30px; text-align: center; background-color: #ccc;"> 참가자 유형</div>
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">아동청소년</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center; " >2</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">2</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center; " ></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell; vertical-align: middle;">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">성인</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">3</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">2</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">노인</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">4</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">5</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">장애인</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">5</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">6</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
 
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">저소득층</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">7</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">8</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">가족</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">9</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">4</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">다문화가정</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">2</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">4</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">중독</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">5</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">6</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
 
                 <div style="display: table-cell">   
                     <div style="width: 108px; line-height: 30px;height: 30px; border-bottom: 1px solid black;  text-align: center; background-color: #ccc;">계</div>
-                    <div style="width: 108px; line-height: 30px;height: 30px; border-bottom: 1px solid black; text-align: center;">7</div>
-                    <div style="width: 108px; line-height: 30px;height: 30px;  text-align: center;">2</div>
+                    <div style="width: 108px; line-height: 30px;height: 30px; border-bottom: 1px solid black; text-align: center;"></div>
+                    <div style="width: 108px; line-height: 30px;height: 30px;  text-align: center;"></div>
                 </div> 
                 
             </div>
@@ -129,38 +129,38 @@
                 <div style=" border-bottom:1px solid black; width:406px;line-height: 30px; height: 30px; text-align: center; background-color: #ccc;"> 사업구분</div>
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">일반</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">4</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">2</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">녹색자금</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">3</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">4</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">바우처</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">8</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">12</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">교직원</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">4</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">5</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; background-color: #ccc;">사회공헌</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">52</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">4</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell">   
                     <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center;background-color: #ccc;">기타</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;">2</div>
-                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;">5</div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-bottom: 1px solid black; border-right: 1px solid black;text-align: center;"></div>
+                    <div style="width: 50px; line-height: 30px;height: 30px; border-right: 1px solid black; text-align: center;"></div>
                 </div> 
                 <div style="display: table-cell">   
                     <div style="width: 106px; line-height: 30px;height: 30px; border-bottom: 1px solid black; text-align: center; background-color: #ccc;">계</div>
-                    <div style="width: 106px; line-height: 30px;height: 30px; border-bottom: 1px solid black; text-align: center;">6</div>
-                    <div style="width: 106px; line-height: 30px;height: 30px;  text-align: center;">7</div>
+                    <div style="width: 106px; line-height: 30px;height: 30px; border-bottom: 1px solid black; text-align: center;"></div>
+                    <div style="width: 106px; line-height: 30px;height: 30px;  text-align: center;"></div>
                 </div> 
             </div>
     </div>
@@ -174,19 +174,18 @@
         <%for(int i = 0; i < list_1.length; i++) { %>
         <div style="display: table-cell; border:1px solid black; width: 50px; height: 90px; vertical-align: middle;" >
             <div style="  border-bottom:1px solid black; width: 50px; line-height: 30px;height: 30px; text-align: center; background-color: #ccc;"><%=list_1[i]%></div>
-            <div style=" border-bottom:1px solid black; width:50px; line-height: 30px;height: 30px; text-align: center;">3 </div>
-            <div style=" width:50px; line-height: 30px;height: 30px; text-align: center;"> 4</div>
+            <div style=" border-bottom:1px solid black; width:50px; line-height: 30px;height: 30px; text-align: center;"> </div>
+            <div style=" width:50px; line-height: 30px;height: 30px; text-align: center;"> </div>
         </div>
         <% } %>
        </div>
-    <br>
     
     
     <!--프로그램 시행개요 -->
     <div style=" display:table inline-block; padding:10px; border-collapse: collapse; font-size: 10px;text-align: center; ">
         <div style="display: table-cell; border:1px solid black; width: 50px; height: 240px; vertical-align: middle;">프로그램 <br>시행개요</div>
         <div style="display: table-cell; border:1px solid black; width: 50px; height: 240px; ">
-            <div style=" display: table-cell;border-bottom:1px solid black; width: 50px; height: 90px; vertical-align: middle; ">구분</div>
+            <div style=" display: table-cell;border-bottom:1px solid black; width: 50px; height: 91px; vertical-align: middle; ">구분</div>
             <div style=" border-bottom:1px solid black; width:50px; height: 30px; ">수익사업</div>
             <div style=" border-bottom:1px solid black; width:50px; height: 30px; ">사회공헌</div>
             <div style=" border-bottom:1px solid black; width:50px; height: 30px; ">계</div>
@@ -198,58 +197,58 @@
                 <div style="display: table-cell; width :150px; height: 90px;">
                     <div style=" border-bottom:1px solid black; width:150px; height: 30px; border-right: 1px solid black;text-align: center; background-color: #ccc;"> 참여자(명)</div>
                     <div style="display: table-cell">   
-                         <div style="width: 50px; height: 30px; border-bottom: 1px solid black; border-left: 1px solid blac; border-right: 1px solid black; text-align: center;">남</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">1</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">3</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">4</div>
+                         <div style="width: 50px; height: 31px; border-bottom: 1px solid black; border-left: 1px solid blac; border-right: 1px solid black; text-align: center;">남</div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div> 
                     <div style="display: table-cell; vertical-align: middle;">   
-                        <div style="width: 50px; height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">여</div>
-                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">6</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">7</div>
+                        <div style="width: 50px; height: 31px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">여</div>
+                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                         
                     </div> 
                     <div style="display: table-cell; vertical-align: middle;">   
-                        <div style="width: 50px; height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">계</div>
-                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">1</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">4</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
+                        <div style="width: 50px; height: 31px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">계</div>
+                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div>
                 </div>
                 <div style="display: table-cell; width :150px; height: 90px;">
                     <div style=" border-bottom:1px solid black; width:150px; height: 30px; border-right: 1px solid black;text-align: center; background-color: #ccc;">인솔자(명)</div>
                     <div style="display: table-cell">   
-                         <div style="width: 50px; height: 30px; border-bottom: 1px solid black; border-left: 1px solid blac; border-right: 1px solid black; text-align: center;">남</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">6</div>
+                         <div style="width: 50px; height: 31px; border-bottom: 1px solid black; border-left: 1px solid blac; border-right: 1px solid black; text-align: center;">남</div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div> 
                     <div style="display: table-cell; vertical-align: middle;">   
-                        <div style="width: 50px; height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">여</div>
-                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
+                        <div style="width: 50px; height: 31px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">여</div>
+                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div> 
                     <div style="display: table-cell; vertical-align: middle;">   
-                        <div style="width: 50px; height: 30px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">계</div>
-                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">24</div>
+                        <div style="width: 50px; height: 31px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">계</div>
+                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div> 
                 </div>
                 <div style="display: table-cell; width :100px; height: 90px;">
                     <div style="display: table-cell">   
-                         <div style=" display: table-;width: 50px; height: 60px; border-bottom: 1px solid black; border-left: 1px solid blac; border-right: 1px solid black; text-align: center;background-color: #ccc;">실인원</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">1</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
+                         <div style=" display: table-;width: 50px; height: 61px; border-bottom: 1px solid black; border-left: 1px solid blac; border-right: 1px solid black; text-align: center;background-color: #ccc;">실인원</div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div> 
                     <div style="display: table-cell;">   
-                        <div style=" display: table-cell;width: 50px; height: 59px; border-bottom: 1px solid black; text-align: center; background-color: #ccc; ">연인원</div>
-                        <div style="border-bottom:1px solid black;width: 50px; height: 30px; text-align: center;">43</div>
-                        <div style="border-bottom:1px solid black;width: 50px; height: 30px; text-align: center;">4</div>
-                        <div style="border-bottom:1px solid black;width: 50px; height: 30px; text-align: center;">24</div>
+                        <div style=" display: table-cell;width: 50px; height: 60px; border-bottom: 1px solid black; text-align: center; background-color: #ccc; ">연인원</div>
+                        <div style="border-bottom:1px solid black;width: 50px; height: 30px; text-align: center;"></div>
+                        <div style="border-bottom:1px solid black;width: 50px; height: 30px; text-align: center;"></div>
+                        <div style="border-bottom:1px solid black;width: 50px; height: 30px; text-align: center;"></div>
                     </div> 
                 </div>
                 </div>
@@ -258,24 +257,24 @@
                         <div style="border-right: 1px solid black; width:50px;height: 60px;">인원(명)</div>
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black;border-right: 1px solid black; width:50px;height: 30px;">참여자</div>
-                            <div style="border-right: 1px solid black; width:50px;height: 30px;">fd</div>
+                            <div style="border-right: 1px solid black; width:50px;height: 30px;"></div>
                         </div>
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black;border-right: 1px solid black; width:50px;height: 30px;">인솔자</div>
-                            <div style="border-right: 1px solid black; width:50px;height: 30px;">a</div>
+                            <div style="border-right: 1px solid black; width:50px;height: 30px;"></div>
                         </div>
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black;border-right: 1px solid black; width:50px;height: 30px;">가터</div>
-                            <div style="border-right: 1px solid black; width:50px;height: 30px;">sf</div>
+                            <div style="border-right: 1px solid black; width:50px;height: 30px;"></div>
                         </div>
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black;border-right: 1px solid black; width:100px;height: 30px;">계</div>
-                            <div style="border-right: 1px solid black; width:100px;height: 30px;">s</div>
+                            <div style="border-right: 1px solid black; width:100px;height: 30px;"></div>
                         </div>
                         <div style="border-right: 1px solid black; width:50px;height: 60px;">객실(실)</div>
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black; width:50px;height: 30px;">참여자</div>
-                            <div style=" width:50px;height: 30px;">fd</div>
+                            <div style=" width:50px;height: 30px;"></div>
                         </div>
                     </div>
                 </div>
@@ -286,28 +285,28 @@
                 <div style="display: table-cell; width :150px; height: 90px;">
                     <div style="display: table-cell">   
                          <div style="width: 50px; height: 60px; border-bottom: 1px solid black; border-left: 1px solid blac; border-right: 1px solid black; text-align: center;">프로그램</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div> 
                     <div style="display: table-cell; vertical-align: middle;">   
                         <div style="width: 50px; height: 60px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">숙박</div>
-                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">1</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
+                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                         
                     </div> 
                     <div style="display: table-cell; vertical-align: middle;">   
                         <div style="width: 50px; height: 60px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">식사</div>
-                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
+                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div>
                     <div style="display: table-cell; vertical-align: middle;">   
                         <div style="width: 50px; height: 60px; border-bottom: 1px solid black; text-align: center; ">기타</div>
-                        <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;">14</div>
-                         <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
-                         <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
+                        <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div>
                 </div>
                 </div>
@@ -315,15 +314,15 @@
                     <div style="display:table-row">
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black;border-right: 1px solid black; width:50px;height: 30px;">인솔자</div>
-                            <div style="border-right: 1px solid black; width:50px;height: 30px;">2</div>
+                            <div style="border-right: 1px solid black; width:50px;height: 30px;"></div>
                         </div>
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black;border-right: 1px solid black; width:50px;height: 30px;">기타</div>
-                            <div style="border-right: 1px solid black; width:50px;height: 30px;">5</div>
+                            <div style="border-right: 1px solid black; width:50px;height: 30px;"></div>
                         </div>
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black; width:100px;height: 30px;">계</div>
-                            <div style=" width:100px;height: 30px;">6</div>
+                            <div style=" width:100px;height: 30px;"></div>
                         </div>
                     </div>
                 </div>
@@ -334,40 +333,40 @@
                 <div style="display: table-cell; width :150px; height: 90px;">
                     <div style="display: table-cell">   
                          <div style="width: 50px; height: 60px; border-bottom: 1px solid black; border-left: 1px solid blac; border-right: 1px solid black; text-align: center;">산림교육</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">4</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div> 
                     <div style="display: table-cell; vertical-align: middle;">   
                         <div style="width: 50px; height: 60px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">산림치유</div>
-                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">1</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">432</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
+                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                         
                     </div> 
                     <div style="display: table-cell; vertical-align: middle;">   
                         <div style="width: 50px; height: 60px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">중독치유</div>
-                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">4</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
+                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div>
                     <div style="display: table-cell; vertical-align: middle;">   
                         <div style="width: 50px; height: 60px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">중독예방</div>
-                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">3</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">1</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">5</div>
+                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div>
                     <div style="display: table-cell; vertical-align: middle;">   
                         <div style="width: 50px; height: 60px; border-bottom: 1px solid black; border-right: 1px solid black; text-align: center; ">힐링</div>
-                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">3</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
-                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;">09</div>
+                        <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;border-right: 1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div>
                     <div style="display: table-cell; vertical-align: middle;">   
                         <div style="width: 50px; height: 60px; border-bottom: 1px solid black; text-align: center; ">기타</div>
-                        <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;">1</div>
-                         <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;">4</div>
-                         <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;">2</div>
+                        <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
+                         <div style="border-bottom:1px solid black;width: 50px; height: 30px;  text-align: center;"></div>
                     </div>
                 </div>
                 </div>
@@ -376,19 +375,19 @@
                         <div style="border-right: 1px solid black; width:50px;height: 60px;">식사</div>
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black;border-right: 1px solid black; width:50px;height: 30px;">참여자</div>
-                            <div style="border-right: 1px solid black; width:50px;height: 30px;">24</div>
+                            <div style="border-right: 1px solid black; width:50px;height: 30px;"></div>
                         </div>
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black;border-right: 1px solid black; width:50px;height: 30px;">인솔자</div>
-                            <div style="border-right: 1px solid black; width:50px;height: 30px;">14</div>
+                            <div style="border-right: 1px solid black; width:50px;height: 30px;"></div>
                         </div>
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black;border-right: 1px solid black; width:50px;height: 30px;">기타</div>
-                            <div style="border-right: 1px solid black; width:50px;height: 30px;">2</div>
+                            <div style="border-right: 1px solid black; width:50px;height: 30px;"></div>
                         </div>
                         <div style="display: table-cell;">
                             <div style="border-bottom:1px solid black; width:100px;height: 30px;">계</div>
-                            <div style=" width:100px;height: 30px;">42</div>
+                            <div style=" width:100px;height: 30px;"></div>
                         </div>
                     </div>
                 </div>
@@ -441,7 +440,7 @@
     <div style=" display:table inline-block; padding:10px; border-collapse: collapse; font-size: 10px;text-align: center; vertical-align: middle; ">
         <div style="display: table-cell; border:1px solid black; width: 50px; height: 90px; vertical-align: middle; background-color: #ccc;">시설<br>서비스<br>만족도</div>
         <div style="display: table-cell; border:1px solid black; width: 50px; height: 90px; vertical-align: middle;" >
-            <div style=" display: table;border-bottom:1px solid black; width:50px; line-height:60px; height: 60px; text-align: center; vertical-align: middle;background-color: #ccc; ">구분</div>
+            <div style=" display: table;border-bottom:1px solid black; width:50px; line-height:59px; height: 59px; text-align: center; vertical-align: middle;background-color: #ccc; ">구분</div>
             <div style=" width:50px; height: 30px; text-align: center;"> </div>
         </div>
         <div style="display: table-cell; border:1px solid black; width:100px; height: 90px; text-align: center;">
@@ -527,7 +526,7 @@
             </div> 
         </div> 
         <div style="display: table-cell; border:1px solid black; width:100px; height: 90px; text-align: center;">
-            <div style=" display: table-cell; border-bottom:1px solid black; width:150px;height: 60px; text-align: center; background-color: #ccc; "> 평균</div>
+            <div style=" display: table-cell; border-bottom:1px solid black; width:150px;height: 59px; text-align: center; background-color: #ccc; "> 평균</div>
             <div style="display: table-cell"></div> 
         </div> 
     </div>

@@ -18,6 +18,8 @@
 					<option value="/insertForm/receiptInsertForm.do">상담&치유서비스 효과평가</option>
 					<option value="/insertForm/preventInsertForm.do">예방서비스 효과평가</option>
 					<option value="/insertForm/healingInsertForm.do" >힐링서비스 효과평가</option>
+					<option value="/insertForm/hrvInsertForm.do" >HRV 측정 검사</option>
+					<option value="/insertForm/vibraInsertForm.do" >바이브라 측정 검사</option>
 				</select>
 			</div>
 		</div>

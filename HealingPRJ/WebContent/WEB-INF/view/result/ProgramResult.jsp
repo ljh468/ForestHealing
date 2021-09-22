@@ -118,34 +118,29 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">프로그램 결과 입력</li>
+				<li class="active">프로그램 윤영결과</li>
 			</ol>
-		</div><!--/.row-->
+		</div>
 		
 		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="page-header">프로그램 결과 입력</h1>
-			</div>
-		</div><!--/.row-->
-		<input type="button" value="인쇄" onClick="info_print()"/>
-			<!--단체별 운영결과 검색창   -->
-		<div class="row">
-			<div class="col-lg-3">
-					   <div style="display: inline-flex;">
-						  <div class="input-group input-group-lg" style="width: 30%;">
-							 <input type="text" id="agency" name="agency" placeholder="기업명" class="form-control" style="width: 300px;">
-							  <div class="form-group justify-content-center">
-								<label class="col-md-2 control-label">참여일자</label>
-								<div class="col-md-10">
-									<input type='date' name="openday" id="openday"style="font-size: 16pt" ;/>
-								</div>
-							  </div>
-							 <button type="button" onClick="JavaScript:search();" class="btn btn-default" tabindex="-1" value="검색"><i class="fa fa-search"></i></button>
-							 
-					      </div>
-					   </div>
-			</div>
-		</div>	<!--/.main-->
+				<div class="col-md-9">
+					<label class="col-md-10 control-label">참여단체</label>
+				</div>
+				<div class="col-md-9">
+					<input type="text" id="agency" name="agency" placeholder="기업명" class="form-control" style="width: 300px;">
+				</div>
+				<div class="col-md-9">
+					<label class="col-md-10 control-label">참여일자</label>
+				</div>
+				<div class="col-md-9">
+					<input type='date' name="openday" id="openday"style="font-size: 16pt" /> 
+				</div>
+				<div class="col-md-9">
+					<button type="button" onClick="JavaScript:search();"class="btn btn-default" tabindex="-1" value="검색"> <i class="fa fa-search"></i>
+					</button>
+					<input type="button" value="인쇄" onClick="info_print()" />
+				</div>
+		</div>
 		
 		<div id="ProgramResult_chart"></div>
 	</div>

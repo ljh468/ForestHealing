@@ -38,15 +38,26 @@
 	<!-- 차트 ajax -->
 	<script>
 	function search(){
-		var name = $("#user_name").val();
-		console.log(name);
+		var content1 = $("#content1").val();
+		var sub1 = $("#sub1").val();
+		var content2 = $("#content2").val();
+		var sub2 = $("#sub2").val();
+		var content3 = $("#content3").val();
+		var sub3 = $("#sub3").val();
+		console.log(sub1); 
+		console.log(content1); 
+		console.log(sub2); 
+		console.log(content2); 
+		console.log(sub3); 
+		console.log(content3); 
 		  $.ajax({
-			url : 'resProgram_chart.do',
+			url : 'SearchResult_chart.do',
 			type : 'post',
-			data : {name : name},
+			 data :  {content1 : content1,content2 : content2,content3 : content3,
+				 	  sub1 : sub1,sub2 : sub2,sub3 : sub3	} , 
 			success : function(data) {
 				console.log("성공");
-				console.log(data);
+				/* console.log(data); */
 				$("#resProgram_chart").html(data);
 			},
 			error:function (e){
@@ -76,27 +87,37 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">프로그램 결과 입력</li>
+				<li class="active">주제어별 프로그램 결과 보고 </li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">프로그램 결과 입력</h1>
+				<h1 class="page-header">주제어별 프로그램 결과보고 </h1>
 			</div>
 		</div><!--/.row-->
-		
-			<!--단체별 운영결과 검색창   -->
-		<div class="row">
-			<div class="col-lg-3">
-					   <div style="display: inline-flex;">
-						  <div class="input-group input-group-lg" style="width: 30%;">
-							 <input type="text" id="user_name" name="user_name" placeholder="검색어......" class="form-control" style="width: 300px;">
-							 <button type="button" onClick="JavaScript:search();" class="btn btn-default" tabindex="-1" value="검색"><i class="fa fa-search"></i></button>
-					      </div>
-					   </div>
+		<div style="display:inline-flex">
+			<% for(int i =1; i<= 3; i++) { %>
+			&nbsp;&nbsp;
+				<select id="sub<%=i%>" name="sub<%=i%>" class="form-control" style="border-radius: 5px; width: 40%; height: 50px;">
+					<option value="AGENCY">기관명</option>
+					<option value="PROGRAM_NAME">참여프로그램</option>
+					<option value="SEX">성별</option>
+					<option value="AGE">연령(만)</option>
+					<option value="REGIDENCE">거주지</option>
+					<option value="JOB">직업</option>
+					<option value="ProgramName">프로그램명</option>
+					<option value="TEACHER">강사명</option>
+					<option value="PLACE">장소</option>
+					<option value="OPENDAY">참가기간</option>
+				</select> 
+				<input type="text" id="content<%=i%>"name="content<%=i%>" placeholder="Search" class="form-control" style="border-radius: 5px;width: 40%; height: 50px;">
+			&nbsp;&nbsp;
+			<% } %>
+			<div class="col-md-9">
+				<button type="button" onClick="JavaScript:search();"class="btn btn-default" tabindex="-1" value="검색"> <i class="fa fa-search"></i></button>
 			</div>
-		</div>	<!--/.main-->
+		</div>
 		
 		<div id="resProgram_chart"></div>
 	</div>

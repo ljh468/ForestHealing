@@ -8,4 +8,10 @@
 		WHERE AGENCY = #{agency} AND OPENDAY = #{openday}
 	</select>
 	
+	
+	<select id ="getProgramList" parameterType="BasicInfoDTO" resultType="BasicInfoDTO">
+		SELECT * FROM BASIC_INFO	
+		WHERE OPENDAY BETWEEN #{openday} AND #{endday}
+	</select>
+	
 </mapper>

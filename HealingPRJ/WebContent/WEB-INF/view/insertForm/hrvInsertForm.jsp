@@ -54,22 +54,8 @@ body {
 		<!--/.row-->
 		<!--홍석민이 만들고 있음  -->
 		<div class="row">
-			<!-- 고르기 버튼 시작-->
-			<div class="col-md-12">
-				<div class="col-md-3">
-					<div class="form-group">
-						<label>입력양식</label>
-						<select class="form-control" onchange="location.href=this.value">
-							<option value="http://localhost:9000/insertForm/serviceInsertForm.do">서비스환경 만족도</option>
-							<option value="http://localhost:9000/insertForm/programInsertForm.do">프로그램 만족도</option>
-							<option value="http://localhost:9000/insertForm/receiptInsertForm.do" selected>상담&치유서비스 효과평가</option>
-							<option value="http://localhost:9000/insertForm/preventInsertForm.do">예방서비스 효과평가</option>
-							<option value="http://localhost:9000/insertForm/healingInsertForm.do">힐링서비스 효과평가</option>
-						</select>
-					</div>
-				</div>
-				<!-- 고르기 버튼 끝 -->
-			</div>
+			<!--고르기버튼 include -->
+			<%@ include file="/WEB-INF/view/select.jsp"%>
 			<div class="col-md-12">
 				<div class="panel panel-default chat">
 					<div class="panel-heading" style="display: flex; height: auto !important; flex-flow: row-reverse;">
@@ -91,10 +77,10 @@ body {
 							</div>
 						</div>
 					</div>
-					<div class="panel-body" style="overflow-x: scroll; height: auto;">
+					<div class="panel-body" style="overflow-x: scroll; height: auto; overflow-y: hidden;">
 						<!--  -->
-						<div style="width: 5100px; height: 70px">
-							<div style="width: 120px; float: left; margin-right: 10px; text-align: center; -webkit-text-emphasis-style: open;">
+						<div style="width: 2500px; height: 70px">
+							<div style="width: 120px; float: left; margin-right: 10px; margin-left:30px; text-align: center; -webkit-text-emphasis-style: open;">
 								<h4 style="font-weight: 600">ID</h4>
 							</div>
 							<div style="width: 120px; float: left; margin-right: 10px; text-align: center; -webkit-text-emphasis-style: open;">
@@ -141,76 +127,78 @@ body {
 						</div>
 						<!--  -->
 						<!-- <div id="insertForm"> -->
+						<div id="parent">
 						<%
 							for (int i = 0; i < 20; i++) {
 						%>
-						<div class="insertForm" style="width: 5100px; height: 60px;">
-							<div style="width: 120px; float: left; margin-right: 10px;">
-								<input class="form-control" name='form-name' placeholder="ID">
+							<div class="insertForm" style="width:2500px; height: 60px;" name="form-main" id="child<%=i%>">
+								<button onclick="delete_info(<%=i%>)" style="font-size:70%; display:block; margin-top:7px; margin-right:5px; float: left;">X</button>
+								<div style="width: 120px; float: left; margin-right: 10px;">
+									<input class="form-control" name='form-id' placeholder="ID">
+								</div>
+								<div style="width: 120px; float: left; margin-right: 10px;">
+									<input class="form-control" name='form-name' placeholder="이름">
+								</div>
+								<div style="width: 190px; float: left; margin-right: 10px;">
+									<input class="form-control" name='form-jumin1' placeholder="앞자리" style="width: 90px; float: left;" maxlength="6">
+									<p style="display: inline-flex; vertical-align: sub;">-</p>
+									<input class="form-control" name='form-jumin2' placeholder="뒷자리" style="width: 90px; float: right;" maxlength="1">
+								</div>
+								<!--  -->
+								<div style="width: 60px; float: left; margin-right: 10px;">
+									<input class="form-control" name='form-sex' placeholder="성별">
+								</div>
+								<!--  -->
+								<div style="width: 60px; float: left; margin-right: 10px;">
+									<input class="form-control" name='form-age' placeholder="연령">
+								</div>
+								<div style="width: 160px; float: left; margin-right: 10px;">
+									<input class="form-control" type="date" name='form-date'>
+								</div>
+								
+								<div style="width: 60px; float: left; margin-right: 10px;">
+									<input class="form-control form-num1" data-id="<%=i%>" data-type="listA" name='form-num1' placeholder="수치">
+								</div>
+								<div class='listA' style="width: 130px; float: left; margin-right: 10px;">-</div>
+								
+								<div style="width: 60px; float: left; margin-right: 10px;">
+									<input class="form-control form-num2" data-id="<%=i%>" data-type="listB" name='form-num2' placeholder="수치">
+								</div>
+								<div class='listB' style="width: 130px; float: left; margin-right: 10px;">-</div>
+								
+								<div style="width: 60px; float: left; margin-right: 10px;">
+									<input class="form-control form-num3" data-id="<%=i%>" data-type="listC" name='form-num3' placeholder="수치">
+								</div>
+								<div class='listC' style="width: 130px; float: left; margin-right: 10px;">-</div>
+								
+								<div style="width: 60px; float: left; margin-right: 10px;">
+									<input class="form-control form-num4" data-id="<%=i%>" data-type="listD" name='form-num4' placeholder="수치">
+								</div>
+								<div class='listD' style="width: 130px; float: left; margin-right: 10px;">-</div>
+								
+								<div style="width: 60px; float: left; margin-right: 10px;">
+									<input class="form-control form-num5" data-id="<%=i%>" data-type="listE" name='form-num5' placeholder="수치">
+								</div>
+								<div class='listE' style="width: 130px; float: left; margin-right: 10px;">-</div>
+								
+								<div style="width: 60px; float: left; margin-right: 10px;">
+									<input class="form-control form-num6" data-id="<%=i%>" data-type="listF" name='form-num6' placeholder="수치">
+								</div>
+								<div class='listF' style="width: 130px; float: left; margin-right: 10px;">-</div>
+								
+								<div style="width: 60px; float: left; margin-right: 10px;">
+									<input class="form-control form-num7" data-id="<%=i%>" data-type="listG" name='form-num7' placeholder="수치">
+								</div>
+								<div class='listG' style="width: 130px; float: left; margin-right: 10px;">-</div>
+								
+								<div style="width: 60px; float: left; margin-right: 80px; margin-left: 70px;">
+									<input class="form-control" name='form-num8' placeholder="수치">
+								</div>
 							</div>
-							<div style="width: 120px; float: left; margin-right: 10px;">
-								<input class="form-control" name='form-name' placeholder="이름">
-							</div>
-							<div style="width: 190px; float: left; margin-right: 10px;">
-								<input class="form-control" name='form-jumin1' placeholder="앞자리" style="width: 90px; float: left;" maxlength="6">
-								<p style="display: inline-flex; vertical-align: sub;">-</p>
-								<input class="form-control" name='form-jumin2' placeholder="뒷자리" style="width: 90px; float: right;" maxlength="1">
-							</div>
-							<!--  -->
-							<div style="width: 60px; float: left; margin-right: 10px;">
-								<input class="form-control" name='form-sex' placeholder="성별">
-							</div>
-							<!--  -->
-							<div style="width: 60px; float: left; margin-right: 10px;">
-								<input class="form-control" name='form-age' placeholder="연령">
-							</div>
-							<div style="width: 160px; float: left; margin-right: 10px;">
-								<input class="form-control" type="date" name='form-date'>
-							</div>
-							
-							<div style="width: 60px; float: left; margin-right: 10px;">
-								<input class="form-control form-num" data-id="<%=i%>" data-type="listA" name='form-num' placeholder="수치">
-							</div>
-							<div class='listA' style="width: 130px; float: left; margin-right: 10px;">-</div>
-							
-							<div style="width: 60px; float: left; margin-right: 10px;">
-								<input class="form-control form-num2" data-id="<%=i%>" data-type="listB" name='form-num2' placeholder="수치">
-							</div>
-							<div class='listB' style="width: 130px; float: left; margin-right: 10px;">-</div>
-							
-							<div style="width: 60px; float: left; margin-right: 10px;">
-								<input class="form-control form-num3" data-id="<%=i%>" data-type="listC" name='form-num3' placeholder="수치">
-							</div>
-							<div class='listC' style="width: 130px; float: left; margin-right: 10px;">-</div>
-							
-							<div style="width: 60px; float: left; margin-right: 10px;">
-								<input class="form-control form-num4" data-id="<%=i%>" data-type="listD" name='form-num4' placeholder="수치">
-							</div>
-							<div class='listD' style="width: 130px; float: left; margin-right: 10px;">-</div>
-							
-							<div style="width: 60px; float: left; margin-right: 10px;">
-								<input class="form-control form-num5" data-id="<%=i%>" data-type="listE" name='form-num5' placeholder="수치">
-							</div>
-							<div class='listE' style="width: 130px; float: left; margin-right: 10px;">-</div>
-							
-							<div style="width: 60px; float: left; margin-right: 10px;">
-								<input class="form-control form-num6" data-id="<%=i%>" data-type="listF" name='form-num6' placeholder="수치">
-							</div>
-							<div class='listF' style="width: 130px; float: left; margin-right: 10px;">-</div>
-							
-							<div style="width: 60px; float: left; margin-right: 10px;">
-								<input class="form-control form-num7" data-id="<%=i%>" data-type="listG" name='form-num7' placeholder="수치">
-							</div>
-							<div class='listG' style="width: 130px; float: left; margin-right: 10px;">-</div>
-							
-							<div style="width: 60px; float: left; margin-right: 80px; margin-left: 70px;">
-								<input class="form-control" name='form-num8' placeholder="수치">
-							</div>
-							
-						</div>
 						<%
 							}
 						%>
+						</div>
 						<div id="field"></div>
 					</div>
 				</div>
@@ -227,38 +215,169 @@ body {
 	<script src="/lumino/js/custom.js"></script>
 	<script type="text/javascript">
 	function addE() {
-		document.querySelectorAll('.insertForm .form-num').forEach(item => item.addEventListener("focusout",(e) => test(e.target.dataset.type,e.target.value, e.target.dataset.id) ));
-		document.querySelectorAll('.insertForm .form-num2').forEach(item => item.addEventListener("focusout",(e) => test(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
-		document.querySelectorAll('.insertForm .form-num3').forEach(item => item.addEventListener("focusout",(e) => test(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
-		document.querySelectorAll('.insertForm .form-num4').forEach(item => item.addEventListener("focusout",(e) => test(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
-		document.querySelectorAll('.insertForm .form-num5').forEach(item => item.addEventListener("focusout",(e) => test(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
-		document.querySelectorAll('.insertForm .form-num6').forEach(item => item.addEventListener("focusout",(e) => test(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
-		document.querySelectorAll('.insertForm .form-num7').forEach(item => item.addEventListener("focusout",(e) => test(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
+		document.querySelectorAll('.insertForm .form-num1').forEach(item => item.addEventListener("focusout",(e) => testA(e.target.dataset.type,e.target.value, e.target.dataset.id) ));
+		document.querySelectorAll('.insertForm .form-num2').forEach(item => item.addEventListener("focusout",(e) => testB(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
+		document.querySelectorAll('.insertForm .form-num3').forEach(item => item.addEventListener("focusout",(e) => testC(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
+		document.querySelectorAll('.insertForm .form-num4').forEach(item => item.addEventListener("focusout",(e) => testD(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
+		document.querySelectorAll('.insertForm .form-num5').forEach(item => item.addEventListener("focusout",(e) => testE(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
+		document.querySelectorAll('.insertForm .form-num6').forEach(item => item.addEventListener("focusout",(e) => testF(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
+		document.querySelectorAll('.insertForm .form-num7').forEach(item => item.addEventListener("focusout",(e) => testG(e.target.dataset.type, e.target.value, e.target.dataset.id) ));
 	}
-	function test(type, value,inx) {
+	function testA(type, value,inx) {
 		let val = Number(value);
 		let valText = document.querySelectorAll('.'+type);
 		switch (true) {
-			case (val>8):
-				valText[inx].textContent = '매우좋음';
+			case (val>0 && val<=70):
+				valText[inx].textContent = '매우나쁨';
 				break;
-			case (val>6):
-				valText[inx].textContent = '좋음';
-				break;
-			case (val>4):
-				valText[inx].textContent = '보통';
-				break;
-			case (val>2):
+			case (val>70 && val<=90):
 				valText[inx].textContent = '나쁨';
 				break;
-			case (val>0):
-				valText[inx].textContent = '매우나쁨';
+			case (val>90 && val<=110):
+				valText[inx].textContent = '정상';
+				break;
+			case (val>110 && val<=130):
+				valText[inx].textContent = '정상';
+				break;
+			case (val>130):
+				valText[inx].textContent = '매우좋음';
 				break;
 			default:
 				break;
 		}
 	}
-	
+	function testB(type, value,inx) {
+		let val = Number(value);
+		let valText = document.querySelectorAll('.'+type);
+		switch (true) {
+		case (val>0 && val<=50):
+			valText[inx].textContent = '균형';
+			break;
+		case (val>50 && val<=100):
+			valText[inx].textContent = '불균형';
+			break;
+		case (val>100):
+			valText[inx].textContent = '매우불균형';
+			break;
+		default:
+			break;
+		}
+	}
+	function testC(type, value,inx) {
+		let val = Number(value);
+		let valText = document.querySelectorAll('.'+type);
+		switch (true) {
+		case (val>0 && val<=70):
+			valText[inx].textContent = '매우나쁨';
+			break;
+		case (val>70 && val<=90):
+			valText[inx].textContent = '나쁨';
+			break;
+		case (val>90 && val<=110):
+			valText[inx].textContent = '정상';
+			break;
+		case (val>110 && val<=130):
+			valText[inx].textContent = '좋음';
+			break;
+		case (val>130):
+			valText[inx].textContent = '매우좋음';
+			break;
+		default:
+			break;
+		}
+	}
+	function testD(type, value,inx) {
+		let val = Number(value);
+		let valText = document.querySelectorAll('.'+type);
+		switch (true) {
+		case (val>0 && val<=70):
+			valText[inx].textContent = '매우좋음';
+			break;
+		case (val>70 && val<=90):
+			valText[inx].textContent = '좋음';
+			break;
+		case (val>90 && val<=110):
+			valText[inx].textContent = '정상';
+			break;
+		case (val>110 && val<=130):
+			valText[inx].textContent = '나쁨';
+			break;
+		case (val>130):
+			valText[inx].textContent = '매우나쁨';
+			break;
+		default:
+			break;
+		}
+	}
+	function testE(type, value,inx) {
+		let val = Number(value);
+		let valText = document.querySelectorAll('.'+type);
+		switch (true) {
+		case (val>0 && val<=70):
+			valText[inx].textContent = '매우좋음';
+			break;
+		case (val>70 && val<=90):
+			valText[inx].textContent = '좋음';
+			break;
+		case (val>90 && val<=110):
+			valText[inx].textContent = '정상';
+			break;
+		case (val>110 && val<=130):
+			valText[inx].textContent = '나쁨';
+			break;
+		case (val>130):
+			valText[inx].textContent = '매우나쁨';
+			break;
+		default:
+			break;
+		}
+	}
+	function testF(type, value,inx) {
+		let val = Number(value);
+		let valText = document.querySelectorAll('.'+type);
+		switch (true) {
+		case (val>0 && val<=60):
+			valText[inx].textContent = '매우낮음';
+			break;
+		case (val>60 && val<=65):
+			valText[inx].textContent = '낮음';
+			break;
+		case (val>65 && val<=80):
+			valText[inx].textContent = '정상';
+			break;
+		case (val>80 && val<=100):
+			valText[inx].textContent = '높음';
+			break;
+		case (val>100):
+			valText[inx].textContent = '매우높음';
+			break;
+		default:
+			break;
+		}
+	}
+	function testG(type, value,inx) {
+		let val = Number(value);
+		let valText = document.querySelectorAll('.'+type);
+		switch (true) {
+		case (val>0 && val<=70):
+			valText[inx].textContent = '매우나쁨';
+			break;
+		case (val>70 && val<=90):
+			valText[inx].textContent = '나쁨';
+			break;
+		case (val>90 && val<=110):
+			valText[inx].textContent = '정상';
+			break;
+		case (val>110 && val<=130):
+			valText[inx].textContent = '정상';
+			break;
+		case (val>130):
+			valText[inx].textContent = '매우좋음';
+			break;
+		default:
+			break;
+		}
+	}
 	</script>
 	<script type="text/javascript">
 		function add_div() {
@@ -284,6 +403,8 @@ body {
 		
 		let agency = document.getElementsByName('form-agency')[0].value;
 		let equipment = document.getElementsByName('form-equipment')[0].value;
+		let formArr = document.getElementsByName('form-main');
+
 		  //유효성 검사
 	      if(agency.trim() == '') {
 	    	  alert('기관을 입력해주세요.');
@@ -300,9 +421,10 @@ body {
 			let age = document.getElementsByName('form-age')[i].value;
 			let date = document.getElementsByName('form-date')[i].value;
 			let jumin = document.getElementsByName('form-jumin1')[i].value + document.getElementsByName('form-jumin2')[i].value;
+			let num8 = document.getElementsByName('form-num8')[i].value;
 			
 			
-			if(sex.id() == '' && name.trim() == '') {
+			if(id.trim() == '' && name.trim() == '') {
 	       	 	
 	         } else {
 	        	 if(id.trim() == '') { 
@@ -316,9 +438,9 @@ body {
 	        	 }else if(jumin.trim() == '') { 
 			 	        alert('주민등록번호를 입력해주세요.');
 			 	        console.log(i);
-			 	       	return document.getElementsByName('form-jumin1')[i].focus();
+			 	    	return document.getElementsByName('form-jumin1')[i].focus();
 			     }else if(sex.trim() == '') { 
-		 	        alert('성별을 입력해주세요.');
+		 	       	alert('성별을 입력해주세요.');
 		 	        console.log(i);
 		 	       	return document.getElementsByName('form-sex')[i].focus();
 		        } else if(age.trim() == '') { 
@@ -330,34 +452,35 @@ body {
 		        	console.log(i);
 		        	return document.getElementsByName('form-date')[i].focus();
 		        }
-		         for(let j = 0; j < 19; j++) {
-					for(let x = 1; x < 4; x++) {
-						if(document.getElementsByName('form-score'+(j+1)+'-'+x)[i].value.trim() == '') { 
-							alert('점수를 입력해주세요.');
-							return document.getElementsByName('form-score'+(j+1)+'-'+x)[i].focus();
-						}
-						param['receiptDtoList['+i+'].scoreList['+j+']['+(x-1)+']'] = document.getElementsByName('form-score'+(j+1)+'-'+x)[i].value;
+				for(let x = 1; x < 8; x++) {
+					if(document.getElementsByName('form-num'+x)[i].value.trim() == '') { 
+						alert('수치를 입력해주세요.');
+						return document.getElementsByName('form-num'+x)[i].focus();
 					}
+					param['hrvDtoList['+i+'].scoreList[' + (x-1) +']'] = document.getElementsByName('form-num'+x)[i].value;
+				}
+				if(num8.trim() == '') {
+					alert('수치를 입력해주세요.');
+					return document.getElementsByName('form-num8')[i].focus();
 				}
 	         }
 			 if(sex=="") {
 				 break;
 			 } else { 
-				 param['receiptDtoList['+i+'].agency']=agency;
-		         param['receiptDtoList['+i+'].date']=date; 
-		         param['receiptDtoList['+i+'].contents']=contents; 
-		         param['receiptDtoList['+i+'].session']=session; 
-		         param['receiptDtoList['+i+'].name']=name; 
-		         param['receiptDtoList['+i+'].sex']=sex;
-		         param['receiptDtoList['+i+'].age']=age;
-		         param['receiptDtoList['+i+'].residence']=residence;
-		         param['receiptDtoList['+i+'].job']=job;
-		         param['receiptDtoList['+i+'].pastExp']=pastExp;
+				 param['hrvDtoList['+i+'].agency']=agency;
+		         param['hrvDtoList['+i+'].equipment']=equipment; 
+		         param['hrvDtoList['+i+'].id']=id; 
+		         param['hrvDtoList['+i+'].name']=name; 
+		         param['hrvDtoList['+i+'].jumin']=jumin; 
+		         param['hrvDtoList['+i+'].sex']=sex;
+		         param['hrvDtoList['+i+'].age']=age;
+		         param['hrvDtoList['+i+'].date']=date; 
+		         param['hrvDtoList['+i+'].num8']=num8;
 			 }
 		}
 		 console.log(param);
 	      $.ajax({
-	         url: "/insertForm/receiptInsertForm/insertData.do",
+	         url: "/insertForm/hrvInsertForm/insertData.do",
 	         type: "POST",
 	         data: param, 
 	         success:function(result) {
@@ -368,6 +491,15 @@ body {
 	         }
 	      })
 	}
+	</script>
+	<script>
+	function delete_info(num) {
+		let parent = document.getElementById('parent');
+		let child = document.getElementById('child'+num);
+		
+		parent.removeChild(child);
+		
+    }
 	</script>
 </body>
 </html>

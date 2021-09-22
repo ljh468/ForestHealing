@@ -31,6 +31,9 @@
 		<ul class="nav menu">
 			<li class="active"><a href="/insertOperateResult.do"><em
 					class="fa fa-dashboard">&nbsp;</em> 프로그램 결과 입력</a></li>
+					
+			<li class="active"><a href="/result/ProgramList.do"><em
+					class="fa fa-dashboard">&nbsp;</em> 연월별 단체 검색</a></li>
 
 			<li class="parent"><a data-toggle="collapse" href="#sub-item-1">
 					<em class="fa fa-bar-chart">&nbsp;</em> 운영결과 결과보고 <span
@@ -50,7 +53,7 @@
 					</a></li>
 				</ul></li>
 			
-			<li class="insert"><a href="/insertForm/serviceInsertForm.do"><em class="fa fa-dashboard">&nbsp;</em> 만족도 및 효과평가 입력</a></li>
+			<li class="active"><a href="/insertForm/serviceInsertForm.do"><em class="fa fa-dashboard">&nbsp;</em> 만족도 및 효과평가 입력</a></li>
 			
 			<li class="parent"><a data-toggle="collapse" href="#sub-item-2">
 					<em class="fa fa-navicon">&nbsp;</em> 만족도 및 효과평가 결과검색 <span
@@ -69,19 +72,19 @@
 			
 			<li class="parent"><a data-toggle="collapse" href="#sub-item-3">
 					<em class="fa fa-power-off">&nbsp;</em> 관리자모드 <span
-					data-toggle="collapse" href="#sub-item-3" class="icon pull-right">
+					data-toggle="collapse" href="#sub-item-4" class="icon pull-right">
 						<em class="fa fa-plus"></em>
 				</span>
 			</a>
 				<ul class="children collapse" id="sub-item-3">
 					<li><a class="" href="/mng/mngGetUserList.do"> <span
-								class="fa fa-arrow-right">&nbsp;</span> 직원 계정 관리
-						</a></li>
+							class="fa fa-arrow-right">&nbsp;</span> 직원 계정 관리
+					</a></li>
 					<li><a class="" href="/mng/mngGetUserHist.do"> <span
-								class="fa fa-arrow-right">&nbsp;</span> 사용자 이용 기록 조회
-						</a></li>
+							class="fa fa-arrow-right">&nbsp;</span> 사용자 이용 기록 조회
+					</a></li>
 				</ul></li>
-				<!-- 홍두표 - li.parent > a 에서 em태그를 사용하면 활성화 될 때 아이콘이 'fa-minus'로 바뀌므로 span태그를 사용하기를 권장함. -->
+			<!-- 홍두표 - li.parent > a 에서 em태그를 사용하면 활성화 될 때 아이콘이 'fa-minus'로 바뀌므로 span태그를 사용하기를 권장함. -->
 				<!-- <li class="parent active"><a data-toggle="collapse"
 					href="#sub-item-2"> <span class="fa fa-power-off">&nbsp;</span>
 						관리자 모드 <span data-toggle="collapse" href="#sub-item-2"

@@ -221,6 +221,7 @@ public class BasicInfoDTO {
 	public void setOverall_opinion(String overall_opinion) {
 		this.overall_opinion = overall_opinion;
 	}
+	
 	//DTO 전체 출력 메소드
 	public void getAll(BasicInfoDTO bDTO) {
 		System.out.println("BasicInfoDTO bDTO");

@@ -22,7 +22,7 @@ public class ResultController {
 	@Resource(name = "ResultService")
 	private IResultService resultService;
 	
-	//운영결과 페이지 호출 _ 유연준
+	// =========================================================연월 프로그램 결과 ===================================================================================
 	@RequestMapping(value ="result/YearMonthResult")
 	public String resultProgram(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		log.info("연월 프로그램 결과");
@@ -30,14 +30,17 @@ public class ResultController {
 	}
 	
 	@RequestMapping(value ="result/YearMonthResult_chart")
-	public String YearMonthResult_chart(BasicInfoDTO uDTO, HttpServletResponse response) throws Exception {
+	public String YearMonthResult_chart(BasicInfoDTO bDTO, HttpServletResponse response) throws Exception {
 		log.info("연월 프로그램 차트 실행");
-		log.info(uDTO.getOpenday());
-		log.info(uDTO.getEndday());
+		log.info(bDTO.getOpenday());
+		log.info(bDTO.getEndday());
+		List<BasicInfoDTO> BasicInfoList = resultService.getProgrmaList(bDTO);
+		log.info(BasicInfoList.size());
 		
 		log.info("연월 프로그램 차트 실행 종료");
 		return "result/YearMonthResult_chart";
 	}
+	// =========================================================단체별 프로그램 결과 ===================================================================================
 	@RequestMapping(value ="result/ProgramResult")
 	public String ProgramResult(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
@@ -47,14 +50,9 @@ public class ResultController {
 	@RequestMapping(value ="result/ProgramResult_chart")
 	public String ProgramResult_chart(BasicInfoDTO bDTO, HttpServletResponse response,Model model) throws Exception {
 		log.info("프로그램 차트 실행");
-		log.info("bDTO.getOpenday() : "+ bDTO.getOpenday());
-		log.info("bDTO.getAgency() : " + bDTO.getAgency());
+		log.info("참여단체 : " + bDTO.getAgency());
+		log.info("참여일자 : "+ bDTO.getOpenday());
 		log.info("시설서비스 만족도 평가 시작");
-		//List<ServiceSaf_avgDTO> Service_env_satList = testService.getServiceSaf(uDTO);
-		/*
-		 * if(Service_env_satList == null) { log.info("null값임"); }else {
-		 * model.addAttribute("Service_env_satList", Service_env_satList); }
-		 */
 		List<BasicInfoDTO> basicList = resultService.getBasiclist(bDTO);
 		log.info("basicList : " + basicList.get(0).getAgency());
 		model.addAttribute("basicList", basicList);
@@ -62,7 +60,12 @@ public class ResultController {
 		log.info("프로그램 차트 종료");
 		return "result/ProgramResult_chart";
 	}
-
+	@RequestMapping(value ="result/ProgramResult_chart1")
+	public String ProgramResult_chart1(BasicInfoDTO bDTO, HttpServletResponse response,Model model) throws Exception {
+		
+		return "result/ProgramResult_chart";
+	}
+	// =========================================================주제어 별 프로그램 결과 ===================================================================================
 	@RequestMapping(value ="result/SearchResult")
 	public String SearchResult(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		log.info("주제어별 결과");
@@ -72,12 +75,36 @@ public class ResultController {
 	public String SearchResult_chart(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		log.info("주제어별 결과");
-		return "result/SearchResulta_chart";
+		return "result/SearchResult_chart";
 	}
 	@RequestMapping(value ="result/insertAgencyInfo")
 	public String insertAgencyInfo(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		log.info("주제어별 결과");
 		return "result/SearchResulta_chart";
+	}
+	// =========================================================프로그램 리스트  ===================================================================================
+	
+	@RequestMapping(value ="result/ProgramList")
+	public String ProgramList(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		log.info("연월 프로그램 결과");
+		return "result/ProgramList";
+	}
+	
+	@RequestMapping(value ="result/ProgramList_chart")
+	public String ProgramList_chart(BasicInfoDTO bDTO, Model model) throws Exception {
+		log.info("프로그램 리스트 시작");
+		log.info("프로그램 시작일 : "  + bDTO.getOpenday());
+		log.info("프로그램 종료일 : "  + bDTO.getEndday());
+		List<BasicInfoDTO> rList = resultService.getProgrmaList(bDTO);
+		log.info(rList.size());
+		model.addAttribute("rList", rList);
+		log.info("프로그램 차트 종료");
+		return "result/ProgramList_chart";
+	}
+	@RequestMapping(value ="result/ProgramList_chart1")
+	public String ProgramList_chart1(BasicInfoDTO bDTO, Model model) throws Exception {
+		
+		return "result/ProgramList_chart";
 	}
 } 

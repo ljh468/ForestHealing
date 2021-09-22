@@ -11,6 +11,9 @@ public interface IResultMapper {
 
 	List<BasicInfoDTO> getBasicInfo(BasicInfoDTO bDTO) throws Exception;
 
+	List<BasicInfoDTO> getProgramList(BasicInfoDTO bDTO) throws Exception;
+
+
 	
 	
 }

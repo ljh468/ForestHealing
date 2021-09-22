@@ -989,8 +989,7 @@ h1.page-header {
   margin: 0; }
 
 .chat .panel-body {
-  overflow-y: scroll;
-  height: 300px; }
+  overflow-x: scroll; }
 
 .chat-body small {
   margin-left: 5px; }

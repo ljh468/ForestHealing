@@ -13,8 +13,16 @@ public class ReceiptInsertDTO {
 	private String residence;
 	private String job;
 	private String pastExp;
-	private List<List<String>> scoreList;
+	private String pv;
+	private List<String> scoreList;
 	private List<ReceiptInsertDTO> receiptDtoList;
+	
+	public String getPv() {
+		return pv;
+	}
+	public void setPv(String pv) {
+		this.pv = pv;
+	}
 	public String getAgency() {
 		return agency;
 	}
@@ -75,17 +83,18 @@ public class ReceiptInsertDTO {
 	public void setPastExp(String pastExp) {
 		this.pastExp = pastExp;
 	}
-	public List<List<String>> getScoreList() {
-		return scoreList;
-	}
-	public void setScoreList(List<List<String>> scoreList) {
-		this.scoreList = scoreList;
-	}
 	public List<ReceiptInsertDTO> getReceiptDtoList() {
 		return receiptDtoList;
 	}
 	public void setReceiptDtoList(List<ReceiptInsertDTO> receiptDtoList) {
 		this.receiptDtoList = receiptDtoList;
 	}
+	public List<String> getScoreList() {
+		return scoreList;
+	}
+	public void setScoreList(List<String> scoreList) {
+		this.scoreList = scoreList;
+	}
+	
 
 }
