@@ -1,5 +1,7 @@
 package poly.dto;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BasicInfoDTO {
@@ -14,13 +16,15 @@ public class BasicInfoDTO {
 	private String part_woman_cnt;
 	private String lead_man_cnt;
 	private String lead_woman_cnt;
-	private List<String> support;
-	private List<String> income_type;
-	private List<String> part_type;
-	private List<String> age_group;
-	private List<String> biz_purpose;
-	private List<String> service_type;
+	private String support;
+	private List<String> support1;
+	private String income_type;
+	private String part_type;
+	private String age_type;
+	private String biz_purpose;
+	private String service_type;
 	private List<ProgramInOutDTO> program_in_out;
+	private List<String> program_in_out2;
 	private String room_part_people;
 	private String room_part_room;
 	private String room_lead_people;
@@ -34,7 +38,63 @@ public class BasicInfoDTO {
 	private String program_opinion;
 	private String service_opinion;
 	private String overall_opinion;
+	private List<ExpenseDTO> expList;
+	private List<IncomeDTO> incList;
+	private String progress_state;
+	private String sum;
+	private String count;
+	private String reg_id;
 	
+	// 기본생성자 디폴트 값 생성
+	public BasicInfoDTO() {
+		basic_info_seq = "";
+		openday = "";
+		agency = "";
+		om = "";
+		endday = "";
+		days_to_stay = "";
+		residence = "";
+		part_man_cnt = "";
+		part_woman_cnt = "";
+		lead_man_cnt = "";
+		lead_woman_cnt = "";
+		support = "";
+		income_type = "";
+		part_type = "";
+		age_type = "";
+		biz_purpose = "";
+		service_type = "";
+		program_in_out = new ArrayList<ProgramInOutDTO>();
+		program_in_out2 = new ArrayList<String>();
+		room_part_people = "";
+		room_part_room = "";
+		room_lead_people = "";
+		room_lead_room = "";
+		room_etc_people = "";
+		room_etc_room = "";
+		meal_type = "";
+		meal_part = "";
+		meal_lead = "";
+		meal_etc = "";
+		program_opinion = "";
+		service_opinion = "";
+		overall_opinion = "";
+		expList = new ArrayList<ExpenseDTO>();
+		incList = new ArrayList<IncomeDTO>();
+		progress_state = "";
+		sum = "";
+		count = "";
+		reg_id = "";
+	}
+	
+	public List<String> getProgram_in_out2() {
+		return program_in_out2;
+	}
+
+	public void setProgram_in_out2(String program_in_out2) {
+		this.program_in_out2 = Arrays.asList(program_in_out2.split(","));
+	}
+
 	public String getBasic_info_seq() {
 		return basic_info_seq;
 	}
@@ -101,40 +161,50 @@ public class BasicInfoDTO {
 	public void setLead_woman_cnt(String lead_woman_cnt) {
 		this.lead_woman_cnt = lead_woman_cnt;
 	}
-	public List<String> getSupport() {
+	
+	public String getSupport() {
 		return support;
 	}
-	public void setSupport(List<String> support) {
+	public void setSupport(String support) {
 		this.support = support;
 	}
-	public List<String> getIncome_type() {
+	
+	public List<String> getSupport1() {
+		return support1;
+	}
+	public void setSupport1(String support1) {
+		this.support1 = Arrays.asList(support1.split(","));
+	}
+	
+	public String getIncome_type() {
 		return income_type;
 	}
-	public void setIncome_type(List<String> income_type) {
+	public void setIncome_type(String income_type) {
 		this.income_type = income_type;
 	}
-	public List<String> getPart_type() {
+	public String getPart_type() {
 		return part_type;
 	}
-	public void setPart_type(List<String> part_type) {
+	public void setPart_type(String part_type) {
 		this.part_type = part_type;
 	}
-	public List<String> getAge_group() {
-		return age_group;
+	
+	public String getAge_type() {
+		return age_type;
 	}
-	public void setAge_group(List<String> age_group) {
-		this.age_group = age_group;
+	public void setAge_type(String age_type) {
+		this.age_type = age_type;
 	}
-	public List<String> getBiz_purpose() {
+	public String getBiz_purpose() {
 		return biz_purpose;
 	}
-	public void setBiz_purpose(List<String> biz_purpose) {
+	public void setBiz_purpose(String biz_purpose) {
 		this.biz_purpose = biz_purpose;
 	}
-	public List<String> getService_type() {
+	public String getService_type() {
 		return service_type;
 	}
-	public void setService_type(List<String> service_type) {
+	public void setService_type(String service_type) {
 		this.service_type = service_type;
 	}
 	public List<ProgramInOutDTO> getProgram_in_out() {
@@ -222,45 +292,44 @@ public class BasicInfoDTO {
 		this.overall_opinion = overall_opinion;
 	}
 	
+	public List<ExpenseDTO> getExpList() {
+		return expList;
+	}
+	public void setExpList(List<ExpenseDTO> expList) {
+		this.expList = expList;
+	}
+	public List<IncomeDTO> getIncList() {
+		return incList;
+	}
+	public void setIncList(List<IncomeDTO> incList) {
+		this.incList = incList;
+	}
+	public String getProgress_state() {
+		return progress_state;
+	}
+	public void setProgress_state(String progress_state) {
+		this.progress_state = progress_state;
+	}
+	public String getCount() {
+		return count;
+	}
+	public void setCount(String count) {
+		this.count = count;
+	}
+	public String getSum() {
+		return sum;
+	}
+	public void setSum(String sum) {
+		this.sum = sum;
+	}
+	public String getReg_id() {
+		return reg_id;
+	}
+	public void setReg_id(String reg_id) {
+		this.reg_id = reg_id;
+	}
 	//DTO 전체 출력 메소드
 	public void getAll(BasicInfoDTO bDTO) {
-		System.out.println("BasicInfoDTO bDTO");
-		System.out.println("------------------------");
-		System.out.println("om: "+bDTO.getOm());
-		System.out.println("start_date: "+bDTO.getOpenday());
-		System.out.println("agency: "+bDTO.getAgency());
-		System.out.println("end_date: "+bDTO.getEndday());
-		System.out.println("days_to_stay: "+bDTO.getDays_to_stay());
-		System.out.println("part_man_cnt: "+bDTO.getPart_man_cnt());
-		System.out.println("part_woman_cnt: "+bDTO.getPart_woman_cnt());
-		System.out.println("lead_man_cnt: "+bDTO.getLead_man_cnt());
-		System.out.println("lead_woman_cnt: "+bDTO.getLead_woman_cnt());
-		System.out.println("support: "+bDTO.getSupport());
-		System.out.println("income_type: "+bDTO.getIncome_type());
-		System.out.println("part_type: "+bDTO.getPart_type());
-		System.out.println("biz_purpose: "+bDTO.getBiz_purpose());
-		System.out.println("service_type: "+bDTO.getService_type());
-		System.out.println();
-		for(int i = 0 ; i <bDTO.getProgram_in_out().size();i++) {
-			System.out.print("프로그램명 : "+bDTO.getProgram_in_out().get(i).getProgram()+" | ");
-			System.out.print("내부강사 : "+bDTO.getProgram_in_out().get(i).getIn_tutor()+" | ");
-			System.out.println("외부강사 : "+bDTO.getProgram_in_out().get(i).getOut_tutor());
-		}
-		System.out.println();
-		System.out.println("room_part_peaple: "+bDTO.getRoom_part_people());
-		System.out.println("room_part_room: "+bDTO.getRoom_part_room());
-		System.out.println("room_lead_peaple: "+bDTO.getRoom_lead_people());
-		System.out.println("room_lead_room: "+bDTO.getRoom_lead_room());
-		System.out.println("room_etc_people: "+bDTO.getRoom_etc_people());
-		System.out.println("room_etc_room: "+bDTO.getRoom_etc_room());
-		System.out.println("meal_type: "+bDTO.getMeal_type());
-		System.out.println("meal_part: "+bDTO.getMeal_part());
-		System.out.println("meal_lead: "+bDTO.getMeal_lead());
-		System.out.println("meal_etc: "+bDTO.getMeal_etc());
-		System.out.println("Program_opinion: "+bDTO.getProgram_opinion());
-		System.out.println("Service_opinion: "+bDTO.getService_opinion());
-		System.out.println("overall_opinion: "+bDTO.getOverall_opinion());
-		System.out.println("------------------------\n");
 	}
 	
 }

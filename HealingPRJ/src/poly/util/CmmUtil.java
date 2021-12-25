@@ -1,5 +1,7 @@
 package poly.util;
 
+import static poly.util.CmmUtil.nvl;
+
 public class CmmUtil {
 	public static String nvl(String str, String chg_str) {
 		String res;
@@ -123,6 +125,36 @@ public class CmmUtil {
 	public static String fmNumber(int num, int cnt) {
 		return String.format("%0" + cnt + "d", num);
 
+	}
+	
+	public static Boolean nvl(Boolean bool, Boolean chg_bool) {
+		Boolean res;
+
+		if (bool == null) {
+			res = chg_bool;
+		} else if (!chg_bool) {
+			res = chg_bool;
+		} else {
+			res = bool;
+		}
+		return res;
+	}
+
+	public static Boolean nvl(Boolean bool) {
+		return nvl(bool, false);
+	}
+
+	public static String convertXSS(String value) {
+		// 변환했던 문자를 다시 원래 특수문자로 변환
+		if (nvl(value).length() == 0) {
+			return "";
+		}
+		value = value.replaceAll("& lt;", "<").replaceAll("& gt;", ">");
+		value = value.replaceAll("& #40;", "\\(").replaceAll("& #41;", "\\)");
+		value = value.replaceAll("& #44;", ",");
+		value = value.replaceAll("& #39;", "'");
+		value = value.replaceAll("eval\\((.*)\\)", "");
+		return value;
 	}
 
 }

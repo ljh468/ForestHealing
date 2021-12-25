@@ -15,7 +15,7 @@
 				<select class="form-control select" onchange="location.href=this.value">
 					<option value="/insertForm/serviceInsertForm.do">서비스환경 만족도</option>
 					<option value="/insertForm/programInsertForm.do">프로그램 만족도</option>
-					<option value="/insertForm/receiptInsertForm.do">상담&치유서비스 효과평가</option>
+					<option value="/insertForm/counselInsertForm.do">상담&치유서비스 효과평가</option>
 					<option value="/insertForm/preventInsertForm.do">예방서비스 효과평가</option>
 					<option value="/insertForm/healingInsertForm.do" >힐링서비스 효과평가</option>
 					<option value="/insertForm/hrvInsertForm.do" >HRV 측정 검사</option>

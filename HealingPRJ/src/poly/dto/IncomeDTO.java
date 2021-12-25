@@ -1,23 +1,62 @@
 package poly.dto;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class IncomeDTO {
-	private String income_id;
+	
+	private String income_seq;
+	private String basic_info_seq;
 	private String openday;
-	private String program_income;
-	private String program_detail;
-	private String material_income;
-	private String material_detail;
-	private String meal_income;
-	private String meal_detail;
-	private String rental_income;
-	private String rental_detail;
-	private String sum_tax_except;
-	private String sum_tax_include;
-	public String getIncome_id() {
-		return income_id;
+	private String endday;
+	private String agency;
+	private String type;
+	private String price;
+	private String detail;
+	private String note;
+	private String sum;
+	private List<String> price1;
+	private List<String> detail1;
+	private List<String> note1;
+	// 기본생성자 디폴트 값 생성
+	public IncomeDTO() {
+		income_seq = "";
+		basic_info_seq = "";
+		openday = "";
+		agency = "";
+		type = "";
+		price = "";
+		detail = "";
+		note = "";
 	}
-	public void setIncome_id(String income_id) {
-		this.income_id = income_id;
+	
+	public String getSum() {
+		return sum;
+	}
+
+	public void setSum(String sum) {
+		this.sum = sum;
+	}
+
+	public String getEndday() {
+		return endday;
+	}
+
+	public void setEndday(String endday) {
+		this.endday = endday;
+	}
+
+	public String getIncome_seq() {
+		return income_seq;
+	}
+	public void setIncome_seq(String income_seq) {
+		this.income_seq = income_seq;
+	}
+	public String getBasic_info_seq() {
+		return basic_info_seq;
+	}
+	public void setBasic_info_seq(String basic_info_seq) {
+		this.basic_info_seq = basic_info_seq;
 	}
 	public String getOpenday() {
 		return openday;
@@ -25,65 +64,53 @@ public class IncomeDTO {
 	public void setOpenday(String openday) {
 		this.openday = openday;
 	}
-	public String getProgram_income() {
-		return program_income;
+	public String getAgency() {
+		return agency;
 	}
-	public void setProgram_income(String program_income) {
-		this.program_income = program_income;
+	public void setAgency(String agency) {
+		this.agency = agency;
 	}
-	public String getProgram_detail() {
-		return program_detail;
+	public String getType() {
+		return type;
 	}
-	public void setProgram_detail(String program_detail) {
-		this.program_detail = program_detail;
+	public void setType(String type) {
+		this.type = type;
 	}
-	public String getMaterial_income() {
-		return material_income;
+	public void setPrice(String price) {
+		this.price = price;
 	}
-	public void setMaterial_income(String material_income) {
-		this.material_income = material_income;
+	public String getPrice() {
+		return price;
 	}
-	public String getMaterial_detail() {
-		return material_detail;
+	public String getDetail() {
+		return detail;
 	}
-	public void setMaterial_detail(String material_detail) {
-		this.material_detail = material_detail;
+	public void setDetail(String detail) {
+		this.detail = detail.replaceAll(",", "& #44;");
 	}
-	public String getMeal_income() {
-		return meal_income;
+	public String getNote() {
+		return note;
 	}
-	public void setMeal_income(String meal_income) {
-		this.meal_income = meal_income;
+	public void setNote(String note) {
+		this.note = note.replaceAll(",", "& #44;");
 	}
-	public String getMeal_detail() {
-		return meal_detail;
+	public List<String> getPrice1() {
+		return price1;
 	}
-	public void setMeal_detail(String meal_detail) {
-		this.meal_detail = meal_detail;
+	public void setPrice1(String price1) {
+		this.price1 = Arrays.asList(price1.split(","));
 	}
-	public String getRental_income() {
-		return rental_income;
+	public List<String> getDetail1() {
+		return detail1;
 	}
-	public void setRental_income(String rental_income) {
-		this.rental_income = rental_income;
+	public void setDetail1(String detail1) {
+		this.detail1 = Arrays.asList(detail1.split(","));
 	}
-	public String getRental_detail() {
-		return rental_detail;
+	public List<String> getNote1() {
+		return note1;
 	}
-	public void setRental_detail(String rental_detail) {
-		this.rental_detail = rental_detail;
-	}
-	public String getSum_tax_except() {
-		return sum_tax_except;
-	}
-	public void setSum_tax_except(String sum_tax_except) {
-		this.sum_tax_except = sum_tax_except;
-	}
-	public String getSum_tax_include() {
-		return sum_tax_include;
-	}
-	public void setSum_tax_include(String sum_tax_include) {
-		this.sum_tax_include = sum_tax_include;
+	public void setNote1(String note1) {
+		this.note1 = Arrays.asList(note1.split(","));
 	}
 	
 }

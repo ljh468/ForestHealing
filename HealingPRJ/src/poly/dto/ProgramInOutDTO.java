@@ -3,7 +3,9 @@ package poly.dto;
 public class ProgramInOutDTO {
 	private String agency;
 	private String openday;
-	private String program;
+	private String programName;
+	private String teacher;
+	private String bunya;
 	private String in_tutor;
 	private String out_tutor;
 	
@@ -19,11 +21,23 @@ public class ProgramInOutDTO {
 	public void setOpenday(String openday) {
 		this.openday = openday;
 	}
-	public String getProgram() {
-		return program;
+	public String getProgramName() {
+		return programName;
 	}
-	public void setProgram(String program) {
-		this.program = program;
+	public void setProgramName(String programName) {
+		this.programName = programName;
+	}
+	public String getTeacher() {
+		return teacher;
+	}
+	public void setTeacher(String teacher) {
+		this.teacher = teacher;
+	}
+	public String getBunya() {
+		return bunya;
+	}
+	public void setBunya(String bunya) {
+		this.bunya = bunya;
 	}
 	public String getIn_tutor() {
 		return in_tutor;

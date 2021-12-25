@@ -118,7 +118,8 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">프로그램 윤영결과</li>
+				<li class="active">운영 통계 검색</li>
+				<li class="active">프로그램 운영결과</li>
 			</ol>
 		</div>
 		
@@ -136,7 +137,7 @@
 					<input type='date' name="openday" id="openday"style="font-size: 16pt" /> 
 				</div>
 				<div class="col-md-9">
-					<button type="button" onClick="JavaScript:search();"class="btn btn-default" tabindex="-1" value="검색"> <i class="fa fa-search"></i>
+					<button type="button" onClick="JavaScript:search();"class="btn-success" tabindex="-1" value="검색"> <i class="fa fa-search"></i>
 					</button>
 					<input type="button" value="인쇄" onClick="info_print()" />
 				</div>

@@ -14,6 +14,7 @@ public class HealingInsertDTO {
 	private String ptcProgram;
 	private String past_stress_experience;
 	private String pv;
+	private String eval_date;
 	private List<String> scoreList;
 	private List<String> scoreString2List;
 	private List<HealingInsertDTO> healingDtoList;
@@ -83,6 +84,12 @@ public class HealingInsertDTO {
 	}
 	public void setPv(String pv) {
 		this.pv = pv;
+	}
+	public String getEval_date() {
+		return eval_date;
+	}
+	public void setEval_date(String eval_date) {
+		this.eval_date = eval_date;
 	}
 	public List<String> getScoreList() {
 		return scoreList;

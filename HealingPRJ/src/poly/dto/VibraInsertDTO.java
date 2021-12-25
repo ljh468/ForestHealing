@@ -1,5 +1,6 @@
 package poly.dto;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class VibraInsertDTO {
@@ -12,9 +13,23 @@ public class VibraInsertDTO {
 	private String sex;
 	private String age;
 	private String date;
+	private String pv;
 	private List<String> scoreList;
+	private List<String> scoreString2List;
 	private List<VibraInsertDTO> vibraDtoList;
 	
+	public List<String> getScoreString2List() {
+		return scoreString2List;
+	}
+	public void setScoreString2List(String scoreString2List) {
+		this.scoreString2List = Arrays.asList(scoreString2List.split(","));
+	}
+	public String getPv() {
+		return pv;
+	}
+	public void setPv(String pv) {
+		this.pv = pv;
+	}
 	public String getAgency() {
 		return agency;
 	}

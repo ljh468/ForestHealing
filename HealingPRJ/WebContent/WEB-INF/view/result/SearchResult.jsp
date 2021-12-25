@@ -44,12 +44,18 @@
 		var sub2 = $("#sub2").val();
 		var content3 = $("#content3").val();
 		var sub3 = $("#sub3").val();
-		console.log(sub1); 
-		console.log(content1); 
-		console.log(sub2); 
-		console.log(content2); 
-		console.log(sub3); 
-		console.log(content3); 
+		
+		if(content1 == ""){
+			content1 ="%%"
+		}
+		if(content2 == ""){
+			content2 ="%%"
+		}
+		if(content3 == ""){
+			content3 ="%%"
+		}
+		console.log(content1);
+		
 		  $.ajax({
 			url : 'SearchResult_chart.do',
 			type : 'post',
@@ -87,39 +93,51 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">주제어별 프로그램 결과 보고 </li>
+				<li class="active">운영 통계 검색</li>
+				<li class="active">주제어별 프로그램 통계 검색</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">주제어별 프로그램 결과보고 </h1>
+				<h1 class="page-header">주제어별 프로그램 통계 검색 </h1>
 			</div>
 		</div><!--/.row-->
-		<div style="display:inline-flex">
-			<% for(int i =1; i<= 3; i++) { %>
-			&nbsp;&nbsp;
-				<select id="sub<%=i%>" name="sub<%=i%>" class="form-control" style="border-radius: 5px; width: 40%; height: 50px;">
-					<option value="AGENCY">기관명</option>
-					<option value="PROGRAM_NAME">참여프로그램</option>
-					<option value="SEX">성별</option>
-					<option value="AGE">연령(만)</option>
-					<option value="REGIDENCE">거주지</option>
-					<option value="JOB">직업</option>
-					<option value="ProgramName">프로그램명</option>
-					<option value="TEACHER">강사명</option>
-					<option value="PLACE">장소</option>
-					<option value="OPENDAY">참가기간</option>
-				</select> 
-				<input type="text" id="content<%=i%>"name="content<%=i%>" placeholder="Search" class="form-control" style="border-radius: 5px;width: 40%; height: 50px;">
-			&nbsp;&nbsp;
-			<% } %>
-			<div class="col-md-9">
-				<button type="button" onClick="JavaScript:search();"class="btn btn-default" tabindex="-1" value="검색"> <i class="fa fa-search"></i></button>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-body" style="padding-bottom:0px;">
+						<label for="" style="margin: 0px 90px 0px 80px;">주제어1</label>
+						<label for="" style="margin: 0px 73px 0px 95px;">주제어2</label>
+						<label for="" style="margin: 0px 73px 0px 86px;">주제어3</label>
+					</div>
+					<div class="panel-body" style="padding-top:7px;">
+						<div style="display:inline-flex">
+							<% for(int i =1; i<= 3; i++) { %>
+							&nbsp;&nbsp;
+								<select id="sub<%=i%>" name="sub<%=i%>" class="form-control" style="border-radius: 5px; width: 99px; height: 50px; margin-right:7px;">
+									<option value="X">해당없음</option>
+									<option value="AGENCY">단체명</option>
+									<option value="OM">OM</option>
+									<option value="DAYS_TO_STAY">체류기간</option>
+									<option value="REGIDENCE">거주지역</option>
+									<option value="SUPPORT">지원사항</option>
+									<option value="BIZ_PURPOSE">사업목적</option>
+									<option value="PART_TYPE">참가자유형</option>
+									<option value="AGE_TYPE">연령대</option>
+									<option value="INCOME_TYPE">수입구분</option>
+									<option value="SERVICE_TYPE">서비스유형</option>
+								</select> 
+								<input type="text" id="content<%=i%>"name="content<%=i%>" placeholder="Search" class="form-control" style="border-radius: 5px;width: 100px; height: 50px; margin: 0px 15px 0px 0px;">
+							&nbsp;&nbsp;
+							<% } %>
+								<button type="button" onClick="JavaScript:search();"class="btn-success" tabindex="-1" value="검색" style="margin: 7px 0px 0px 0px; height:35px"><i class="fa fa-search"></i></button>
+						</div>
+					</div>
+				</div>
 			</div>
+			<div id="resProgram_chart"></div>
 		</div>
-		
-		<div id="resProgram_chart"></div>
 	</div>
 
 </body>

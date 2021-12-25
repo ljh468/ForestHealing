@@ -4,17 +4,16 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import poly.dto.HistoryDTO;
+import poly.dto.UserDTO;
 import poly.persistance.mapper.IHistoryMapper;
 import poly.service.IHistoryService;
+import poly.service.comm.AbstractService;
 
 @Service("HistoryService")
-public class HistoryService implements IHistoryService{
-	
-	private Logger log = Logger.getLogger(this.getClass());
+public class HistoryService  extends AbstractService implements IHistoryService{
 	
 	@Resource(name = "HistoryMapper")
 	private IHistoryMapper historyMapper;
@@ -27,7 +26,7 @@ public class HistoryService implements IHistoryService{
 	}
 
 	@Override
-	public List<HistoryDTO> getHistory() throws Exception {
+	public List<HistoryDTO> getAllHistories() throws Exception {
 		log.info(this.getClass().getName() + ".getHistory Start !!");
 		log.info(this.getClass().getName() + ".getHistory End !!");
 		return historyMapper.getAllHistories();
@@ -38,6 +37,13 @@ public class HistoryService implements IHistoryService{
 		log.info(this.getClass().getName() + ".getHistory Start !!");
 		log.info(this.getClass().getName() + ".getHistory End !!");
 		return historyMapper.getHistory(hDTO);
+	}
+
+	@Override
+	public List<UserDTO> getRegUser() throws Exception {
+		log.info(this.getClass().getName() + ".getRegUser Start !!");
+		log.info(this.getClass().getName() + ".getRegUser End !!");
+		return historyMapper.getRegUser();
 	}
 
 	

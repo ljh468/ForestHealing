@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import ="static poly.util.CmmUtil.nvl" %>
+<%@ page import ="static poly.util.CmmUtil.convertXSS" %>
+<%@ page import ="poly.dto.BasicInfoDTO" %>
+<%@ page import ="java.util.List" %>
+<%
+	List<BasicInfoDTO> rList = (List<BasicInfoDTO>)request.getAttribute("rList");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,6 +63,38 @@
 			}
 		}) 
 	}
+	 function search_1(i){
+			var openday = document.getElementById("OPENDAY" + i).textContent;
+			var agency = document.getElementById("AGENCY" + i).textContent;
+			console.log("시작일자 : " +openday)
+			console.log("기관명 : " + agency);
+			var search = {"openday":openday,"agency":agency};
+			  $.ajax({
+				url : 'ProgramResult_chart.do',
+				type : 'post',
+				data : search,
+				success : function(data) {
+					console.log("성공");
+					console.log(data);
+					$("#ProgramResult_chart").html(data);
+				},
+				error:function (e){
+					alert("조회를 할 수 없습니다.");
+				}
+			})
+		 } 
+	 function info_print() {
+			var initBody = document.body.innerHTML;
+			window.onbeforeprint = function () {
+				document.body.innerHTML = document.getElementById("ProgramResult_chart").innerHTML;
+			}
+			window.onafterprint = function () {
+				document.body.innerHTML = initBody;
+			}
+
+			window.print();
+
+		}
 </script>
 <script src="/lumino/js/jquery-1.11.1.min.js"></script>
 	<script src="/lumino/js/bootstrap.min.js"></script>
@@ -75,13 +114,13 @@
 				<li><a href="#">
 					<em class="fa fa-home"></em>
 				</a></li>
-				<li class="active">연 월 별 단체 검색</li>
+				<li class="active">운영 결과 보고 검색</li>
 			</ol>
 		</div><!--/.row-->
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">연 월 별 단체 검색</h1>
+				<h1 class="page-header">운영 결과 보고 검색</h1>
 			</div>
 		</div><!--/.row-->
 			<!--단체별 운영결과 검색창   -->
@@ -92,12 +131,43 @@
 				</div>
 				<div class="col-md-12">
 					<input type='date' name="openday" id="openday"style="font-size: 16pt" /> <input type='date' name="endday" id="endday"style="font-size: 16pt" />
-					<button type="button" onClick="JavaScript:search();"class="btn btn-default" tabindex="-1" value="검색"> <i class="fa fa-search"></i></button> 
+					<button type="button" onClick="JavaScript:search();"class="btn-success" tabindex="-1" value="검색"> <i class="fa fa-search"></i></button> 
+					<input type="button" value="인쇄" onClick="info_print()" />
 				</div>
 			</div>
 		</div>	<!--/.main-->
 		&nbsp;&nbsp;&nbsp;
-		<div id="resProgram_chart"></div>
+		<div>
+			<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>순번</th>
+					<th>단체 명</th>
+					<th>시작일</th>
+					<th>종료일</th>
+					<th>인원수</th>
+					<th>om</th>
+					<th>검색</th>
+				</tr>
+			</thead>
+			<tbody id="resProgram_chart">
+			<%
+				for (int i = 0; i < rList.size(); i++) {
+			%>
+				<tr>
+					<td><%= i+1 %></td>
+					<td id="AGENCY<%=i%>"><%= convertXSS(rList.get(i).getAgency())%></td>
+					<td id="OPENDAY<%=i%>"><%= convertXSS(rList.get(i).getOpenday())%></td>
+					<td><%= rList.get(i).getEndday()%></td>
+					<td><%= Integer.parseInt(rList.get(i).getLead_man_cnt()) + Integer.parseInt(rList.get(i).getLead_woman_cnt())+ Integer.parseInt(rList.get(i).getPart_man_cnt()) + Integer.parseInt(rList.get(i).getPart_woman_cnt()) %></td>
+					<td><%= convertXSS(rList.get(i).getOm())%></td>
+					<td><button type="button" onClick="search_1('<%=i%>');"class="btn-success" tabindex="-1" value="검색"> <i class="fa fa-search"></i></button></td>
+				</tr>
+			<%}%>
+			</tbody>
+			</table>
+			<div id="ProgramResult_chart"></div>
+		</div>
 	</div>
 
 </body>

@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import ="poly.util.CmmUtil" %>
 <%@ page import ="java.util.List" %>
 <%@ page import ="poly.dto.HistoryDTO" %>
+<%@ page import ="poly.dto.UserDTO" %>
+<%@ page import ="static poly.util.CmmUtil.nvl" %>
+<%@ page import ="static poly.util.CmmUtil.convertXSS" %>
 
 
 <%
 	List<HistoryDTO> hList = (List<HistoryDTO>)request.getAttribute("hList");
+	List<UserDTO> rList = (List<UserDTO>)request.getAttribute("rList");
 %>
 
 
@@ -83,9 +86,14 @@ body {
 				<h4 style="float : left; margin: 13px 10px 13px 0px;">사용자 이용 기록 | </h4>
 				<h4 style="float : left; margin: 13px 10px 13px 0px;">작성자</h4> 
 				<div style="width: 120px;float: left;margin-right: 10px;flex: auto;flex-basis: auto;white-space: nowrap;max-width: 300px;">
-					<input class="form-control form-reg_id" id='form-reg_id' placeholder="작성자">
+					<select class="form-control form-reg_id" id="form-reg_id" style="width: 200px; border-radius: 5px; margin: 4px 0px 0px 0px;">
+						<option value="작성자">작성자</option>
+						<%for(int i=0; i<rList.size(); i++)  {%>
+						<option value="<%=convertXSS(rList.get(i).getUser_name())%>"><%=convertXSS(rList.get(i).getUser_name())%></option>
+						<%} %>
+					</select>
 				</div>
-				<div style="float: left; margin: 2px 10px 2px 0px;">
+				<div style="float: left; margin: 2px 10px 2px 77px;">
 					<input type="button" class="btn btn-default btn-sm" value="조회" onclick="search()">
 				</div>
 			</div>
@@ -93,6 +101,9 @@ body {
 			<div class="panel-body timeline-container" id="main-div">
 				<ul class="timeline" id="timeline">
 					<%for(int i=0; i<hList.size(); i++) { 
+						if(i==19) { 
+							break;
+						}
 						if(hList.get(i).getReg_id().equals("관리자")) {
 					%>
 							<li>
@@ -101,11 +112,11 @@ body {
 								</div>
 								<div class="timeline-panel">
 									<div class="timeline-heading">
-										<span class="timeline-title" style="display: inline-block; margin-bottom: 3px; font-size: smaller;"><%=hList.get(i).getReg_id()%> | </span> 
-										<span style="display: inline-block; font-size: small"><%=hList.get(i).getDate()%></span>
+										<span class="timeline-title" style="display: inline-block; margin-bottom: 3px; font-size: smaller;"><%=convertXSS(hList.get(i).getReg_id())%> | </span> 
+										<span style="display: inline-block; font-size: small"><%=convertXSS(hList.get(i).getDate())%></span>
 									</div>
 									<div class="timeline-body">
-										<span><%=hList.get(i).getDescription()%></span>
+										<span><%=convertXSS(hList.get(i).getDescription())%></span>
 									</div>
 								</div>
 							</li>
@@ -119,11 +130,11 @@ body {
 							<div class="timeline-panel">
 								<div class="timeline-heading">
 									<span class="timeline-title"
-										style="display: inline-block; margin-bottom: 3px; font-size: smaller;"><%=hList.get(i).getReg_id()%>
-										- 직원 | </span> <span style="display: inline-block; font-size: small"><%=hList.get(i).getDate()%></span>
+										style="display: inline-block; margin-bottom: 3px; font-size: smaller;"><%=convertXSS(hList.get(i).getReg_id())%>
+										- 직원 | </span> <span style="display: inline-block; font-size: small"><%=convertXSS(hList.get(i).getDate())%></span>
 								</div>
 								<div class="timeline-body">
-									<span><%=hList.get(i).getDescription()%></span>
+									<span><%=convertXSS(hList.get(i).getDescription())%></span>
 								</div>
 							</div>
 						</li>
@@ -204,8 +215,8 @@ body {
 						text += "<div class='timeline-badge'><i class='glyphicon glyphicon-user'></i>";
 						text += "</div><div class='timeline-panel'>";
 						text += "<div class='timeline-heading'><span class='timeline-title' style='display: inline-block; margin-bottom: 3px; font-size: smaller;'>";
-						text += result[i].reg_id + "| </span> ";
-						text += "<span style='display: inline-block; font-size: small'>"+result[i].date + result[i].time+"</span></div>";
+						text +=  result[i].reg_id + " - 직원 | </span> ";
+						text += "<span style='display: inline-block; font-size: small'>"+result[i].date + "</span></div>";
 						text += "<div class='timeline-body'><span>"+result[i].description+"</span>";
 						text += "</div></div></li>";
 					}

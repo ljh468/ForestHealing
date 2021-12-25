@@ -1,10 +1,11 @@
+<%@page import="poly.util.CmmUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%
     
-    String msg = (String)request.getAttribute("msg");
-	String url = (String)request.getAttribute("url");
+    String msg = CmmUtil.nvl((String)request.getAttribute("msg"));
+	String url = CmmUtil.nvl((String)request.getAttribute("url"));
     
 %>
 
@@ -12,8 +13,13 @@
 <html>
 <head>
 <script type="text/javascript">
-alert("<%=msg %>")
-location.href = "<%=url %>"
+let msg = '<%=msg%>';
+if(msg=='') { 
+	location.href = "<%=url %>"
+} else { 
+	location.href = "<%=url %>"
+	alert("<%=msg %>")
+}
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>redirect</title>

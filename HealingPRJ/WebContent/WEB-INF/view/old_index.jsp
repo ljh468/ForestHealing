@@ -177,7 +177,136 @@
 		</div>
 		
 		<!--  -->
-		
+		<!-- <div style=" display:table inline-block; padding:10px; border-collapse: collapse; font-size: 10px;text-align: center; ">
+        <div style="display: table-cell; border:1px solid black; width: 50px; height: auto; vertical-align: middle; background-color: #ccc;">지출<br>금액</div>
+        <div style="display: table-cell; border:1px solid black; width:100px; height: 60px; text-align: center;">
+            <div style="display: table-cell; ">   
+                <div style="width: 100px; height: 20px; border-bottom: 1px solid black; text-align: center; background-color: #ccc;">지출항목</div>
+                <div style="display: table-row; width :150px; height: auto;">
+                    <div style="display: table-cell">   
+                         <div style="display: table-cell;width: 50px; height: 359px; border-bottom: 1px solid black;  border-right: 1px solid black; text-align: center; vertical-align: middle;">강사</div>
+                    </div> 
+                    <div style="display: table-cell; vertical-align: middle;">   
+                        <div style="width: 50px; height: 140px;line-height:140px; border-bottom: 1px solid black;  text-align: center; vertical-align: middle;">강사비</div>
+                        <div style="width: 50px; height: 140px;line-height:140px; border-bottom: 1px solid black;  text-align: center; vertical-align: middle;">교통비</div>
+                        <div style="width: 50px; height: 60px; line-height:60px;border-bottom: 1px solid black;  text-align: center; vertical-align: middle;">보조강사비</div>
+                        <div style="border-bottom: 1px solid black;width: 50px; height: 20px; text-align: center; vertical-align: middle;">식비</div>
+                    </div> 
+                </div>
+                <div style="display: table-row; width :150px; height: 60px;">
+                    <div style="display: table-cell">   
+                         <div style="display: table-cell;width: 50px; height: 119px; border-bottom: 1px solid black;  border-right: 1px solid black; text-align: center; vertical-align: middle;">참가자</div>
+                    </div> 
+                    <div style="display: table-cell; vertical-align: middle;">   
+                        <div style="width: 50px; height: 40px; line-height:40px;border-bottom: 1px solid black;  text-align: center;">숙박</div>
+                        <div style="width: 50px; height: 40px; line-height:40px;border-bottom: 1px solid black;  text-align: center;">식비</div>
+                        <div style="border-bottom: 1px solid black;width: 50px; height: 40px;line-height:40px; text-align: center;">쟤료비</div>
+                    </div> 
+                </div>
+                <div style="width: 100px; height: 20px; border-bottom: 1px solid black; text-align: center;">예비비</div>
+                <div style="width: 100px; height: 20px; text-align: center;">합계</div>
+            </div>
+        </div>
+        <div style="display: table-cell; border:1px solid black; width:100px; height: auto; text-align: center;">
+            <div style="display: table-cell; ">   
+                <div style="width: 150px; height: 20px; border-bottom: 1px solid black; text-align: center; background-color: #ccc;">기존예산</div>
+                <div style="width: 150px; height: 140px; line-height:140px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 140px; line-height:140px; border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 60px;  line-height:60px;border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  line-height:20px;border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 40px;  line-height:40px;border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 40px;  line-height:40px;border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 40px;  line-height:40px; border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  line-height:20px;border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  line-height:20px;text-align: center;"></div>
+            </div>
+        </div>
+        <div style="display: table-cell; border:1px solid black; width:100px; height: auto; text-align: center;">
+            <div style="display: table-cell; ">   
+                <div style="width: 160px; height: 20px; border-bottom: 1px solid black; text-align: center; background-color: #ccc;">집행금액</div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 40px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 40px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 40px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 160px; height: 20px;  text-align: center;">
+                </div>
+            </div>
+        </div>
+        <div style="display: table-cell; border:1px solid black; width:100px; height: auto; text-align: center;">
+            <div style="display: table-cell; ">   
+                <div style="width: 350px; height: 20px; border-bottom: 1px solid black; text-align: center; background-color: #ccc;">세부내역</div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 40px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 40px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 40px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 350px; height: 20px;  text-align: center;"></div>
+            </div>
+        </div>
+        <div style="display: table-cell; border:1px solid black; width:150px; height: auto; text-align: center;">
+            <div style="display: table-cell; ">   
+                <div style="width: 150px; height: 20px; border-bottom: 1px solid black; text-align: center; background-color: #ccc;">비고</div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 40px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 40px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 40px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  border-bottom: 1px solid black; text-align: center;"></div>
+                <div style="width: 150px; height: 20px;  text-align: center;"></div>
+            </div>
+        </div>
+    </div> --> 
 		
 	</div>	<!--/.main-->
 	
